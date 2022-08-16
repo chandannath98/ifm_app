@@ -5,7 +5,7 @@ import  VisitorsItem from './VisitorsItem';
 export default function Visitors_List() {
   return (
     
-    <View style={[styles.container ]}>
+    <View >
      <VisitorsItem/>
       
     </View>

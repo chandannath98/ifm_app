@@ -2,24 +2,38 @@ import { StatusBar } from "expo-status-bar";
 import { Platform, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Route from "./src/navigation/Router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Dimensions } from "react-native";
+import { LogBox } from "react-native";
+import { MenuProvider } from "react-native-popup-menu";
+
+LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
 export default function App() {
+  const WindowWidth = Dimensions.get("window").width;
   
 
   return (
-    <SafeAreaView style={[styles.safeAreaViewStyle, styles.container]}>
+    <SafeAreaView style={[WindowWidth<600 ?styles.safeAreaViewStyleAndroid:styles.safeAreaViewStyleWeb, styles.container]}>
       <StatusBar backgroundColor="#CEE5D0" />
-
+<MenuProvider>
      <Route/>
-      
+     </MenuProvider>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  safeAreaViewStyle: {
+  safeAreaViewStyleAndroid: {
     paddingTop: Platform.os === "android" ? 25 : 0,
+    
     paddingTop: 35,
+    flex: 1,
+    // backgroundColor: "#CEE5D0"
+  },
+  safeAreaViewStyleWeb: {
+    // paddingTop: Platform.os === "android" ? 25 : 0,
+    
+    paddingTop: 2,
     flex: 1,
     // backgroundColor: "#CEE5D0"
   },

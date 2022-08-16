@@ -17,7 +17,7 @@ return(
         }}>
             <stack.Screen name="Home" component={BottemTabNav} options={{headerShown:false}} />
             <stack.Screen name="PostDeatils" component={PostDeatils} />
-            <stack.Screen name="Form" component={VisitorsForm} />
+            <stack.Screen name="VisitorsForm" component={VisitorsForm} />
             
         </stack.Navigator>
     </NavigationContainer>

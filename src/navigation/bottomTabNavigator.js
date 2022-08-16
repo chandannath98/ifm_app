@@ -5,7 +5,7 @@ import PostDeatils from "../screens/postdetails";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {FontAwesome} from "@expo/vector-icons"
 import VisitorsForm from "../components/Visitors_View/VisitorsForm";
-
+import DulicateForm from "../components/Visitors_View/duplicateform";
 const BottemTabNav=()=>{
 const Tab=createBottomTabNavigator();
 
@@ -13,7 +13,8 @@ return(
     <Tab.Navigator 
     screenOptions={{
         tabBarActiveBackgroundColor: "#CEE5D0",
-        tabBarActiveTintColor: "#fff",
+        tabBarActiveTintColor: "#5ba662",
+        
 
     }} 
     sceneContainerStyle={{
@@ -51,7 +52,7 @@ return(
         }
         
         }/>
-        <Tab.Screen name={"OverView"} component={Home} 
+        <Tab.Screen name={"DulicateForm"} component={DulicateForm} 
         options={
             {
             tabBarIcon:((color)=>(
