@@ -14,57 +14,9 @@ import {
 
   
   const SelectorModal = (props) => {
-    const DATA = [
-      {
-        id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-        title: "First Item",
-      },
-      {
-        id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-        title: "Second Item",
-      },
-      {
-        id: "58694a0f-3da1-4171f-bd96-145571e29d72",
-        title: "Thi1rd Item",
-      },
-      {
-        id: "58694a0f2-3da1-471f-bd96-145571e29d72",
-        title: "Third2 Item",
-      },
-      {
-        id: "58694a0f3-3da1-471f-bd96-145571e29d72",
-        title: "Third3 Item",
-      },
-      {
-        id: "58694a0f4-3da1-471f-bd96-145571e29d72",
-        title: "Thir4d Item",
-      },
-      {
-        id: "58694a50f-3da1-471f-bd96-145571e29d72",
-        title: "Thir5d Item",
-      },
-      {
-        id: "58694a06f-3da1-471f-bd96-145571e29d72",
-        title: "Third6 Item",
-      },
-      {
-        id: "58694a07f-3da1-471f-bd96-145571e29d72",
-        title: "Third 7Item",
-      },
-      {
-        id: "58694a0f-3d8a1-471f-bd96-145571e29d72",
-        title: "Thi8rd Item",
-      },
-      {
-        id: "586949a0f-3da1-471f-bd96-145571e29d72",
-        title: "Thi9rd Item",
-      },
-      {
-        id: "58694a011f-3da1-471f-bd96-145571e29d72",
-        title: "Thir11d Item",
-      },
-    ];
+    const DATA = props.data
     
+   
     
     
     const [filteredData, setfilteredData] = useState(DATA);
@@ -72,15 +24,15 @@ import {
   
   
     var newArray = DATA.filter(function (el) {
-      return el.title.includes(props.value)
+      return el.includes(props.value)
     });
     console.log(newArray)
   
   
     const renderItem = ({ item }) => 
-    <Pressable onPress={()=>{[props.setValue(item.title),props.setRnmodelvisible(false)]}} style={styles.contentBox}>
-      <Ionicons style={{flex:0.3}} name={props.value===item.title?"radio-button-on":"radio-button-off"   } size={20} color="black" />
-      <Text style={styles.listItems}>{item.title}</Text>
+    <Pressable onPress={()=>{[props.setValue(item),props.setRnmodelvisible(false),props.filterData(item)]}} style={styles.contentBox}>
+      <Ionicons style={{flex:0.3}} name={props.value===item?"radio-button-on":"radio-button-off"   } size={20} color="black" />
+      <Text style={styles.listItems}>{item}</Text>
     </Pressable>
     ;
   
@@ -96,7 +48,7 @@ import {
               <TextInput value={props.value} style={styles.modelInput} placeholder="Search" onChangeText={(e)=>[props.setValue(e),
               (setfilteredData(
                 DATA.filter(function (el) {
-                  return el.title.toLowerCase().includes(e.toLowerCase())
+                  return el.toLowerCase().includes(e.toLowerCase())
                 })
               ))
               ]  }/>
@@ -105,7 +57,7 @@ import {
               
                 data={filteredData}
                 renderItem={renderItem}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item}
                 fil
               />
               {/* </ScrollView> */}

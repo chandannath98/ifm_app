@@ -21,11 +21,11 @@ import {useNavigation} from "@react-navigation/native"
 
 
 
-export default function PostDetail() {
+export default function PostDetail({ navigation, route }) {
   
-  const navigation= useNavigation();
+  // const navigation= useNavigation();
   
-
+const item= route.params.item
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
@@ -50,21 +50,21 @@ export default function PostDetail() {
               </View>
               {/* Profile Name and Bio */}
               <View style={styles.nameAndBioView}>
-                <Text style={styles.userFullName}>{'Visitors Name'}</Text>
-                <Text style={styles.userBio}>{'7845869545'}</Text>
+                <Text style={styles.userFullName}>{item.visitor_name}</Text>
+                <Text style={styles.userBio}>{item.phone}</Text>
               </View>
               {/* Posts/Followers/Following View */}
               <View style={styles.countsView}>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>20/05/2022</Text>
+                  <Text style={styles.countNum}>{item.date}</Text>
                   <Text style={styles.countText}>Date</Text>
                 </View>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>12:10 PM</Text>
+                  <Text style={styles.countNum}>{item.time_in}</Text>
                   <Text style={styles.countText}>Time In</Text>
                 </View>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>01:10 PM</Text>
+                  <Text style={styles.countNum}>{item.time_out}</Text>
                   <Text style={styles.countText}>Time Out</Text>
                 </View>
               </View>
@@ -74,7 +74,7 @@ export default function PostDetail() {
               <View style={{ paddingHorizontal: 25, marginTop: 10 }}>
                 <Text style={{  fontSize: 16 }}>
                   
-                  Ratings : ⭐⭐⭐⭐⭐ 
+                  Ratings : {item.rating} 
                   
                 </Text>
               </View>

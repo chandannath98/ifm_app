@@ -3,22 +3,76 @@ import {  Pressable, StyleSheet, Text, View, TouchableOpacity } from 'react-nati
 import { Entypo } from '@expo/vector-icons';
 import RNModal from 'react-native-modal';
 import { useState } from "react";
-import { MenuProvider } from 'react-native-popup-menu';
+import { AntDesign } from '@expo/vector-icons';
 import {
   Menu,
   MenuOptions,
   MenuOption,
   MenuTrigger,
 } from 'react-native-popup-menu';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedVisitorsItems } from "../../redux/actions";
+
+
+
+
+
 
  const VisitorsItem =(props)=> {
+
+
    const navigation= useNavigation();
    const [rnmodalvisible, setRnmodalvisible] = useState(false);
+    const {selectedVisitorsItems}=useSelector(state => state.visitorReducer);
+    const dispatch = useDispatch();
+
+const setlist=(item)=>{
+var list=selectedVisitorsItems
+
+if (list.includes(item)){
+
+  list=list.filter((i)=>{
+    return i != item
+  }
+  )
+  
+
+}
+else{
+
+  list.push(item)
+  
+}
+dispatch(setSelectedVisitorsItems(list))
+}
+
+
+
+
+
+
   return (
     <View >
-      <View style={[styles.listing_container,styles.shadowProp]}>
+      <View style={[selectedVisitorsItems.includes(props.item.visitor_name)?styles.selected_listing_container:styles.listing_container,styles.shadowProp]}>
+        {selectedVisitorsItems.includes(props.item.visitor_name)? <AntDesign name="checkcircle" size={15} color="#5ba662" />:<Text></Text>}
+      
 
-      <Pressable style={[styles.listing_1container]} onPress={()=>{navigation.navigate("PostDeatils")}}>
+      <Pressable 
+      style={[styles.listing_1container]} 
+      onPress={
+        
+        selectedVisitorsItems.length>0?()=>{
+          setlist(props.item.visitor_name)
+        
+
+
+      } :()=>{
+        navigation.navigate("PostDeatils", {
+          item:props.item
+        })
+        
+      }}
+      >
         <View style={styles.listing_inline_first_row}>
           <Text style={styles.listing_top_line}> {props.item.visitor_name}</Text>
           <Text> {props.item.date}</Text>
@@ -28,7 +82,7 @@ import {
           <Text style={styles.listing_second_line}>{props.item.time_out}</Text>
         </View>
         <View>
-        <Text> ⭐⭐⭐</Text>
+        <Text> {props.item.rating}</Text>
         </View>
       </Pressable>
 
@@ -41,7 +95,7 @@ import {
         <MenuOption onSelect={() => setRnmodalvisible(true)} >
           <Text style={{color: 'red'}}>Delete</Text>
         </MenuOption>
-        <MenuOption   text='Select' />
+        <MenuOption   text='Select' onSelect={() => setlist(props.item.visitor_name)} />
       </MenuOptions>
     </Menu>
 
@@ -94,7 +148,7 @@ const styles = StyleSheet.create({
     display:"flex",
     flexDirection:"column",
     justifyContent:"space-between",
-    backgroundColor:"white",
+    // backgroundColor:"white",
    
     
   },
@@ -105,12 +159,13 @@ const styles = StyleSheet.create({
   },
 
   listing_container:{
+    backgroundColor:"white",
     display:"flex",
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems:"center",
    
-    backgroundColor:"white",
+    // backgroundColor:"white",
     // height:60,
     paddingVertical:10,
     
@@ -121,6 +176,27 @@ const styles = StyleSheet.create({
     // borderColor:"grey",
     
   },
+
+  selected_listing_container:{
+    backgroundColor:"#e6f0e7",
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    alignItems:"center",
+   
+    // backgroundColor:"white",
+    // height:60,
+    paddingVertical:10,
+    
+    marginHorizontal:10,
+    paddingHorizontal:10,
+    // borderRadius:5,
+    marginVertical:1,
+    // borderColor:"grey",
+    
+  },
+
+
   shadowProp: {
     shadowColor: 'grey',
     shadowOffset: {width: 0, height: 4},
