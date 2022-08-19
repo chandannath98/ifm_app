@@ -17,199 +17,80 @@ import VisitorsItem from "../../components/Visitors_View/VisitorsItem";
 import { useState,useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { setfilterdVisitorsData } from "../../redux/actions";
+import { visitorsdata } from "../../components/Visitors_View/data";
 
 
 
 export default function Home() {
   const navigation = useNavigation();
   
-  const {filterdVisitorsData}=useSelector(state => state.visitorReducer);
+  const {filterdVisitorsData,uniqueRatingList,visitorSelectedRating,visitorsMonthYearValue}=useSelector(state => state.visitorReducer);
     const dispatch = useDispatch();
 
 
-  const data = [
-    {
-      visitor_name: "visitor name1",
-      time_in: "10:11 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896521"
-    },
-    {
-      visitor_name: "visitor name512",
-      time_in: "10:12 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896522"
-    },
-    {
-      visitor_name: "visitor name33",
-      time_in: "10:13 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896523"
-    },
-    {
-      visitor_name: "visitor name47",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896524"
-    },
-    {
-      visitor_name: "visitor name5",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896525"
-    },
-    {
-      visitor_name: "visitor name6",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896526"
-    },
-    {
-      visitor_name: "visitor name7",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896527"
-    },
-    {
-      visitor_name: "visitor name8",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896528"
-
-    },
-    {
-      visitor_name: "visitor name9",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896529"
-
-    },
-    {
-      visitor_name: "visitor name10",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name11",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name12",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name13",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name14",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name15",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name16",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "aisitor name1",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name18",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐⭐",
-      phone:"7875896529"
-    },
-    {
-      visitor_name: "visitor name19",
-      time_in: "10:10 AM",
-      time_out: "12:12 PM",
-      date: "10/05/2022",
-      rating:"⭐⭐⭐",
-      phone:"7875896529"
-    },
-    
-  ];
+  var data=visitorsdata
 
   function getFields( field) {
     var output = [];
     for (var i=0; i < data.length ; ++i)
         output.push(data[i][field]);
-         output = output.filter((item, i, ar) => ar.indexOf(item) === i);
+        //  output = output.filter((item, i, ar) => ar.indexOf(item) === i);
     return output;
 }
 
-var allVisitorsName=getFields("visitor_name"); 
-
-
-
-const filterData=(rating)=>{
- var data2=data.filter((item)=>{
-    return item.rating===rating
-  })
-  dispatch(setfilterdVisitorsData(data2))
-  
+function getMonthYear( ) {
+    var output = [];
+    for (var i=0; i < data.length ; ++i)
+        output.push((new Date(data[i]["date"]).getMonth()+1).toString()+"-"+ new Date(data[i]["date"]).getFullYear().toString());
+       
+    return output;
 }
 
 
+
+
+
+const filterData=(rating,MonthYear)=>{
+  if(rating==="All" &MonthYear==="All" ){
+    dispatch(setfilterdVisitorsData(data))
+    
+    return data
+    
+  }
+  
+  else if(rating==="All" &MonthYear != "All") {
+    var data2=data.filter((item)=>{
+      return (((new Date(item.date).getMonth()+1).toString()+"-"+ new Date(item.date).getFullYear().toString())===MonthYear)
+    })
+    dispatch(setfilterdVisitorsData(data2))
+    return data2
+  }
+  else if(rating !="All" &MonthYear==="All")  {
+    var data2=data.filter((item)=>{
+      return (item.rating===rating)
+    })
+    dispatch(setfilterdVisitorsData(data2))
+    return data2
+  }
+  else{
+    var data2=data.filter((item)=>{
+      return (item.rating===rating & ((new Date(item.date).getMonth()+1).toString()+"-"+ new Date(item.date).getFullYear().toString())===MonthYear)
+    })
+    dispatch(setfilterdVisitorsData(data2))
+    return data2
+    
+  }
+  
+}
+
 useEffect(() => {
   dispatch(setfilterdVisitorsData(data))
-  console.log(data)
+
 }, []);
+
+
+
+
 
 
 
@@ -219,11 +100,12 @@ useEffect(() => {
 
   return (
     <View style={[styles.safeAreaViewStyle]}>
-      <HeaderForMobile data={allVisitorsName} filterData={filterData}  getFields={getFields}/>
+      <HeaderForMobile  getMonthYear={getMonthYear} data={ getFields("visitor_name", data)}  getFields={getFields} filterData={filterData}/>
 
       <FlatList
         style={styles.scrollView}
-        data={filterdVisitorsData.sort((a, b) => a.visitor_name.localeCompare(b))}
+        data={filterdVisitorsData}
+        // stickyHeaderIndices={[0,6,10]}
         renderItem={({ item }) => (
           
             <VisitorsItem

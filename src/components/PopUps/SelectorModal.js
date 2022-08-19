@@ -15,24 +15,30 @@ import {
   
   const SelectorModal = (props) => {
     const DATA = props.data
+    const uniqueData=DATA.filter((item, i, ar) => ar.indexOf(item) === i);
     
    
     
     
-    const [filteredData, setfilteredData] = useState(DATA);
+    const [filteredData, setfilteredData] = useState(uniqueData);
   
+    const counts = {};
+
+    for (const num of DATA) {
+      counts[num] = counts[num] ? counts[num] + 1 : 1;
+    }
   
-  
-    var newArray = DATA.filter(function (el) {
-      return el.includes(props.value)
-    });
-    console.log(newArray)
+    // var newArray = DATA.filter(function (el) {
+    //   return el.includes(props.value)
+    // });
+    
   
   
     const renderItem = ({ item }) => 
-    <Pressable onPress={()=>{[props.setValue(item),props.setRnmodelvisible(false),props.filterData(item)]}} style={styles.contentBox}>
+    <Pressable onPress={()=>{[props.setValue(item),props.setRnmodelvisible(false)]}} style={styles.contentBox}>
       <Ionicons style={{flex:0.3}} name={props.value===item?"radio-button-on":"radio-button-off"   } size={20} color="black" />
-      <Text style={styles.listItems}>{item}</Text>
+      <Text style={styles.listItems}>{item} {item=="All"?<Text></Text>: <Text style={styles.aggregate}> {counts[item]} </Text>} </Text>
+      {/* <Text style={styles.listItems}></Text> */}
     </Pressable>
     ;
   
@@ -45,6 +51,7 @@ import {
             animationOut="zoomOut"
           >
             <View style={styles.modelContent}>
+            <Text>{props.selectorName}</Text>
               <TextInput value={props.value} style={styles.modelInput} placeholder="Search" onChangeText={(e)=>[props.setValue(e),
               (setfilteredData(
                 DATA.filter(function (el) {
@@ -52,7 +59,20 @@ import {
                 })
               ))
               ]  }/>
-              {/* <ScrollView > */}
+
+
+              <Pressable onPress={()=>{[props.setValue("All"),props.setRnmodelvisible(false)]}} style={styles.contentBox}>
+      <Ionicons style={{flex:0.3}} name={props.value==="All"?"radio-button-on":"radio-button-off"   } size={20} color="black" />
+     
+
+      <Text style={styles.listItems}>All <Text style={styles.aggregate}> {DATA.length}  </Text></Text>
+        
+      
+      {/* <Text style={styles.listItems}></Text> */}
+    </Pressable>
+
+
+
               <FlatList
               
                 data={filteredData}
@@ -128,7 +148,11 @@ import {
       padding:10,
       borderRadius:5,
       // left: 30,
-      justifyContent: "flex-start",}
+      justifyContent: "flex-start",},
+      aggregate
+      :{
+        color:"#fff", backgroundColor:"grey", borderRadius:10, width:20
+      }
   });
   
   export default SelectorModal;

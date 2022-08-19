@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   safeAreaViewStyleAndroid: {
     paddingTop: Platform.os === "android" ? 25 : 0,
     
-    paddingTop: 35,
+    paddingTop: 30,
     flex: 1,
     // backgroundColor: "#CEE5D0"
   },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
-    paddingVertical: 10,
+    // paddingVertical: 10,
     // backgroundColor:"white",
     // marginHorizontal:10
   },

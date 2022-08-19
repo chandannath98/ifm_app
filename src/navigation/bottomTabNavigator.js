@@ -6,6 +6,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {FontAwesome} from "@expo/vector-icons"
 import VisitorsForm from "../components/Visitors_View/VisitorsForm";
 import DulicateForm from "../components/Visitors_View/duplicateform";
+import VisitorsChart from "../components/Visitors_View/chartView";
+// import AppNavigator from "../screens/Home/ActionNavigator";
 const BottemTabNav=()=>{
 const Tab=createBottomTabNavigator();
 
@@ -32,7 +34,7 @@ return(
         }
         
         }/>
-        <Tab.Screen name={"Proect Security"} component={PostDeatils} 
+        {/* <Tab.Screen name={"Proect Security"} component={PostDeatils} 
         options={
             {
             tabBarIcon:((color)=>(
@@ -41,7 +43,7 @@ return(
             headerShown:false   
         }
         
-        }/>
+        }/> */}
         <Tab.Screen name={"Form"} component={VisitorsForm} 
         options={
             {
@@ -52,7 +54,7 @@ return(
         }
         
         }/>
-        <Tab.Screen name={"DulicateForm"} component={DulicateForm} 
+        {/* <Tab.Screen name={"navigator"} component={AppNavigator} 
         options={
             {
             tabBarIcon:((color)=>(
@@ -61,7 +63,7 @@ return(
             headerShown:false   
         }
         
-        }/>
+        }/> */}
 
 
       

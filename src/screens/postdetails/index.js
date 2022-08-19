@@ -13,6 +13,8 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import {useNavigation} from "@react-navigation/native"
+import { toTimeString } from '../../components/Visitors_View/VisitorsItem';
+import { DateFormet } from '../../CustomFunctions/CustomFunctions';
 
 
 
@@ -56,15 +58,15 @@ const item= route.params.item
               {/* Posts/Followers/Following View */}
               <View style={styles.countsView}>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>{item.date}</Text>
+                  <Text style={styles.countNum}>{DateFormet(item.date)}</Text>
                   <Text style={styles.countText}>Date</Text>
                 </View>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>{item.time_in}</Text>
+                  <Text style={styles.countNum}>{toTimeString(item.time_in)}</Text>
                   <Text style={styles.countText}>Time In</Text>
                 </View>
                 <View style={styles.countView}>
-                  <Text style={styles.countNum}>{item.time_out}</Text>
+                  <Text style={styles.countNum}>{toTimeString(item.time_out)}</Text>
                   <Text style={styles.countText}>Time Out</Text>
                 </View>
               </View>
@@ -121,11 +123,15 @@ const item= route.params.item
           </View>
         </>
       </ScrollView>
-      <MaterialCommunityIcons name="circle-edit-outline" style={styles.editButton}  size={55} color="black"  onPress={()=>{navigation.navigate("VisitorsForm")}}/>
+      <MaterialCommunityIcons name="circle-edit-outline" style={styles.editButton}  size={55} color="black"  onPress={()=>{navigation.navigate("VisitorsForm", {
+                    item: item,
+                  })}}/>
       
     </View>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   coverImage: {paddingTop:5, height: 200, width: '100%',backgroundColor:"#CEE5D0" },

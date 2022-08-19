@@ -20,92 +20,71 @@ import {
   Dropdown,
   
 } from 'sharingan-rn-modal-dropdown';
+import { toTimeString } from "./VisitorsItem";
 
 
 export const data = [
   {
     value: '1',
     label: 'Tiger Nixon',
-    employee_salary: '320800',
-    employee_age: '61',
+    
     
   },
   {
     value: '2',
     label: 'Garrett Winters',
-    employee_salary: '170750',
-    employee_age: '63',
-    avatarSource: {
-      uri: 'https://img.icons8.com/color/344/circled-user-male-skin-type-5.png',
-    },
+    
   },
   {
     value: '3',
     label: 'Ashton Cox',
-    employee_salary: '86000',
-    employee_age: '66',
-    avatarSource: {
-      uri: 'https://img.icons8.com/color/344/circled-user-male-skin-type-5.png',
-    },
+    
   },
   {
     value: '4',
     label: 'Cedric Kelly',
-    employee_salary: '433060',
-    employee_age: '22',
-    avatarSource: {
-      uri: 'https://img.icons8.com/color/344/circled-user-male-skin-type-5.png',
-    },
+    
   },
 ];
 
 
 
 
-const VisitorsForm = () => {
+const VisitorsForm = ({ navigation, route }) => {
 
+  const item= route.params?route.params.item:false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const [valueSS, setValueSS] = useState('');
-  const navigation = useNavigation();
+  
   const windowWidth = Dimensions.get("window").width;
   const [date, setDate] = useState( 
     {
     nativeEvent: {
-      timestamp: Date.now(),
+      timestamp: item?new Date(item.date):Date(),
     },
   }
   
   );
   const [Time, setTime] = useState({
     nativeEvent: {
-      timestamp: Date.now(),
+      timestamp: item?new Date(item.time_in):Date('10/05/2022'),
     },
   });
+  const [visitorsName, setVisitorsName] = useState(item?item.visitor_name:"");
+  const [phone, setPhone] = useState(item?item.phone:"");
+  const [purpose, setPurpose] = useState(item?item.purpose:"");
+  const [whomeToMeet, setWhomeToMeet] = useState(item?item.whomeToMeet:"");
+  const [detailedReasonToVisit, setDetailedReasonToVisit] = useState(item?item.detailedReasonToVisit:"");
+  const [solutionOfferd, setSolutionOfferd] = useState(item?item.solutionOfferd:"");
+  const [comment, setComment] = useState(item?item.comment:"");
 
 
-  const onChangeSS = (value) => {
-    setValueSS(value);
-  };
+
+  
 
 
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
+
 
 
 
@@ -208,6 +187,8 @@ const VisitorsForm = () => {
             <TextInput
               style={windowWidth < 900 ? styles.input : styles.inputWeb}
               placeholder={"Visitors Name"}
+              value={visitorsName}
+              onChangeText={setVisitorsName}
             />
           </View>
         </View>
@@ -224,6 +205,8 @@ const VisitorsForm = () => {
               keyboardType="phone-pad"
               autoComplete="tel"
               maxLength={10}
+              value={phone}
+              onChangeText={setPhone}
             />
           </View>
         </View>
@@ -257,7 +240,7 @@ const VisitorsForm = () => {
               
             />
             ) : (
-              <Text style={styles.dateFormet}>{timeString}</Text>
+              <Text style={styles.dateFormet}>{toTimeString(Time.nativeEvent.timestamp)}</Text>
             )}
           </View>
         </Pressable>
@@ -265,16 +248,38 @@ const VisitorsForm = () => {
         
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Purpose</Text>
+          <Text style={styles.label}>Whome To Meet</Text>
           <View style={styles.inputview}>
           <AntDesign name="infocirlceo" size={20} color="black" />
 
           <Dropdown 
                       // label="Whome To Meet"
-                      data={data}
+                      data={[
+                        {
+                          value: 'To Meet Sales Person',
+                          label: 'To Meet Sales Person',
+                          
+                          
+                        },
+                        {
+                          value: 'Site Visit',
+                          label: 'Site Visit',
+                          
+                        },
+                        {
+                          value: 'Sales Enquiry',
+                          label: 'Sales Enquiry',
+                          
+                        },
+                        {
+                          value: 'To Complain',
+                          label: 'To Complain',
+                          
+                        }]
+                      }
                       enableSearch
-                      value={valueSS}
-                      onChange={setValueSS}
+                      value={purpose}
+                      onChange={(e)=>setPurpose(e)}
                       itemContainerStyle={{backgroundColor:"#fff"}}
                       animationOutTiming={20}
                       // itemTextStyle={{backgroundColor:"#fff"}}
@@ -287,24 +292,44 @@ const VisitorsForm = () => {
         
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Whome To Meet</Text>
+          <Text style={styles.label}>Purpose</Text>
           <View style={styles.inputview}>
           <AntDesign name="infocirlceo" size={20} color="black" />
-          
+
           <Dropdown 
                       // label="Whome To Meet"
-                      data={data}
+                      data={[
+                        {
+                          value: 'Tarun',
+                          label: 'Tarun',
+                          
+                          
+                        },
+                        {
+                          value: 'Komal',
+                          label: 'Komal',
+                          
+                        },
+                        {
+                          value: 'Dilip',
+                          label: 'Dilip',
+                          
+                        },
+                        {
+                          value: 'Apoorva',
+                          label: 'Apoorva',
+                          
+                        }]
+                      }
                       enableSearch
-                      value={valueSS}
-                      onChange={setValueSS}
+                      value={whomeToMeet}
+                      onChange={(e)=>setWhomeToMeet(e)}
                       itemContainerStyle={{backgroundColor:"#fff"}}
                       animationOutTiming={20}
                       // itemTextStyle={{backgroundColor:"#fff"}}
                       // parentDDContainerStyle={{backgroundColor:"#fff"}}
                       textInputStyle={styles.inputview}
                     />
-          
-          
           </View>
         </View>
 
@@ -321,6 +346,8 @@ const VisitorsForm = () => {
             <TextInput
               style={windowWidth < 900 ? styles.input : styles.inputWeb}
               placeholder={"Detailed Reason To Visit"}
+              value={detailedReasonToVisit}
+              onChangeText={setDetailedReasonToVisit}
             />
           </View>
         </View>
@@ -337,6 +364,8 @@ const VisitorsForm = () => {
             <TextInput
               style={windowWidth < 900 ? styles.input : styles.inputWeb}
               placeholder={"Solution Offerd"}
+              value={solutionOfferd}
+              onChangeText={setSolutionOfferd}
             />
           </View>
         </View>
@@ -352,6 +381,8 @@ const VisitorsForm = () => {
             <TextInput
               style={windowWidth < 900 ? styles.input : styles.inputWeb}
               placeholder={"Comment"}
+              value={comment}
+              onChangeText={setComment}
             />
           </View>
         </View>
@@ -374,29 +405,21 @@ const VisitorsForm = () => {
 
 
 
-
-
-
-
-
-
-
-
-
       <View style={styles.buttonGroup}>
         <Pressable
           style={[styles.button, styles.cancelButton]}
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.goBack(null)
+
           }}
-        >
+        > 
           <Text style={styles.text}>Cancel</Text>
         </Pressable>
 
         <Pressable
           style={[styles.button, styles.saveButton]}
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.goBack(null)
           }}
         >
           <Text style={styles.text}>Save</Text>
