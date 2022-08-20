@@ -26,9 +26,13 @@ import { AntDesign } from '@expo/vector-icons';
 const ProjectSecurityDateWiseGrouping = ({ navigation, route }) => {
 
 
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
   var data = route.params.securitydata.filter((item)=>{
     {
-      return ((new Date(item.date).getMonth() + 1).toString() + "-" + new Date(item.date).getFullYear().toString())===route.params.value
+      return (monthNames[(new Date(item.date).getMonth() + 1)] + " - " + new Date(item.date).getFullYear().toString())===route.params.value
     
     }});
 
@@ -49,10 +53,10 @@ return(
   <SafeAreaView style={styles.container}>
 
 <View style={styles.header}>
-<AntDesign name="calendar" size={50} color="#fff" />
+<AntDesign name="calendar" size={25} color="#fff" />
 <Text style={styles.headertext}>Dates</Text>
 </View>
-    <View style={{backgroundColor:"#CEE5D0",
+    <View style={{
     paddingHorizontal:10,
     paddingVertical:20,
     borderRadius:15,
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   headertext:{
-    fontSize:50,
+    fontSize:25,
     color:"#fff"
     
   }

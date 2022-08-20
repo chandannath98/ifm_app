@@ -31,7 +31,8 @@ export default function App() {
 const styles = StyleSheet.create({
   safeAreaViewStyle: {
     flex: 1,
-    // backgroundColor: "#CEE5D0"
+    paddingTop:1,
+    backgroundColor:"#CEE5D0"
   },
   safeAreaViewStyleWeb: {
     // paddingTop: Platform.os === "android" ? 25 : 0,
