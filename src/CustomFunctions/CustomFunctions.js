@@ -16,4 +16,19 @@
 
     return DateStr;
 }
-export {DateFormet}
+
+
+
+function getFields(field, data) {
+    var output = [];
+    for (var i = 0; i < data.length; ++i) output.push(data[i][field]);
+
+    return output;
+  }
+
+
+
+
+
+
+export {DateFormet,getFields}

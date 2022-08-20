@@ -215,8 +215,8 @@ const styles = StyleSheet.create({
 
     marginHorizontal: 10,
     paddingHorizontal: 10,
-    // borderRadius:5,
-    marginVertical: 1,
+    borderRadius:15,
+    marginVertical: 2,
     // borderColor:"grey",
   },
 

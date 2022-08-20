@@ -16,7 +16,7 @@ export default function Visitors_List() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop:10,
+        // paddingTop:10,
         flex:1,
         // backgroundColor: "#CEE5D0",
         color:"white",

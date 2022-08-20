@@ -7,7 +7,12 @@ import {FontAwesome} from "@expo/vector-icons"
 import VisitorsForm from "../components/Visitors_View/VisitorsForm";
 import DulicateForm from "../components/Visitors_View/duplicateform";
 import VisitorsChart from "../components/Visitors_View/chartView";
-// import AppNavigator from "../screens/Home/ActionNavigator";
+import ProjectSecurityItem from "../components/ProjectSecurity/ProjectSecurityItem";
+import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
+import { MaterialIcons } from '@expo/vector-icons';
+
+
+
 const BottemTabNav=()=>{
 const Tab=createBottomTabNavigator();
 
@@ -34,26 +39,27 @@ return(
         }
         
         }/>
-        {/* <Tab.Screen name={"Proect Security"} component={PostDeatils} 
+        <Tab.Screen name={"Proect Security"} component={ProjectSecurity} 
         options={
             {
             tabBarIcon:((color)=>(
-                <FontAwesome name="home" size={25} color={"#0d0d0d"} />
-            )),
-            headerShown:false   
-        }
-        
-        }/> */}
-        <Tab.Screen name={"Form"} component={VisitorsForm} 
-        options={
-            {
-            tabBarIcon:((color)=>(
-                <FontAwesome name="home" size={25} color={"#0d0d0d"} />
+                <MaterialIcons name="security" size={25} color="#0d0d0d" />
             )),
             headerShown:false   
         }
         
         }/>
+        <Tab.Screen name={"Form"} component={VisitorsForm} 
+        options={
+            {
+            tabBarIcon:((color)=>(
+                <MaterialIcons name="home" size={25} color="#0d0d0d" />
+            )),
+            headerShown:false   
+        }
+        
+        }
+        />
         {/* <Tab.Screen name={"navigator"} component={AppNavigator} 
         options={
             {

@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import Visitors_List from "../../components/Visitors_View";
 import HeaderForMobile from "../../components/HeaderForMobile";
-import { ScrollView } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import VisitorsItem from "../../components/Visitors_View/VisitorsItem";
@@ -18,6 +17,7 @@ import { useState,useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { setfilterdVisitorsData } from "../../redux/actions";
 import { visitorsdata } from "../../components/Visitors_View/data";
+import { StatusBar } from "expo-status-bar";
 
 
 
@@ -105,6 +105,7 @@ useEffect(() => {
       <FlatList
         style={styles.scrollView}
         data={filterdVisitorsData}
+        contentContainerStyle={{ paddingBottom: 100, }}
         // stickyHeaderIndices={[0,6,10]}
         renderItem={({ item }) => (
           
@@ -137,25 +138,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "#CEE5D0",
   },
 
-  header: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    // backgroundColor:"white",
-    // marginHorizontal:10
-  },
-
-  headerItem: {
-    display: "flex",
-    flexDirection: "row",
-    backgroundColor: "white",
-    paddingVertical: 7,
-    paddingHorizontal: 8,
-    borderRadius: 35,
-    alignItems: "center",
-    justifyContent: "space-around",
-  },
+ 
   addButton: {
     color: "#5ba662",
     flex: 1,
@@ -164,12 +147,11 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
   },
-  EmptySpace: {
-    height: 100,
-  },
+  
   scrollView: {
-    paddingTop: 10,
+    // paddingTop: 10,
     // marginBottom:10,
     // paddingBottom:60
   },
-});
+}
+);

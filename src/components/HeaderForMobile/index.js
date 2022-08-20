@@ -93,7 +93,7 @@ export default function HeaderForMobile(props) {
         <Pressable
           onPress={() => [
             setRnmodelvisible(true),
-            console.log(uniqueRatingList),
+            
           ]}
           style={styles.headerItem}
         >
