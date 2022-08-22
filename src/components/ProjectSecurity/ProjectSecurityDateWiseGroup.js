@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { getFields } from "../../CustomFunctions/CustomFunctions";
-import ProjectSecurityItem from "./ProjectSecurityItem";
+import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from '@expo/vector-icons';
 
 
@@ -42,7 +42,7 @@ const ProjectSecurityDateWiseGrouping = ({ navigation, route }) => {
 
 
 const onpress=()=>{
-  
+  console.log("presssed")
 }
 
 
@@ -57,10 +57,7 @@ return(
 <Text style={styles.headertext}>Dates</Text>
 </View>
     <View style={{
-    paddingHorizontal:10,
-    paddingVertical:20,
-    borderRadius:15,
-    marginVertical:10,
+    
   // paddingVertical:10
   }}>
     <FlatList
@@ -69,12 +66,13 @@ return(
       contentContainerStyle={{
         flexGrow: 1,
         paddingBottom: 100,
+        paddingHorizontal:6
       }}
       // stickyHeaderIndices={[0,6,10]}
       renderItem={({ item }) => <View>
 
      
-      <ProjectSecurityItem item={item} onpress={onpress}/>
+      <ProjectSecurityGropingItem item={item} onpress={()=>navigation.navigate("Project Security Listing")} />
      
       </View>
     }
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     padding:10,
     margin:10,
-    backgroundColor:"#CEE5D0",
+    backgroundColor:"rgb(0, 172, 194)",
     borderRadius:10
   },
   headertext:{

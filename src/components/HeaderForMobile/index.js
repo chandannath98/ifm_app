@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     paddingVertical: 10,
-    backgroundColor: "#CEE5D0",
+    backgroundColor: "rgb(0, 172, 194)",
   },
 
   headerItem: {

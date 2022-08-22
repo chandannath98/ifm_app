@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, Pressable } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { getFields } from "../../CustomFunctions/CustomFunctions";
 import { projectSecurityData } from "./projectsecuritydata";
-import ProjectSecurityItem from "./ProjectSecurityItem";
+import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -58,11 +58,9 @@ return(
     </View> */}
     <View
       style={{
-        // backgroundColor: "#CEE5D0",
-        paddingHorizontal: 10,
-        paddingVertical: 20,
-        borderRadius: 15,
-        marginVertical: 10,
+        // backgroundColor: "rgb(0, 172, 194)",
+        
+        // marginVertical: 10,
         // paddingVertical:10
       }}
     >
@@ -71,6 +69,7 @@ return(
         contentContainerStyle={{
           flexGrow: 1,
           paddingBottom: 100,
+          paddingHorizontal:6
         }}
         // stickyHeaderIndices={[0,6,10]}
         renderItem={({ item }) => (
@@ -84,7 +83,7 @@ return(
               <Text style={styles.textStyle}>{item}</Text>
               <AntDesign name="right" size={20} color="black" />
             </Pressable> */}
-                  <ProjectSecurityItem item={item} onpress={onpress} securitydata={securitydata} data={data}value={item}/>
+                  <ProjectSecurityGropingItem item={item} onpress={()=>navigation.navigate("Project Security Date Wise",{securitydata:securitydata,data:data,value:item})} />
 
           </View>
         )}
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     margin: 10,
-    backgroundColor: "#CEE5D0",
+    backgroundColor: "rgb(0, 172, 194)",
     borderRadius: 10,
   },
   Topheader: {
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     margin: 10,
-    backgroundColor: "#CEE5D0",
+    backgroundColor: "rgb(0, 172, 194)",
     borderRadius: 10,
   },
   headertext: {

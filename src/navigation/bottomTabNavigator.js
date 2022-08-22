@@ -7,9 +7,11 @@ import {FontAwesome} from "@expo/vector-icons"
 import VisitorsForm from "../components/Visitors_View/VisitorsForm";
 import DulicateForm from "../components/Visitors_View/duplicateform";
 import VisitorsChart from "../components/Visitors_View/chartView";
-import ProjectSecurityItem from "../components/ProjectSecurity/ProjectSecurityItem";
+
 import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
 import { MaterialIcons } from '@expo/vector-icons';
+import ProjectSecurityItems from "../components/ProjectSecurity/ProjectSecurityItems";
+import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
 
 
 
@@ -18,23 +20,37 @@ const Tab=createBottomTabNavigator();
 
 return(
     <Tab.Navigator 
+    style={{
+        margin:5
+    }}
     screenOptions={{
-        tabBarActiveBackgroundColor: "#CEE5D0",
-        tabBarActiveTintColor: "#5ba662",
+        // tabBarActiveBackgroundColor: "rgb(0, 172, 194)",
+        tabBarActiveTintColor: "rgb(0, 172, 194)",
+        // tabBarStyle: {position:'absolute',bottom:5,marginHorizontal:15,borderRadius:15 },
         
+  
 
     }} 
     sceneContainerStyle={{
         // backgroundColor: "#fff"
+        
         }} >
 
 
         <Tab.Screen name={"VisitorsList"} component={Home} 
         options={
             {
-            tabBarIcon:((color)=>(
-                <FontAwesome name="home" size={25} color={"#0d0d0d"} />
-            )),
+            // tabBarIcon:((color)=>(
+            //     <FontAwesome name="home" size={25} color={"#0d0d0d"} />
+            // ))
+            tabBarIcon: ({ focused, size }) => {
+                // const icon=focused?"bell":"home";
+                const color=focused?"rgb(0, 172, 194)":"black"
+                return (
+                    <FontAwesome name="home" size={25} color={color} />
+              )}
+
+            ,
             headerShown:false   
         }
         
@@ -42,19 +58,27 @@ return(
         <Tab.Screen name={"Proect Security"} component={ProjectSecurity} 
         options={
             {
-            tabBarIcon:((color)=>(
-                <MaterialIcons name="security" size={25} color="#0d0d0d" />
-            )),
+                tabBarIcon: ({ focused, size }) => {
+                    // const icon=focused?"bell":"home";
+                    const color=focused?"rgb(0, 172, 194)":"black"
+                    return (
+                        <MaterialIcons name="security" size={25} color={color} />
+                  )}
+            ,
             headerShown:false   
         }
         
         }/>
-        <Tab.Screen name={"Form"} component={VisitorsForm} 
+        <Tab.Screen name={"ProjectSecurityListing"} component={ProjectSecurityListing} 
         options={
             {
-            tabBarIcon:((color)=>(
-                <MaterialIcons name="home" size={25} color="#0d0d0d" />
-            )),
+                tabBarIcon: ({ focused, size }) => {
+                    // const icon=focused?"bell":"home";
+                    const color=focused?"rgb(0, 172, 194)":"black"
+                    return (
+                        <FontAwesome name="home" size={25} color={color} />
+                  )}
+                ,
             headerShown:false   
         }
         

@@ -1,34 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
-import { getFields } from "../../CustomFunctions/CustomFunctions";
-import { projectSecurityData } from "./projectsecuritydata";
 import { AntDesign } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 
-var data = projectSecurityData;
 
-var dates = getFields("Date", data).filter(
-  (item, i, ar) => ar.indexOf(item) === i
-);
 
 // ******************Main Function*************************
 
-const ProjectSecurityItem = (props) => {
+const ProjectSecurityGropingItem = (props) => {
 
-  const navigation = useNavigation();
 
 return(
 
   <View>
     <Pressable
-      onPress={() => {
-        navigation.navigate("Project Security Date Wise", {
-          securitydata: props.securitydata,
-          data: props.data,
-          value: props.value,
-        });
-      }}
+      onPress={() => props.onpress()}
       style={styles.item}
     >
       <Text style={styles.textStyle}>{props.item}</Text>
@@ -52,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProjectSecurityItem;
+export default ProjectSecurityGropingItem;

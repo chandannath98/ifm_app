@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     container: {
         // paddingTop:10,
         flex:1,
-        // backgroundColor: "#CEE5D0",
+        // backgroundColor: "rgb(0, 172, 194)",
         color:"white",
         // justifyContent:"center",
         

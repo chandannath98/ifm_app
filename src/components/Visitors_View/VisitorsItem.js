@@ -102,7 +102,7 @@ const VisitorsItem = (props) => {
         ]}
       >
         {selectedVisitorsItems.includes(props.item.visitor_name) ? (
-          <AntDesign name="checkcircle" size={15} color="#5ba662" />
+          <AntDesign name="checkcircle" size={15} color="rgb(0, 172, 194)" />
         ) : (
           <Text></Text>
         )}
@@ -259,6 +259,7 @@ const styles = StyleSheet.create({
   },
   listing_top_line: {
     fontSize: 15,
+    // fontFamily: 'monospace'
   },
   listing_second_line: {
     color: "grey",

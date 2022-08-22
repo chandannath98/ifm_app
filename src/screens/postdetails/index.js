@@ -134,7 +134,7 @@ const item= route.params.item
 
 
 const styles = StyleSheet.create({
-  coverImage: {paddingTop:5, height: 200, width: '100%',backgroundColor:"#CEE5D0" },
+  coverImage: {paddingTop:5, height: 200, width: '100%',backgroundColor:"rgb(0, 172, 194)" },
   profileContainer: {
     // height: 1000,
     backgroundColor: '#fff',
@@ -227,7 +227,7 @@ elevation: 5,
     alignContent:"center"
   },
   editButton:{
-    color:"#5ba662",
+    color:"rgb(0, 172, 194)",
     flex: 1,
     position:"absolute",
     justifyContent: 'flex-end',

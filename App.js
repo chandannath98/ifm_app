@@ -19,7 +19,7 @@ export default function App() {
       style={styles.safeAreaViewStyle}
     >
       <Provider store={Store}>
-        <StatusBar backgroundColor="#CEE5D0" />
+        <StatusBar backgroundColor="rgb(0, 172, 194)" />
         <MenuProvider>
           <Route />
         </MenuProvider>
@@ -32,14 +32,15 @@ const styles = StyleSheet.create({
   safeAreaViewStyle: {
     flex: 1,
     paddingTop:1,
-    backgroundColor:"#CEE5D0"
+    backgroundColor:"rgb(0, 172, 194)",
+    fontFamily: 'notoserif'
   },
   safeAreaViewStyleWeb: {
     // paddingTop: Platform.os === "android" ? 25 : 0,
 
     paddingTop: 2,
     flex: 1,
-    // backgroundColor: "#CEE5D0"
+    // backgroundColor: "rgb(0, 172, 194)"
   },
 
   container: {
