@@ -2,43 +2,29 @@ import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 
 // ******************Main Function*************************
 
 const ProjectSecurityItems = (props) => {
 
-
+const navigation=useNavigation()
 return(
 
   
     <View>
 
     
-    <Pressable
+    <Pressable onPress={()=>{navigation.navigate("Project Security Detail Page")}}
       
-      style={[styles.item,true?{backgroundColor:'green'}:{backgroundColor:'red'}]}
+      style={[styles.item,props.item.Name_of_the_guard?{backgroundColor:'green'}:{backgroundColor:'red'}]}
     >
-      <Text style={[styles.textStyle]}>FCC-01-001</Text>
-      <Text style={[styles.textStyle]}>30/07/2022, 10:41:00 pm  </Text>
+      <Text style={[styles.textStyle]}>{props.item.Area_visited}</Text>
+      <Text style={[styles.textStyle]}>{props.item.date_and_Time}  </Text>
       
     </Pressable>
-    <Pressable
-      
-      style={[styles.item,true?{backgroundColor:'green'}:{backgroundColor:'red'}]}
-    >
-      <Text style={[styles.textStyle]}>FCC-01-001</Text>
-      <Text style={[styles.textStyle]}>30/07/2022, 10:41:00 pm  </Text>
-      
-    </Pressable>
-    <Pressable
-      
-      style={[styles.item,true?{backgroundColor:'red'}:{backgroundColor:'red'}]}
-    >
-      <Text style={[styles.textStyle]}>FCC-01-001</Text>
-      <Text style={[styles.textStyle]}>30/07/2022, 10:41:00 pm  </Text>
-      
-    </Pressable>
+    
 
     </View>
     

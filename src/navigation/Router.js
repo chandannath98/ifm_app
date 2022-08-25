@@ -9,6 +9,7 @@ import PostDeatils from "../screens/postdetails";
 import BottemTabNav from "./bottomTabNavigator";
 import { useNavigation } from "@react-navigation/native";
 import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
+import ProjectSecurityDetailsPage from "../components/ProjectSecurity/ProjectSecurityDetailsPage";
 
 // const navigation = useNavigation();
 
@@ -40,6 +41,11 @@ return(
         }} />
             <stack.Screen name="Project Security Listing"  component={ProjectSecurityListing} options={{
                 headerShown:true, title: 'Project Security', 
+                headerTintColor:"white"
+                
+        }} />
+            <stack.Screen name="Project Security Detail Page"  component={ProjectSecurityDetailsPage} options={{
+                headerShown:true, title: 'Project Security Detail Page', 
                 headerTintColor:"white"
                 
         }} />

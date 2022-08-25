@@ -72,7 +72,9 @@ return(
       renderItem={({ item }) => <View>
 
      
-      <ProjectSecurityGropingItem item={item} onpress={()=>navigation.navigate("Project Security Listing")} />
+      <ProjectSecurityGropingItem item={item} onpress={()=>navigation.navigate("Project Security Listing",{
+        data:data, value:item
+      })} />
      
       </View>
     }

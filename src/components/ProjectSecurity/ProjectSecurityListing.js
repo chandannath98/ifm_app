@@ -9,6 +9,8 @@ import ProjectSecurityItems from "./ProjectSecurityItems";
 // ******************Main Function*************************//
 
 const ProjectSecurityListing = ({ navigation, route }) => {
+  const [filteredData, setFilteredData] = useState([]);
+
   //   const monthNames = ["January", "February", "March", "April", "May", "June",
   //   "July", "August", "September", "October", "November", "December"
   // ];
@@ -27,44 +29,132 @@ const ProjectSecurityListing = ({ navigation, route }) => {
   //   console.log("presssed")
   // }
 
-  const data = [1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12,13,14,15,16,17,18,19,20];
+  var data = route.params.data.filter((item) => {
+    {
+      return item.date === route.params.value;
+    }
+  });
 
-const [filter, setFilter] = useState("All");
+  var visitedData = route.params.data.filter((item) => {
+    {
+      return item.Name_of_the_guard;
+    }
+  });
+
+  var notVisitedData = route.params.data.filter((item) => {
+    {
+      return !item.Name_of_the_guard;
+    }
+  });
+
+  const dataValues = () => {
+    if (filter === "All") {
+      return data;
+    } else if (filter === "Visited") {
+      return visitedData;
+    } else {
+      return notVisitedData;
+    }
+  };
+
+  const [filter, setFilter] = useState("All");
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{paddingBottom:10}}>
+      <View style={{ paddingBottom: 10 }}>
+        <View style={styles.header}>
+          <AntDesign name="calendar" size={25} color="#fff" />
+          <Text style={styles.headertext}>{route.params.value}</Text>
+        </View>
 
-      
-      <View style={styles.header}>
-        <AntDesign name="calendar" size={25} color="#fff" />
-        <Text style={styles.headertext}>20/03/2022</Text>
-      </View>
-
-      <View style={[styles.statusContainer]}>
-        <Pressable onPress={()=>setFilter("All")} style={[styles.statusInnerContainer,filter==="All"?{backgroundColor:"black"}:{backgroundColor:"white"}]}>
-          <Text style={[styles.visitedText,filter==="All"?{color:"white"}:{color:"black"}]}>All : </Text>
-          <Text style={[styles.visitedText,filter==="All"?{color:"white"}:{color:"black"}]}>20</Text>
-        </Pressable>
-        <Pressable onPress={()=>setFilter("Visited")} style={[styles.statusInnerContainer,filter==="Visited"?{backgroundColor:"green"}:{backgroundColor:"white"}]}>
-          <Text style={[styles.visitedText,filter==="Visited"?{color:"white"}:{color:"green"}]}>Visited : </Text>
-          <Text style={[styles.visitedText,filter==="Visited"?{color:"white"}:{color:"green"}]}>5</Text>
-        </Pressable>
-        <Pressable onPress={()=>setFilter("NotVisited")} style={[styles.statusInnerContainer,filter==="NotVisited"?{backgroundColor:"red"}:{backgroundColor:"white"}]}>
-          <Text style={[styles.notVisitedText,filter==="NotVisited"?{color:"white"}:{color:"red"}]}>Not Visited : </Text>
-          <Text style={[styles.notVisitedText,filter==="NotVisited"?{color:"white"}:{color:"red"}]}>15</Text>
-        </Pressable>
-      </View>
+        <View style={[styles.statusContainer]}>
+          <Pressable
+            onPress={() => setFilter("All")}
+            style={[
+              styles.statusInnerContainer,
+              filter === "All"
+                ? { backgroundColor: "black" }
+                : { backgroundColor: "white" },
+            ]}
+          >
+            <Text
+              style={[
+                styles.visitedText,
+                filter === "All" ? { color: "white" } : { color: "black" },
+              ]}
+            >
+              All :{" "}
+            </Text>
+            <Text
+              style={[
+                styles.visitedText,
+                filter === "All" ? { color: "white" } : { color: "black" },
+              ]}
+            >
+              {data.length}
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={() => setFilter("Visited")}
+            style={[
+              styles.statusInnerContainer,
+              filter === "Visited"
+                ? { backgroundColor: "green" }
+                : { backgroundColor: "white" },
+            ]}
+          >
+            <Text
+              style={[
+                styles.visitedText,
+                filter === "Visited" ? { color: "white" } : { color: "green" },
+              ]}
+            >
+              Visited :{" "}
+            </Text>
+            <Text
+              style={[
+                styles.visitedText,
+                filter === "Visited" ? { color: "white" } : { color: "green" },
+              ]}
+            >
+              {visitedData.length}
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={() => setFilter("NotVisited")}
+            style={[
+              styles.statusInnerContainer,
+              filter === "NotVisited"
+                ? { backgroundColor: "red" }
+                : { backgroundColor: "white" },
+            ]}
+          >
+            <Text
+              style={[
+                styles.notVisitedText,
+                filter === "NotVisited" ? { color: "white" } : { color: "red" },
+              ]}
+            >
+              Not Visited :{" "}
+            </Text>
+            <Text
+              style={[
+                styles.notVisitedText,
+                filter === "NotVisited" ? { color: "white" } : { color: "red" },
+              ]}
+            >
+              {notVisitedData.length}
+            </Text>
+          </Pressable>
+        </View>
       </View>
       <View
-        style={
-          {
-            // paddingVertical:10
-          }
-        }
+        style={{
+          flex: 1,
+        }}
       >
         <FlatList
-          data={data}
+          data={dataValues()}
           contentContainerStyle={{
             flexGrow: 1,
             paddingBottom: 300,
@@ -74,7 +164,7 @@ const [filter, setFilter] = useState("All");
           // stickyHeaderIndices={[0,6,10]}
           renderItem={({ item }) => (
             <View>
-              <ProjectSecurityItems />
+              <ProjectSecurityItems item={item} />
             </View>
           )}
         />
@@ -97,7 +187,6 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: "rgb(0, 172, 194)",
     borderRadius: 10,
-    
   },
   headertext: {
     fontSize: 25,
@@ -112,18 +201,25 @@ const styles = StyleSheet.create({
   statusInnerContainer: {
     display: "flex",
     flexDirection: "row",
-    borderRadius:15,
-    paddingVertical:3,
-    paddingHorizontal:10
+    borderRadius: 15,
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+    elevation: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   visitedText: {
     color: "green",
-    fontSize:15
+    fontSize: 15,
   },
   notVisitedText: {
     color: "red",
-    fontSize:15
-
+    fontSize: 15,
   },
 });
 
