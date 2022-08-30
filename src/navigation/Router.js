@@ -47,7 +47,7 @@ return(
         }} />
             <stack.Screen name="Project Security Detail Page"  component={ProjectSecurityDetailsPage} options={{
                 headerShown:true, title: 'Project Security Detail Page', 
-                headerTintColor:"white"
+                headerTintColor:"white" 
                 
         }} />
             <stack.Screen name="DG Detail Page"  component={DGMeterDetails} options={{
