@@ -1,92 +1,72 @@
-// Example of Bottom Sheet in React Native
-// https://aboutreact.com/react-native-bottom-sheet/
+import { Camera, CameraType } from 'expo-camera';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-// import React in our code
-import React, { useState } from 'react';
+export default function Popup() {
+  const [type, setType] = useState(CameraType.back);
+  const [permission, requestPermission] = Camera.useCameraPermissions();
 
-// import all the components we are going to use
-import { SafeAreaView, StyleSheet, View, Text, Button } from 'react-native';
+  if (!permission) {
+    // Camera permissions are still loading
+    return <View />;
+  }
+  
+  if (!permission.granted) {
+    // Camera permissions are not granted yet
+    return (
+      <View style={styles.container}>
+        <Text style={{ textAlign: 'center' }}>
+          We need your permission to show the camera
+        </Text>
+        <Button onPress={requestPermission} title="grant permission" />
+      </View>
+    );
+  }
+  
 
-//import basic react native components
-import { BottomSheet } from 'react-native-btr'; 
-
-//import to show social icons
-import { SocialIcon } from 'react-native-elements';
-
-const App = () => {
-  const [visible, setVisible] = useState(false);
-
-  const toggleBottomNavigationView = () => {
-    //Toggling the visibility state of the bottom sheet
-    setVisible(!visible);
-  };
+  function toggleCameraType() {
+    setType((current) => (
+      current === CameraType.back ? CameraType.front : CameraType.back
+    ));
+  }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <Text
-          style={{
-            fontSize: 20,
-            marginBottom: 20,
-            textAlign: 'center',
-          }}>
-          Example of Bottom Sheet in React Native
-        </Text>
-        <Button
-          onPress={toggleBottomNavigationView}
-          //on Press of the button bottom sheet will be visible
-          title="Show Bottom Sheet"
-        />
-        <BottomSheet
-          visible={visible}
-          //setting the visibility state of the bottom shee
-          onBackButtonPress={toggleBottomNavigationView}
-          //Toggling the visibility state on the click of the back botton
-          onBackdropPress={toggleBottomNavigationView}
-          //Toggling the visibility state on the clicking out side of the sheet
-        >
-          {/*Bottom Sheet inner View*/}
-          <View style={styles.bottomNavigationView}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  padding: 20,
-                  fontSize: 20,
-                }}>
-                Share Using
-              </Text>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                
-              </View>
-            </View>
-          </View>
-        </BottomSheet>
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Camera style={styles.camera} type={type}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={toggleCameraType}>
+            <Text style={styles.text}>Flip Camera</Text>
+          </TouchableOpacity>
+        </View>
+      </Camera>
+    </View>
   );
-};
-
-export default App;
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 2,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#E0F7FA',
   },
-  bottomNavigationView: {
-    backgroundColor: '#fff',
-    width: '100%',
-    height: 250,
-    justifyContent: 'center',
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: 'flex-end',
     alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });

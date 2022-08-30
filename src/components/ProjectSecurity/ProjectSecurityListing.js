@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Pressable } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { getFields } from "../../CustomFunctions/CustomFunctions";
 import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
@@ -72,6 +72,8 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("All")}
             style={[
               styles.statusInnerContainer,
+              {borderBottomColor:"black",borderWidth:0.5}
+              ,
               filter === "All"
                 ? { backgroundColor: "black" }
                 : { backgroundColor: "white" },
@@ -98,6 +100,8 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("Visited")}
             style={[
               styles.statusInnerContainer,
+              {borderColor:"green",borderWidth:0.5}
+              ,
               filter === "Visited"
                 ? { backgroundColor: "green" }
                 : { backgroundColor: "white" },
@@ -124,6 +128,8 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("NotVisited")}
             style={[
               styles.statusInnerContainer,
+              {borderColor:"red",borderWidth:0.5}
+              ,
               filter === "NotVisited"
                 ? { backgroundColor: "red" }
                 : { backgroundColor: "white" },
@@ -153,6 +159,8 @@ const ProjectSecurityListing = ({ navigation, route }) => {
           flex: 1,
         }}
       >
+        
+        
         <FlatList
           data={dataValues()}
           contentContainerStyle={{

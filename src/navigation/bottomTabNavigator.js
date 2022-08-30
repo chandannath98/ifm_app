@@ -1,14 +1,18 @@
 import Home from "../screens/Home";
-import PostDeatils from "../screens/postdetails";
+
 // import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome } from "@expo/vector-icons";
 
-
+import { Octicons } from '@expo/vector-icons';
 import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Popup from "../components/ProjectSecurity/PopupExample";
+import Meters from "../components/Meters";
+;
+import DGMeterDetails from "../components/Meters/dgMeter/DGMeterDetailPage";
+
+
 
 
 
@@ -59,10 +63,22 @@ const BottemTabNav = () => {
           headerShown: false,
         }}
       />
+      <Tab.Screen
+        name={"Meters"}
+        component={Meters}
+        options={{
+          tabBarIcon: ({ focused, size }) => {
+            // const icon=focused?"bell":"home";
+            const color = focused ? "rgb(0, 172, 194)" : "black";
+            return <Octicons name="meter" size={25} color={color} />;
+          },
+          headerShown: false,
+        }}
+      />
 
       <Tab.Screen
         name={"Popup"}
-        component={Popup}
+        component={DGMeterDetails}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";

@@ -8,6 +8,8 @@ import { MenuProvider } from "react-native-popup-menu";
 import React from "react";
 import { Provider } from "react-redux";
 import { Store } from "./src/redux/store";
+import { NativeBaseProvider } from 'native-base';
+
 
 LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
@@ -15,6 +17,9 @@ export default function App() {
   const WindowWidth = Dimensions.get("window").width;
 
   return (
+    <NativeBaseProvider>
+
+    
     <View
       style={styles.safeAreaViewStyle}
     >
@@ -25,6 +30,7 @@ export default function App() {
         </MenuProvider>
       </Provider>
     </View>
+    </NativeBaseProvider>
   );
 }
 

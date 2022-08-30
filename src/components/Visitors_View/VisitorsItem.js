@@ -107,7 +107,7 @@ const VisitorsItem = (props) => {
           <Text></Text>
         )}
 
-        <Pressable
+        <TouchableOpacity
           style={[styles.listing_1container]}
           onPress={
             selectedVisitorsItems.length > 0
@@ -137,7 +137,7 @@ const VisitorsItem = (props) => {
           <View>
             <Text> {props.item.rating}</Text>
           </View>
-        </Pressable>
+        </TouchableOpacity>
 
         <Menu>
           <MenuTrigger>
@@ -258,11 +258,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   listing_top_line: {
-    fontSize: 15,
-    // fontFamily: 'monospace'
+    fontSize: 16,
+    // fontWeight:"bold"
   },
   listing_second_line: {
-    color: "grey",
+    color: "rgb(0, 172, 194)",
   },
   rnmodalView: {
     backgroundColor: "white",

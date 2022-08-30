@@ -10,6 +10,7 @@ import BottemTabNav from "./bottomTabNavigator";
 import { useNavigation } from "@react-navigation/native";
 import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
 import ProjectSecurityDetailsPage from "../components/ProjectSecurity/ProjectSecurityDetailsPage";
+import DGMeterDetails from "../components/Meters/dgMeter/DGMeterDetailPage";
 
 // const navigation = useNavigation();
 
@@ -47,6 +48,12 @@ return(
             <stack.Screen name="Project Security Detail Page"  component={ProjectSecurityDetailsPage} options={{
                 headerShown:true, title: 'Project Security Detail Page', 
                 headerTintColor:"white"
+                
+        }} />
+            <stack.Screen name="DG Detail Page"  component={DGMeterDetails} options={{
+                headerShown:true, title: 'DG Detail Page', 
+                headerTintColor:"white",
+                headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
                 
         }} />
             

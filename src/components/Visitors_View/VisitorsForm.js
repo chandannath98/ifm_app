@@ -206,7 +206,7 @@ const VisitorsForm = ({ navigation, route }) => {
             {windowWidth > 500 ? (
               <TextInput
                 style={windowWidth < 900 ? styles.input : styles.inputWeb}
-                placeholder={"Date"}
+                placeholder={"Time"}
               />
             ) : (
               <Text style={styles.dateFormet}>
@@ -217,7 +217,7 @@ const VisitorsForm = ({ navigation, route }) => {
         </Pressable>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Whome To Meet</Text>
+          <Text style={styles.label}>Purpose</Text>
           <View style={styles.inputview}>
             <AntDesign name="infocirlceo" size={20} color="black" />
 
@@ -254,7 +254,7 @@ const VisitorsForm = ({ navigation, route }) => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Purpose</Text>
+          <Text style={styles.label}>Whome To Meet</Text>
           <View style={styles.inputview}>
             <AntDesign name="infocirlceo" size={20} color="black" />
 
@@ -332,7 +332,7 @@ const VisitorsForm = ({ navigation, route }) => {
           </View>
         </View>
 
-        <AirbnbRating defaultRating={5} />
+       
 
         <Text style={{ paddingBottom: 30 }}></Text>
       </ScrollView>

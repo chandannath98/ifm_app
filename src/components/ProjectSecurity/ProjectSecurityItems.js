@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
@@ -16,14 +16,14 @@ return(
     <View>
 
     
-    <Pressable onPress={()=>{navigation.navigate("Project Security Detail Page")}}
+    <TouchableOpacity onPress={()=>{navigation.navigate("Project Security Detail Page")}}
       
       style={[styles.item,props.item.Name_of_the_guard?{backgroundColor:'green'}:{backgroundColor:'red'}]}
     >
       <Text style={[styles.textStyle]}>{props.item.Area_visited}</Text>
       <Text style={[styles.textStyle]}>{props.item.date_and_Time}  </Text>
       
-    </Pressable>
+    </TouchableOpacity>
     
 
     </View>

@@ -8,7 +8,8 @@ import {
   Image,
   Platform,
   Dimensions,
-  Button
+  Button,
+  TouchableOpacity,
 } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { getFields } from "../../CustomFunctions/CustomFunctions";
@@ -16,20 +17,8 @@ import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from "@expo/vector-icons";
 import ProjectSecurityItems from "./ProjectSecurityItems";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { BottomSheet } from 'react-native-btr'; 
-import { SocialIcon } from 'react-native-elements';
-
-
-
-
-
-
-
-
-
-
-
-
+import { BottomSheet } from "react-native-btr";
+import { SocialIcon } from "react-native-elements";
 
 // ******************Main Function*************************//
 const windowWidth = Dimensions.get("window").width;
@@ -44,68 +33,127 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-
-
-
-
-        <BottomSheet
-          visible={visible}
-          //setting the visibility state of the bottom shee
-          onBackButtonPress={toggleBottomNavigationView}
-          //Toggling the visibility state on the click of the back botton
-          onBackdropPress={toggleBottomNavigationView}
-          //Toggling the visibility state on the clicking out side of the sheet
-        >
-          <View style={styles.bottomNavigationView}>
-            <View
+      <BottomSheet
+        visible={visible}
+        //setting the visibility state of the bottom shee
+        onBackButtonPress={toggleBottomNavigationView}
+        //Toggling the visibility state on the click of the back botton
+        onBackdropPress={toggleBottomNavigationView}
+        //Toggling the visibility state on the clicking out side of the sheet
+      >
+        <View style={styles.bottomNavigationView}>
+          <View
+            style={{
+              flex: 1,
+              // flexDirection: 'column',
+              // justifyContent: 'space-between',
+            }}
+          >
+            <Text
               style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  padding: 20,
-                  fontSize: 20,
-                  color:"red"
-                }}>
-                Issue
-              </Text>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                
-              {/* "Category_of_the_issue": "Major",
-        "Responsable_Department": "Maintenance",
-        "Description_of_the_issue": "Test",
-        "Assigned_To": "Gulzar",
-        "Issue_Resolved?": "Yes",
-        "Issue_Resolved_date_and_Time": "04-02-2022_18:43:00" */}
+                textAlign: "center",
+                padding: 20,
+                fontSize: 25,
+                color: "red",
+                textDecorationLine: "underline",
+                fontWeight:"bold"
+              }}
+            >
+              Issue
+            </Text>
+            <Pressable style={{position:"absolute", top:5,right:10}} onPress={toggleBottomNavigationView}>
+            <AntDesign  name="close" size={24} color="grey" />
+            </Pressable>
+            <View>
+             
 
-<View>
-  <View style={{display:"flex", flexDirection:"row", justifyContent:"space-around",backgroundColor:"green"}}>
-    <Text> Category</Text>
-    <Text> Maintainance</Text>
-  </View>
-</View>
-
-
-
-
-
-
-
-
+              <View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Category
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    Major
+                  </Text>
+                </View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Responsable Department
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    Maintainance
+                  </Text>
+                </View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Description of the issue
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    Issue Found
+                  </Text>
+                </View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Assigned To
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    Gulzar
+                  </Text>
+                </View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Issue Resolved
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    No
+                  </Text>
+                </View>
+                <View style={styles.modelInnerDetailContainer}>
+                  <Text style={[styles.modelDetailText, styles.modelDetailKey]}>
+                    {" "}
+                    Issue Resolved date and Time
+                  </Text>
+                  <Text
+                    style={[styles.modelDetailText, styles.modelDetailValue]}
+                  >
+                    {" "}
+                    04-02-2022 18:43:00
+                  </Text>
+                </View>
               </View>
+
+              <TouchableOpacity onPress={toggleBottomNavigationView} style={styles.visitBtn}>
+                <Text
+                  style={{ textAlign: "center", color: "white", fontSize: 20 }}
+                >
+                  Mark Resolved{" "}
+                  <AntDesign name="arrowright" size={24} color="white" />
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
-        </BottomSheet>
-
-
-
-
-
-
-
+        </View>
+      </BottomSheet>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
@@ -123,14 +171,18 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
           <Text style={styles.dateText}>12:30 AM</Text>
         </View>
 
-        {true? 
-        <Pressable onPress={toggleBottomNavigationView} style={styles.issueContainer}>
-          <Text style={styles.issueText}>
-           
-            <AntDesign name="warning" size={24} color="white" /> Issue Found
-          </Text>
-        </Pressable> : 
-        <View></View>}
+        {true ? (
+          <TouchableOpacity
+            onPress={toggleBottomNavigationView}
+            style={styles.issueContainer}
+          >
+            <Text style={styles.issueText}>
+              <AntDesign name="warning" size={24} color="white" /> Issue Found
+            </Text>
+          </TouchableOpacity>
+        ) : (
+          <View></View>
+        )}
 
         <View style={styles.otherDetailsContainer}>
           <View style={styles.otherDetails}>
@@ -148,19 +200,8 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
             <Text style={styles.OtherDetailValue}>No</Text>
           </View>
         </View>
+
       </ScrollView>
-      <MaterialCommunityIcons
-        name="circle-edit-outline"
-        style={styles.editButton}
-        size={55}
-        color="black"
-        onPress={() => {
-          console.log("edit button pressed");
-          // navigation.navigate("VisitorsForm", {
-          //             item: item,
-          //           })
-        }}
-      />
     </SafeAreaView>
   );
 };
@@ -273,13 +314,48 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
     justifyContent: "center",
+    fontWeight:"bold"
   },
   bottomNavigationView: {
-    backgroundColor: '#fff',
-    width: '100%',
-    height: 250,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#fff",
+    width: "100%",
+    height: 500,
+    borderTopEndRadius: 10,
+    borderTopStartRadius: 10,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
+  modelInnerDetailContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginHorizontal: 10,
+    paddingVertical: 15,
+  },
+  modelDetailText: {
+    flex: 6,
+    // color:"white",
+    paddingHorizontal: 10,
+    fontSize: 15,
+  },
+  modelDetailKey: {
+    color: "grey",
+  },
+  modelDetailValue: {
+    fontWeight: "bold",
+  },
+  visitBtn: {
+    // position:"absolute",
+    // bottom:-25,
+    // left:5,
+    marginHorizontal: 20,
+    backgroundColor: "green",
+    padding: 10,
+    borderRadius: 25,
+    // textAlign:"center",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 25,
   },
 });
 
