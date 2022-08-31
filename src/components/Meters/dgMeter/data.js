@@ -41,7 +41,7 @@ var DGData=[
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "18:24:00",
      "DG_Stop_Time": "18:26:00",
-     "DG_Run_Time": "00:02:00",
+     "DG_Run_Time": "00:02:00", 
      "DG_Running_Hrs__Meter_Reading_": 857.5,
      "Engine_RPM": 1500,
      "Frequency": 50,

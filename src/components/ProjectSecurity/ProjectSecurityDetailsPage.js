@@ -20,10 +20,38 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BottomSheet } from "react-native-btr";
 import { SocialIcon } from "react-native-elements";
 
-// ******************Main Function*************************//
+
+
+
+
+
+
+
+
+
+
+
+
 const windowWidth = Dimensions.get("window").width;
 
+
+
+// ******************Main Function*************************//
+
+
+
+
+
+
+
 const ProjectSecurityDetailsPage = ({ navigation, route }) => {
+
+
+
+
+
+const item= route.params.item
+
   const [visible, setVisible] = useState(false);
 
   const toggleBottomNavigationView = () => {
@@ -77,7 +105,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    Major
+                    {item.Category_of_the_issue}
                   </Text>
                 </View>
                 <View style={styles.modelInnerDetailContainer}>
@@ -89,7 +117,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    Maintainance
+                    {item.Responsable_Department}
                   </Text>
                 </View>
                 <View style={styles.modelInnerDetailContainer}>
@@ -101,7 +129,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    Issue Found
+                    {item.Description_of_the_issue}
                   </Text>
                 </View>
                 <View style={styles.modelInnerDetailContainer}>
@@ -113,7 +141,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    Gulzar
+                    {item.Assigned_To}
                   </Text>
                 </View>
                 <View style={styles.modelInnerDetailContainer}>
@@ -125,7 +153,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    No
+                    {item.Issue_Resolved}
                   </Text>
                 </View>
                 <View style={styles.modelInnerDetailContainer}>
@@ -137,7 +165,7 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
                     style={[styles.modelDetailText, styles.modelDetailValue]}
                   >
                     {" "}
-                    04-02-2022 18:43:00
+                    {item.Issue_Resolved_date_and_Time}
                   </Text>
                 </View>
               </View>
@@ -155,6 +183,16 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
         </View>
       </BottomSheet>
 
+
+
+
+
+
+{/* ***********Main View ******************** */}
+
+
+
+
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image
@@ -164,20 +202,20 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
         </View>
 
         <View style={styles.areaContainer}>
-          <Text style={styles.areaText}>FCA-00-001</Text>
+          <Text style={styles.areaText}>{item.Area_visited}</Text>
         </View>
         <View style={styles.dateTimeContainer}>
-          <Text style={styles.dateText}>01/01/2020</Text>
+          <Text style={styles.dateText}>{item.date}</Text>
           <Text style={styles.dateText}>12:30 AM</Text>
         </View>
 
-        {true ? (
+        {item.Any_issue_found==="Yes" ? (
           <TouchableOpacity
             onPress={toggleBottomNavigationView}
             style={styles.issueContainer}
           >
             <Text style={styles.issueText}>
-              <AntDesign name="warning" size={24} color="white" /> Issue Found
+              <AntDesign name="warning" size={24} color="white" /> {item.Description_of_the_issue}
             </Text>
           </TouchableOpacity>
         ) : (
@@ -192,13 +230,13 @@ const ProjectSecurityDetailsPage = ({ navigation, route }) => {
 
           <View style={styles.otherDetails}>
             <Text style={styles.OtherDetailKey}>Name Of The Guard </Text>
-            <Text style={styles.OtherDetailValue}>Manpreet</Text>
+            <Text style={styles.OtherDetailValue}>{item.Name_of_the_guard}</Text>
           </View>
 
-          <View style={styles.otherDetails}>
+          {/* <View style={styles.otherDetails}>
             <Text style={styles.OtherDetailKey}>Any Issue Found ? </Text>
             <Text style={styles.OtherDetailValue}>No</Text>
-          </View>
+          </View> */}
         </View>
 
       </ScrollView>

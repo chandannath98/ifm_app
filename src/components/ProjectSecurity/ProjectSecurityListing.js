@@ -6,42 +6,33 @@ import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from "@expo/vector-icons";
 import ProjectSecurityItems from "./ProjectSecurityItems";
 
+
+
+
+
 // ******************Main Function*************************//
 
 const ProjectSecurityListing = ({ navigation, route }) => {
   const [filteredData, setFilteredData] = useState([]);
 
-  //   const monthNames = ["January", "February", "March", "April", "May", "June",
-  //   "July", "August", "September", "October", "November", "December"
-  // ];
+  
 
-  //   var data = route.params.securitydata.filter((item)=>{
-  //     {
-  //       return (monthNames[(new Date(item.date).getMonth() + 1)] + " - " + new Date(item.date).getFullYear().toString())===route.params.value
 
-  //     }});
-
-  //   var dates = getFields("date", data).filter(
-  //     (item, i, ar) => ar.indexOf(item) === i
-  //   );
-
-  // const onpress=()=>{
-  //   console.log("presssed")
-  // }
 
   var data = route.params.data.filter((item) => {
     {
+     
       return item.date === route.params.value;
     }
   });
 
-  var visitedData = route.params.data.filter((item) => {
+  var visitedData = data.filter((item) => {
     {
       return item.Name_of_the_guard;
     }
   });
 
-  var notVisitedData = route.params.data.filter((item) => {
+  var notVisitedData = data.filter((item) => {
     {
       return !item.Name_of_the_guard;
     }

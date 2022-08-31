@@ -6,12 +6,12 @@ import { useNavigation } from "@react-navigation/native";
 
 // ******************Main Function*************************//
 
-const DGMeterItem = ( props ) => {
+const LTMeterItem = ( props ) => {
  
     const navigation = useNavigation();
 
 
-var item=props.item
+// var item=props.item
 
   return (
     
@@ -32,7 +32,7 @@ var item=props.item
           style={[styles.listing_1container]}
           onPress={
             () => {
-                  navigation.navigate("DG Detail Page", {
+                  navigation.navigate("LT Detail Page", {
                     item: props.item,
                   });
                 }
@@ -41,21 +41,21 @@ var item=props.item
           <View style={[styles.listing_inline_first_row,styles.infomationLine]}>
             <Text style={styles.listing_top_line}>
               {" "}
-              {item.DG_No}
+              TR No.-1
             </Text>
-            <Text> {item.Date} </Text>
+            <Text> 01/05/2022 </Text>
           </View>
 
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>DG Start Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text>
-            <Text style={styles.listing_second_line}>DG Stop Time : <Text style={styles.infoValue}> {item.DG_Stop_Time}</Text></Text>
+            {/* <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text> */}
+            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> 10:10 AM</Text></Text>
             
           </View>
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>DG Run Time : <Text style={styles.infoValue}> {item.DG_Run_Time}</Text></Text>
-            <Text style={styles.listing_second_line}>KWH/Ltr : <Text style={styles.infoValue}> 26</Text></Text>
+            <Text style={styles.listing_second_line}>KWH Consumed : <Text style={styles.infoValue}> 1250</Text></Text>
+            <Text style={styles.listing_second_line}>KVAH Consumed : <Text style={styles.infoValue}> 1532</Text></Text>
             
           </View>
 
@@ -143,4 +143,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DGMeterItem;
+export default LTMeterItem;

@@ -10,7 +10,8 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import Meters from "../components/Meters";
 ;
-import DGMeterDetails from "../components/Meters/dgMeter/DGMeterDetailPage";
+
+import ElecMeterForm from "../components/Meters/ElecMeter/ElecMeterForm";
 
 
 
@@ -78,7 +79,7 @@ const BottemTabNav = () => {
 
       <Tab.Screen
         name={"Popup"}
-        component={DGMeterDetails}
+        component={ElecMeterForm}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";

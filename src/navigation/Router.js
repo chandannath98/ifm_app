@@ -11,6 +11,9 @@ import { useNavigation } from "@react-navigation/native";
 import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
 import ProjectSecurityDetailsPage from "../components/ProjectSecurity/ProjectSecurityDetailsPage";
 import DGMeterDetails from "../components/Meters/dgMeter/DGMeterDetailPage";
+import HTMeterDetails from "../components/Meters/htMeter/HTMeterDetails";
+import LTMeterDetails from "../components/Meters/LTMeter/LTMeterDetails";
+import ElecMeterDetails from "../components/Meters/ElecMeter/ElecMeterDetails";
 
 // const navigation = useNavigation();
 
@@ -52,6 +55,24 @@ return(
         }} />
             <stack.Screen name="DG Detail Page"  component={DGMeterDetails} options={{
                 headerShown:true, title: 'DG Detail Page', 
+                headerTintColor:"white",
+                headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
+                
+        }} />
+            <stack.Screen name="HT Detail Page"  component={HTMeterDetails} options={{
+                headerShown:true, title: 'HT Detail Page', 
+                headerTintColor:"white",
+                headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
+                
+        }} />
+            <stack.Screen name="LT Detail Page"  component={LTMeterDetails} options={{
+                headerShown:true, title: 'LT Detail Page', 
+                headerTintColor:"white",
+                headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
+                
+        }} />
+            <stack.Screen name="Elec Detail Page"  component={ElecMeterDetails} options={{
+                headerShown:true, title: 'Elec Detail Page', 
                 headerTintColor:"white",
                 headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
                 

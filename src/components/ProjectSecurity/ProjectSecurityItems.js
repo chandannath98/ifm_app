@@ -16,7 +16,7 @@ return(
     <View>
 
     
-    <TouchableOpacity onPress={()=>{navigation.navigate("Project Security Detail Page")}}
+    <TouchableOpacity onPress={()=>{navigation.navigate("Project Security Detail Page",{item:props.item})}}
       
       style={[styles.item,props.item.Name_of_the_guard?{backgroundColor:'green'}:{backgroundColor:'red'}]}
     >

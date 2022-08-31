@@ -19,7 +19,7 @@ function geMonthYear(data) {
   var output = [];
   for (var i = 0; i < data.length; ++i)
     output.push(
-      monthNames[(new Date(data[i]["date"]).getMonth() + 1)] +
+      monthNames[(new Date(data[i]["date"]).getMonth() )] +
         " - " +
         new Date(data[i]["date"]).getFullYear().toString()
     );

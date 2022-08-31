@@ -11,51 +11,52 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
-const FirstRoute = () => (
-  <ScrollView style={[styles.scene]}>
-    <View style={styles.TabInnerContainer}>
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Start Time :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>10:15 AM</Text>
-      </View>
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Stop Time :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>10:30 AM</Text>
-      </View>
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Run Time :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>00:15:00</Text>
-      </View>
-    </View>
-  </ScrollView>
-);
 
-const SecondRoute = () => (
+
+const KWHandKVAH = () => (
     <ScrollView style={[styles.scene]}>
     <View style={styles.TabInnerContainer}>
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Opening Reading :{" "}
+          Old KWH :{" "}
         </Text>
         <Text style={[styles.tabItemText, styles.tabItemValue]}>500</Text>
       </View>
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Closing Reading :{" "}
+          New KWH :{" "}
         </Text>
         <Text style={[styles.tabItemText, styles.tabItemValue]}>530</Text>
       </View>
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          KWH Gnerated :{" "}
+          KWH Generated :{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>300</Text>
+      </View>
+      <View style={styles.tabItem}>
+        <Text style={[styles.tabItemText, styles.tabItemKey]}>
+          Old KVAH :{" "}
+        </Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>500</Text>
+      </View>
+      <View style={styles.tabItem}>
+        <Text style={[styles.tabItemText, styles.tabItemKey]}>
+          New KVAH :{" "}
+        </Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>530</Text>
+      </View>
+      <View style={styles.tabItem}>
+        <Text style={[styles.tabItemText, styles.tabItemKey]}>
+          KVAH Generated :{" "}
+        </Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>300</Text>
+      </View>
+      <View style={styles.tabItem}>
+        <Text style={[styles.tabItemText, styles.tabItemKey]}>
+          Multiplying Fector :{" "}
+        </Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>10</Text>
       </View>
     </View>
   </ScrollView>
@@ -66,130 +67,42 @@ const MeterDetails = () => (
     <View style={styles.TabInnerContainer}>
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          DG Capacity :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>500</Text>
-      </View>
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Meter Reading :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>530</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Frequency :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-      
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Coolent Temprature :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Voltaage RY :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Voltaage RB :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Current R :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Current B :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Load :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
           PF :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-    </View>
-  </ScrollView>
-);
-
-
-
-const DieselDetails = () => (
-    <ScrollView style={[styles.scene]}>
-    <View style={styles.TabInnerContainer}>
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-        Diesel Available :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>500</Text>
+        </Text> 
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>98</Text>
       </View>
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-        Diesel Brought :{" "}
+          Voltage r :{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>530</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>5990</Text>
       </View>
 
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Issued For Other Site :{" "}
+        Voltage Y :{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>6000</Text>
       </View>
       
 
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Balance Diesel :{" "}
+        Voltage B :{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>5752</Text>
       </View>
-
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Diesel Consumed :{" "}
+        {"Load (KW)" }:{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>103.5</Text>
       </View>
-
       <View style={styles.tabItem}>
         <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          Diesel Consumed/Hour :{" "}
+        {"Load (KVA)" }:{" "}
         </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
-      </View>
-
-      <View style={styles.tabItem}>
-        <Text style={[styles.tabItemText, styles.tabItemKey]}>
-          KWH/Ltr :{" "}
-        </Text>
-        <Text style={[styles.tabItemText, styles.tabItemValue]}>30</Text>
+        <Text style={[styles.tabItemText, styles.tabItemValue]}>104.5</Text>
       </View>
 
       
@@ -197,6 +110,10 @@ const DieselDetails = () => (
     </View>
   </ScrollView>
 );
+
+
+
+
 
 
 const OtherDetails = () => (
@@ -227,28 +144,45 @@ const OtherDetails = () => (
 const initialLayout = { width: Dimensions.get("window").width };
 
 const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
+  
+  second: KWHandKVAH,
   third: MeterDetails,
-  fourth: DieselDetails,
+  
   fifth: OtherDetails,
 });
 
-export default function DGMeterDetails() {
+
+
+
+
+
+
+
+// ********Main Function ***********
+
+
+
+
+
+
+
+
+export default function LTMeterDetails() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: "first", title: "Date & Time" },
+   
     { key: "second", title: "KWH" },
     { key: "third", title: "Meter Detail" },
-    { key: "fourth", title: "Diesel" },
+    
     { key: "fifth", title: "Other" },
   ]);
 
   return (
     <View style={[styles.scene, styles.container]}>
       <View style={styles.basicInfoTitle}>
-        <Text style={[styles.basicInfoText, styles.dgNoText]}>DG-1</Text>
-        <Text style={[styles.basicInfoText, styles.dateText,{color: "rgb(0, 172, 194)"}]}>05/04/2022</Text>
+        <Text style={[styles.basicInfoText, styles.dgNoText]}>TR No.-1</Text>
+        <Text style={[styles.basicInfoText, styles.dateText,{color: "rgb(0, 172, 194)"}]}>10/05/2022</Text>
+        <Text style={[styles.basicInfoText, styles.dateText,{color: "rgb(0, 172, 194)"}]}>10:10 AM</Text>
       </View>
       <TabView
       swipeEnabled

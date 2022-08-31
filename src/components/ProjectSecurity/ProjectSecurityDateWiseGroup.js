@@ -32,7 +32,7 @@ const ProjectSecurityDateWiseGrouping = ({ navigation, route }) => {
 
   var data = route.params.securitydata.filter((item)=>{
     {
-      return (monthNames[(new Date(item.date).getMonth() + 1)] + " - " + new Date(item.date).getFullYear().toString())===route.params.value
+      return (monthNames[(new Date(item.date).getMonth() )] + " - " + new Date(item.date).getFullYear().toString())===route.params.value
     
     }});
 

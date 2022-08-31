@@ -6,12 +6,12 @@ import { useNavigation } from "@react-navigation/native";
 
 // ******************Main Function*************************//
 
-const DGMeterItem = ( props ) => {
+const ElecMeterItem = ( props ) => {
  
     const navigation = useNavigation();
 
 
-var item=props.item
+// var item=props.item
 
   return (
     
@@ -32,7 +32,7 @@ var item=props.item
           style={[styles.listing_1container]}
           onPress={
             () => {
-                  navigation.navigate("DG Detail Page", {
+                  navigation.navigate("Elec Detail Page", {
                     item: props.item,
                   });
                 }
@@ -41,21 +41,33 @@ var item=props.item
           <View style={[styles.listing_inline_first_row,styles.infomationLine]}>
             <Text style={styles.listing_top_line}>
               {" "}
-              {item.DG_No}
+              FCA-05-003
             </Text>
-            <Text> {item.Date} </Text>
+            <Text> June-2022 </Text>
           </View>
 
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>DG Start Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text>
-            <Text style={styles.listing_second_line}>DG Stop Time : <Text style={styles.infoValue}> {item.DG_Stop_Time}</Text></Text>
+            <Text style={styles.listing_second_line}>Elec. New Reading : <Text style={styles.infoValue}> 1200</Text></Text>
+            <Text style={styles.listing_second_line}>Elec. Old Reading : <Text style={styles.infoValue}> 1100</Text></Text>
+            
+          </View>
+          <View style={styles.listing_inline_second_row}>
+            {/* <Text style={styles.listing_second_line}>Elec. New Reading : <Text style={styles.infoValue}> 1200</Text></Text> */}
+            <Text style={styles.listing_second_line}>Elec. Consumed : <Text style={styles.infoValue}> 100</Text></Text>
             
           </View>
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>DG Run Time : <Text style={styles.infoValue}> {item.DG_Run_Time}</Text></Text>
-            <Text style={styles.listing_second_line}>KWH/Ltr : <Text style={styles.infoValue}> 26</Text></Text>
+            <Text style={styles.listing_second_line}>DG New Reading : <Text style={styles.infoValue}> 250</Text></Text>
+            <Text style={styles.listing_second_line}>DG Old Reading : <Text style={styles.infoValue}> 225</Text></Text>
+            
+          </View>
+
+
+          <View style={styles.listing_inline_second_row}>
+            {/* <Text style={styles.listing_second_line}>DG New Reading : <Text style={styles.infoValue}> 250</Text></Text> */}
+            <Text style={styles.listing_second_line}>DG Consumed : <Text style={styles.infoValue}> 25</Text></Text>
             
           </View>
 
@@ -143,4 +155,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DGMeterItem;
+export default ElecMeterItem;
