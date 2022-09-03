@@ -9,9 +9,10 @@ import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import Meters from "../components/Meters";
-;
-
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ElecMeterForm from "../components/Meters/ElecMeter/ElecMeterForm";
+import MaterialInOut from "../components/MaterialInOut";
 
 
 
@@ -46,7 +47,7 @@ const BottemTabNav = () => {
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
             const color = focused ? "rgb(0, 172, 194)" : "black";
-            return <FontAwesome name="home" size={25} color={color} />;
+            return <MaterialIcons name="people" size={25} color={color} />;
           },
 
           headerShown: false,
@@ -78,17 +79,20 @@ const BottemTabNav = () => {
       />
 
       <Tab.Screen
-        name={"Popup"}
-        component={ElecMeterForm}
+        name={"Maaterial In/Out"}
+        component={MaterialInOut}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
             const color = focused ? "rgb(0, 172, 194)" : "black";
-            return <FontAwesome name="home" size={25} color={color} />;
+            return <MaterialCommunityIcons name="boom-gate" size={25} color={color} />;
           },
           headerShown: false,
         }}
       />
+
+
+
     </Tab.Navigator>
   );
 };

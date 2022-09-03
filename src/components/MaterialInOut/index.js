@@ -1,10 +1,9 @@
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { View, Text, ScrollView } from 'native-base';
-import DGMeter from './dgMeter';
-import ElecMeter from './ElecMeter';
-import HTMeter from './htMeter';
-import LTMeter from './LTMeter';
+import MaterialIn from './MaterialIN';
+import MaterialOut from './MaterialOut';
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -18,7 +17,7 @@ const HomeScreen=()=>{
 
 
 
-function Meters() {
+function MaterialInOut() {
   return (
    
     <Tab.Navigator
@@ -32,10 +31,9 @@ function Meters() {
       }} 
       
     >
-      <Tab.Screen  name="DG Meter" component={DGMeter} />
-      <Tab.Screen name="HT Meter" component={HTMeter} />
-      <Tab.Screen name="LT Meter" component={LTMeter} />
-      <Tab.Screen name="Elec. Meter" component={ElecMeter} />
+      <Tab.Screen  name="Material In" component={MaterialIn} />
+      <Tab.Screen name="Material Out" component={MaterialOut} />
+      
     
     </Tab.Navigator>
    
@@ -43,5 +41,22 @@ function Meters() {
 }
 
 
-export default Meters
+export default MaterialInOut
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -37,8 +37,9 @@ export default function App() {
 const styles = StyleSheet.create({
   safeAreaViewStyle: {
     flex: 1,
-    paddingTop:1,
+    paddingTop:0.8,
     backgroundColor:"rgb(0, 172, 194)",
+    borderColor:"rgb(0, 172, 194)",
     fontFamily: 'notoserif'
   },
   safeAreaViewStyleWeb: {

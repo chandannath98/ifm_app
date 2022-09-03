@@ -25,7 +25,7 @@ return(
     <NavigationContainer>
         
         <stack.Navigator screenOptions={{
-            headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
+            headerStyle: { backgroundColor: 'rgb(0, 172, 194)',borderColor:"rgb(0, 172, 194)",borderWidth:0 }
         }}>
             <stack.Screen name="Home" component={BottemTabNav} options={{headerShown:false}} />
             <stack.Screen name="PostDeatils" component={PostDeatils} options={{

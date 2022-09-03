@@ -2,21 +2,16 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { DGData } from "../../Meters/dgMeter/data";
+import MaterialInItem from "./MaterialInItem";
 
-
-import ElecMeterItem from "./ElecMeterItem";
-import { ElecData } from "./elecData";
 
 
 
 // ******************Main Function*************************//
 
-const ElecMeter = ({ navigation, route }) => {
-const [editMode, setEditMode] = useState(false);
-    
-var data= ElecData
-
+const MaterialIn = ({ navigation, route }) => {
+var data= DGData
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,14 +19,24 @@ var data= ElecData
         style={styles.scrollView}
         data={data}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => <ElecMeterItem item={item} editMode={editMode}/>}
+        renderItem={({ item }) => item.DG_No?<MaterialInItem item={item} />:<View></View>}
       />
     
-   {editMode?
-   <AntDesign name="checkcircle" style={styles.editButton}  size={55} onPress={()=>setEditMode(false)}  color="black" />:
-    <MaterialCommunityIcons name="circle-edit-outline" style={styles.editButton}  size={55} color="black"  onPress={()=>setEditMode(true)}/>
-     
-    }
+
+      <TouchableOpacity style={styles.addButton} 
+    //   onPress={() => {
+    //       navigation.navigate("VisitorsForm");
+    //     }}
+        >
+      <AntDesign
+        
+        name="pluscircle"
+        size={55}
+        color="rgb(0, 172, 194)"
+        
+      />
+      </TouchableOpacity>
+    
 
     </SafeAreaView>
   );
@@ -104,15 +109,7 @@ const styles = StyleSheet.create({
     bottom:15,
     backgroundColor:"white",
     borderRadius:50
-  },
-  editButton:{
-    color:"rgb(0, 172, 194)",
-    flex: 1,
-    position:"absolute",
-    justifyContent: 'flex-end',
-    bottom:20,
-    right:20
-  },
+  }
 });
 
-export default ElecMeter;
+export default MaterialIn;
