@@ -196,8 +196,9 @@ const item= route.params.item
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image
-            style={styles.image}
+            style={[styles.image,{resizeMode: 'contain',}]}
             source={{ uri: "https://picsum.photos/1200/800" }}
+            
           />
         </View>
 

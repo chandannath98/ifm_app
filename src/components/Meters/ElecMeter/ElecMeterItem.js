@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,memo } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   Pressable,
   TouchableOpacity,
-  TextInput,Alert 
+  TextInput,Alert, Platform 
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -95,7 +95,7 @@ const TwoButtonAlert = () =>
                 onChange={()=>setSaved(false)}
                 
                 placeholder="New Reading"
-                style={styles.inputReading}
+                style={[styles.inputReading,(Platform.OS==="android"?styles.inputReading:styles.inputWeb)]}
               />
             </View>
           ) : (
@@ -131,7 +131,7 @@ const TwoButtonAlert = () =>
                 onChangeText={setDgNew}
                 onChange={()=>setSaved(false)}
                 placeholder="New Reading"
-                style={styles.inputReading}
+                style={[styles.inputReading,(Platform.OS==="android"?styles.inputReading:styles.inputWeb)]}
               />
             </View>
           ) : (
@@ -237,9 +237,12 @@ const styles = StyleSheet.create({
     color: "rgb(0, 172, 194)",
   },
   inputReading: {
+    
     backgroundColor: "#edeef0",
     paddingHorizontal: 3,
     borderRadius: 5,
+    borderColor:"rgb(0, 172, 194)",
+    borderWidth:0.5
   },
   headerText: {
     backgroundColor: "rgb(0, 172, 194)",
@@ -261,6 +264,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  inputWeb:{
+    // backgroundColor:"red",
+    outlineStyle: 'none',
+    paddingVertical:3,
+   maxWidth:50
+  }
 });
 
-export default ElecMeterItem;
+export default memo(ElecMeterItem);

@@ -1,26 +1,33 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { FontAwesome } from '@expo/vector-icons';
 
 import ElecMeterItem from "./ElecMeterItem";
 import { ElecData } from "./elecData";
+import { Button } from "native-base";
 
 
 
 // ******************Main Function*************************//
 
+
+
 const ElecMeter = ({ navigation, route }) => {
 const [editMode, setEditMode] = useState(false);
     
+
+const flatList = useRef();
+const moveToTop = () => flatList.current.scrollToIndex({ index: 0 });
 var data= ElecData
 
 
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
+      ref={flatList}
         style={styles.scrollView}
         data={data}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
@@ -32,6 +39,9 @@ var data= ElecData
     <MaterialCommunityIcons name="circle-edit-outline" style={styles.editButton}  size={55} color="black"  onPress={()=>setEditMode(true)}/>
      
     }
+
+<FontAwesome onPress={moveToTop} style={{position:"absolute",bottom:20,left:10}} name="angle-up" size={40} color="#e0e0de" />
+  
 
     </SafeAreaView>
   );

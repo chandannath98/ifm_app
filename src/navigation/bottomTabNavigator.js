@@ -13,6 +13,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ElecMeterForm from "../components/Meters/ElecMeter/ElecMeterForm";
 import MaterialInOut from "../components/MaterialInOut";
+import IView from "../components/Iview";
+import MaterialInDetails from "../components/MaterialInOut/MaterialIN/MaterialInDetails";
+
 
 
 
@@ -90,6 +93,37 @@ const BottemTabNav = () => {
           headerShown: false,
         }}
       />
+    
+
+      <Tab.Screen
+        name={"MVIew"}
+        component={MaterialInDetails}
+        options={{
+          tabBarIcon: ({ focused, size }) => {
+            // const icon=focused?"bell":"home";
+            const color = focused ? "rgb(0, 172, 194)" : "black";
+            return <MaterialCommunityIcons name="boom-gate" size={25} color={color} />;
+          },
+          headerShown: false,
+        }}
+      />
+    
+
+      <Tab.Screen
+        name={"IVIew"}
+        component={IView}
+        options={{
+          tabBarIcon: ({ focused, size }) => {
+            // const icon=focused?"bell":"home";
+            const color = focused ? "rgb(0, 172, 194)" : "black";
+            return <MaterialCommunityIcons name="boom-gate" size={25} color={color} />;
+          },
+          headerShown: false,
+        }}
+      />
+    
+
+   
 
 
 
