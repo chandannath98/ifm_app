@@ -1,10 +1,17 @@
 
+import { Feather } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { View, Text, ScrollView } from 'native-base';
+import { TouchableOpacity } from 'react-native';
 import DGMeter from './dgMeter';
 import ElecMeter from './ElecMeter';
 import HTMeter from './htMeter';
 import LTMeter from './LTMeter';
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -18,7 +25,25 @@ const HomeScreen=()=>{
 
 
 
-function Meters() {
+function Meters({navigation}) {
+
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity style={{marginHorizontal:5}}  onPress={() => navigation.openDrawer()} >
+      <Feather name="menu" size={24} color="white" />
+      </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
+
+
+
+
+
+
   return (
    
     <Tab.Navigator

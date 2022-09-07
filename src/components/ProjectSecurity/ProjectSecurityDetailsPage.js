@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   Pressable,
   Image,
-  Platform,
+  
   Dimensions,
   Button,
   TouchableOpacity,
@@ -20,6 +20,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BottomSheet } from "react-native-btr";
 import { SocialIcon } from "react-native-elements";
 import RBSheet from "react-native-raw-bottom-sheet";
+import { Platform } from "react-native";
 
 
 
@@ -47,9 +48,10 @@ const windowWidth = Dimensions.get("window").width;
 
 const ProjectSecurityDetailsPage = ({ navigation, route }) => {
 
-
+  // Platform
+console.log(Platform)
+console.log(windowWidth)
   const refRBSheet = useRef();
-
 
 
 const item= route.params.item
@@ -212,14 +214,32 @@ const item= route.params.item
 
 
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.imageContainer}>
+      <View showsVerticalScrollIndicator={false} style={((Platform.OS === "web") & (windowWidth > 800))?{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}:{flex:1}}>
+        <TouchableOpacity style={styles.imageContainer} 
+        onPress={() => navigation.navigate('ImageV',{
+                    images:[
+                      {
+                        // Simplest usage.
+                        url: "https://picsum.photos/1200/800",
+                  
+                        // width: number
+                        // height: number
+                        // Optional, if you know the image size, you can set the optimization performance
+                  
+                        // You can pass props to <Image />.
+                        props: {
+                          // headers: ...
+                        },
+                      },
+                    ]})} >
           <Image
-            style={[styles.image,{resizeMode: 'contain',}]}
+            style={[styles.image,]}
             source={{ uri: "https://picsum.photos/1200/800" }}
             
           />
-        </View>
+        </TouchableOpacity>
+<View style={{minWidth:350}}>
+
 
         <View style={styles.areaContainer}>
           <Text style={styles.areaText}>{item.Area_visited}</Text>
@@ -258,8 +278,8 @@ const item= route.params.item
             <Text style={styles.OtherDetailValue}>No</Text>
           </View> */}
         </View>
-
-      </ScrollView>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
@@ -272,9 +292,10 @@ const styles = StyleSheet.create({
   image: {
     borderRadius: 10,
     margin: 5,
-    height: 300,
-    width: windowWidth - 30,
-    alignItems: "center",
+    height: ((Platform.OS === "web") & (windowWidth > 800))?500:windowWidth-50,
+    width: ((Platform.OS === "web") & (windowWidth > 800))?500:windowWidth-50,
+    alignItems:"center"
+    
   },
   imageContainer: {
     alignItems: "center",

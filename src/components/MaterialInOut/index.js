@@ -1,8 +1,11 @@
-
+import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { View, Text, ScrollView } from 'native-base';
 import MaterialIn from './MaterialIN';
 import MaterialOut from './MaterialOut';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -17,7 +20,28 @@ const HomeScreen=()=>{
 
 
 
-function MaterialInOut() {
+function MaterialInOut({navigation}) {
+
+
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity style={{marginHorizontal:5}}  onPress={() => navigation.openDrawer()} >
+      <Feather name="menu" size={24} color="white" />
+      </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
+
+
+
+
+
+
+
+
   return (
    
     <Tab.Navigator

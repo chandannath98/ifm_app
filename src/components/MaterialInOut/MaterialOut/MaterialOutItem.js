@@ -25,7 +25,7 @@ const MaterialOutItem = (props) => {
       <TouchableOpacity
         style={[styles.listing_1container]}
         onPress={() => {
-          navigation.navigate("HT Detail Page", {
+          navigation.navigate("MaterialOutDetail", {
             item: props.item,
           });
         }}

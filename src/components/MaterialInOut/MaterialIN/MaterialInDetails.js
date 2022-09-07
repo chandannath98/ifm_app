@@ -4,14 +4,13 @@ import {
   Text,
   View,
   SafeAreaView,
-  Pressable,
+
   TouchableOpacity,
-  TouchableHighlight,
-  FlatList,
+  
   Dimensions,
 } from "react-native";
 
-import { AntDesign } from "@expo/vector-icons";
+
 import { Image } from "react-native";
 import { ScrollView } from "react-native";
 import { Platform } from "react-native";

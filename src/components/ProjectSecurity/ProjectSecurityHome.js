@@ -7,6 +7,9 @@ import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { Button } from "react-native";
+import { Feather } from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native";
 
 
 
@@ -36,6 +39,31 @@ const ProjectSecurity = () => {
 
   const navigation = useNavigation();
 
+
+
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <TouchableOpacity style={{marginHorizontal:5}}  onPress={() => navigation.openDrawer()} >
+      <Feather name="menu" size={24} color="white" />
+      </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
+
+
+
+
+
+
+
+
+
+
+
+
   var securitydata = projectSecurityData;
 
 
@@ -48,10 +76,10 @@ const ProjectSecurity = () => {
 
 return(
   <SafeAreaView style={styles.container}>
-    <View style={styles.Topheader}>
+    {/* <View style={styles.Topheader}>
       <MaterialIcons name="security" size={30} color="white" />
       <Text style={styles.Topheadertext}>Project Security</Text>
-    </View>
+    </View> */}
     {/* <View style={styles.header}>
       <AntDesign name="calendar" size={50} color="#fff" />
       <Text style={styles.headertext}>Month-Year</Text>
@@ -60,7 +88,7 @@ return(
       style={{
         // backgroundColor: "rgb(0, 172, 194)",
         
-        // marginVertical: 10,
+        marginVertical: 10,
         // paddingVertical:10
       }}
     >

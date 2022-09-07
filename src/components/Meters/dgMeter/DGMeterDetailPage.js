@@ -12,6 +12,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const FirstRoute = () => (
+    
   <ScrollView style={[styles.scene]}>
     <View style={styles.TabInnerContainer}>
       <View style={styles.tabItem}>
@@ -34,6 +35,7 @@ const FirstRoute = () => (
       </View>
     </View>
   </ScrollView>
+   
 );
 
 const SecondRoute = () => (
@@ -287,6 +289,7 @@ const styles = StyleSheet.create({
   },
   scene: {
     flex: 1,
+    
   },
   basicInfoTitle: {
     // display:"flex",
@@ -311,6 +314,13 @@ const styles = StyleSheet.create({
   TabInnerContainer: {
     margin: 20,
     padding: 20,
+    maxWidth:500,
+    backgroundColor:"#FAFAFA",
+    borderRadius:10,
+    // display:"flex",
+    // justifyContent:"space-between",
+    minWidth:350,
+    alignSelf:"center"
   },
   tabItem: {
     display: "flex",
@@ -322,18 +332,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     fontSize: 17,
+    
   },
   tabItemKey: {
     color: "grey",
-    flex: 3,
+    flex: 6,
+    flexWrap:"wrap"
   },
   tabItemValue: {
-    flex: 1,
+    flex: 2,
     color: "rgb(0, 172, 194)",
   },
   editButton:{
     color:"rgb(0, 172, 194)",
-    flex: 1,
+   
     position:"absolute",
     justifyContent: 'flex-end',
     bottom:20,

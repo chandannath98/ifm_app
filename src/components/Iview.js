@@ -10,8 +10,7 @@ import { TouchableOpacity } from "react-native";
 export default function IView({navigation,route}) {
   // useState
   const images = route.params.images
-console.log(route.params.images)
-  const [visible, setIsVisible] = useState(true);
+
 
   return (
     <View style={{

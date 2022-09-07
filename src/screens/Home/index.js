@@ -18,9 +18,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { setfilterdVisitorsData } from "../../redux/actions";
 import { visitorsdata } from "../../components/Visitors_View/data";
 import { StatusBar } from "expo-status-bar";
+import { DrawerActions } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
+import { Feather } from '@expo/vector-icons';
 
-export default function Home() {
-  const navigation = useNavigation();
+
+
+
+
+export default function Home({navigation}) {
+  // const navigation = useNavigation();
 
   const {
     filterdVisitorsData,
@@ -92,8 +99,30 @@ export default function Home() {
     dispatch(setfilterdVisitorsData(data));
   }, []);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <View style={[styles.safeAreaViewStyle]}>
+
+      <TouchableOpacity  onPress={() => navigation.openDrawer()} style={{position:"absolute", top:15,left:10,zIndex:1}}>
+      <Feather name="menu" size={24} color="white" />
+      </TouchableOpacity>
       <HeaderForMobile
         getMonthYear={getMonthYear}
         data={getFields("visitor_name", data)}

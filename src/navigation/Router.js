@@ -17,12 +17,33 @@ import ElecMeterDetails from "../components/Meters/ElecMeter/ElecMeterDetails";
 import IView from "../components/Iview";
 import MaterialInDetails from "../components/MaterialInOut/MaterialIN/MaterialInDetails";
 import { Button } from "react-native";
+import MaterialOutDetails from "../components/MaterialInOut/MaterialOut/MaterialOutDetails";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import DrawerNav from "./drawerNavigator";
 
 // const navigation = useNavigation();
+
+const Drawer = createDrawerNavigator();
+
 
 const Route=()=>{
 
 const stack= createStackNavigator();
+
+
+function NotificationsScreen({ navigation }) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button onPress={() => navigation.goBack()} title="Go back home" />
+      </View>
+    );
+  }
+  
+  
+
+
+
+
 
 return(
     <NavigationContainer>
@@ -30,7 +51,8 @@ return(
         <stack.Navigator screenOptions={{
             headerStyle: { backgroundColor: 'rgb(0, 172, 194)',borderColor:"rgb(0, 172, 194)",borderWidth:0 }
         }}>
-            <stack.Screen name="Home" component={BottemTabNav} options={{headerShown:false}} />
+            <stack.Screen name="Home" component={DrawerNav} options={{headerShown:false}} />
+            {/* <stack.Screen name="Drawer" component={DrawerNav} options={{headerShown:false}} /> */}
             <stack.Screen name="PostDeatils" component={PostDeatils} options={{
                 title: 'Visiors Details',
                 headerTintColor:"white",
@@ -111,8 +133,31 @@ return(
                 // headerStyle: { backgroundColor: '#fff' }
                 
         }} />
+            <stack.Screen name="MaterialOutDetail"  component={MaterialOutDetails} options={{
+                headerShown:true,  title:"Material Out Detail", presentation:"card", 
+                headerTintColor:"#fff",
+                // headerStyle: { backgroundColor: '#fff' }
+                
+        }} />
             
         </stack.Navigator>
+
+
+
+
+
+       
+        
+     
+
+
+
+
+
+
+
+
+
     </NavigationContainer>
 )
 
