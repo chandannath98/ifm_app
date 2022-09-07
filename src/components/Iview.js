@@ -7,40 +7,28 @@ import ImageViewer from "react-native-image-zoom-viewer";
 import { Entypo } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
-export default function IView() {
+export default function IView({navigation,route}) {
   // useState
-  const images = [
-    {
-      // Simplest usage.
-      url: "https://picsum.photos/500/500",
-
-      // width: number
-      // height: number
-      // Optional, if you know the image size, you can set the optimization performance
-
-      // You can pass props to <Image />.
-      props: {
-        // headers: ...
-      },
-    },
-  ];
-
+  const images = route.params.images
+console.log(route.params.images)
   const [visible, setIsVisible] = useState(true);
 
   return (
-    <View>
-      <Pressable onPress={() => setIsVisible(true)}>
+    <View style={{
+      flex: 1,
+    }}>
+      {/* <Pressable onPress={() => setIsVisible(true)}>
         <Text>fsdf</Text>
       </Pressable>
 
-      <Modal transparent={true} visible={visible}>
+      <Modal transparent={true} visible={visible}> */}
         <View
           style={{
             flex: 1,
           }}
         >
           <TouchableOpacity
-            onPress={() => setIsVisible(false)}
+            onPress={() => navigation.goBack(null)}
             style={{ position: "absolute", top: 10, right: 10, zIndex: 1 }}
           >
             <Entypo name="circle-with-cross" size={40} color="#dedcdc" />
@@ -50,11 +38,11 @@ export default function IView() {
             saveToLocalByLongPress={false}
             enableSwipeDown
             imageUrls={images}
-            onSwipeDown={() => setIsVisible(false)}
+            onSwipeDown={() => navigation.goBack(null)}
             backgroundColor="#fff"
           />
         </View>
-      </Modal>
+      {/* </Modal> */}
     </View>
   );
 }

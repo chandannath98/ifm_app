@@ -31,7 +31,7 @@ const MaterialInItem = ( props ) => {
           style={[styles.listing_1container]}
           onPress={
             () => {
-                  navigation.navigate("HT Detail Page", {
+                  navigation.navigate("MaterialInDetail", {
                     item: props.item,
                   });
                 }

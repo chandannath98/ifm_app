@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import {
   StyleSheet,
   Text,
@@ -19,6 +19,7 @@ import ProjectSecurityItems from "./ProjectSecurityItems";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { BottomSheet } from "react-native-btr";
 import { SocialIcon } from "react-native-elements";
+import RBSheet from "react-native-raw-bottom-sheet";
 
 
 
@@ -47,6 +48,7 @@ const windowWidth = Dimensions.get("window").width;
 const ProjectSecurityDetailsPage = ({ navigation, route }) => {
 
 
+  const refRBSheet = useRef();
 
 
 
@@ -61,15 +63,32 @@ const item= route.params.item
 
   return (
     <SafeAreaView style={styles.container}>
-      <BottomSheet
-        visible={visible}
-        //setting the visibility state of the bottom shee
-        onBackButtonPress={toggleBottomNavigationView}
-        //Toggling the visibility state on the click of the back botton
-        onBackdropPress={toggleBottomNavigationView}
-        //Toggling the visibility state on the clicking out side of the sheet
+
+
+
+      <RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        closeOnPressMask={true}
+        height={550}
+        customStyles={{
+          wrapper: {
+            backgroundColor: "rgba(5, 5, 5, 0.32)",
+            borderTopEndRadius:15
+          },
+          draggableIcon: {
+            backgroundColor: "black",
+            width:70
+            
+          },
+          container:{
+            borderTopEndRadius:15,
+            borderTopStartRadius:15
+          }
+        }}
       >
-        <View style={styles.bottomNavigationView}>
+
+        <ScrollView style={styles.bottomNavigationView}>
           <View
             style={{
               flex: 1,
@@ -89,7 +108,7 @@ const item= route.params.item
             >
               Issue
             </Text>
-            <Pressable style={{position:"absolute", top:5,right:10}} onPress={toggleBottomNavigationView}>
+            <Pressable style={{position:"absolute", top:5,right:10}} onPress={()=>refRBSheet.current.close()}>
             <AntDesign  name="close" size={24} color="grey" />
             </Pressable>
             <View>
@@ -170,7 +189,7 @@ const item= route.params.item
                 </View>
               </View>
 
-              <TouchableOpacity onPress={toggleBottomNavigationView} style={styles.visitBtn}>
+              <TouchableOpacity onPress={()=>refRBSheet.current.close()} style={styles.visitBtn}>
                 <Text
                   style={{ textAlign: "center", color: "white", fontSize: 20 }}
                 >
@@ -180,8 +199,8 @@ const item= route.params.item
               </TouchableOpacity>
             </View>
           </View>
-        </View>
-      </BottomSheet>
+        </ScrollView>
+      </RBSheet>
 
 
 
@@ -212,7 +231,7 @@ const item= route.params.item
 
         {item.Any_issue_found==="Yes" ? (
           <TouchableOpacity
-            onPress={toggleBottomNavigationView}
+            onPress={()=>refRBSheet.current.open()}
             style={styles.issueContainer}
           >
             <Text style={styles.issueText}>

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import {
   StyleSheet,
   Text,
@@ -20,6 +20,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import { Rating, AirbnbRating } from "react-native-ratings";
 import { Dimensions } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import RBSheet from "react-native-raw-bottom-sheet";
 
 
 
@@ -27,18 +28,16 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 
 
 
-
+// *****************Main Funtion*******************
 
 export default function PostDetail({ navigation, route }) {
   
   const windowWidth = Dimensions.get("window").width;
+  const refRBSheet = useRef();
  
-    const [visible, setVisible] = useState(false);
+    
   
-    const toggleBottomNavigationView = () => {
-      
-      setVisible(!visible);
-    };
+  
   
 const item= route.params.item
 
@@ -50,6 +49,7 @@ const [Time, setTime] = useState({
     timestamp: new Date() ,
   },
 });
+
 var timeValue = new Date(Time.nativeEvent.timestamp);
   var hours = timeValue.getHours();
   var minutes = timeValue.getMinutes();
@@ -60,6 +60,20 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
   var timeString = hours + ":" + minutes + " " + ampm;
 
   const [showTimePicker, setShowTimePicker] = useState(false);
+
+
+
+
+
+
+
+
+
+  
+
+
+// **************return Funtion Start Here***************
+
 
 
 
@@ -98,14 +112,28 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
 
 
 
-<BottomSheet
-        visible={visible}
-        //setting the visibility state of the bottom shee
-        onBackButtonPress={toggleBottomNavigationView}
-        //Toggling the visibility state on the click of the back botton
-        onBackdropPress={toggleBottomNavigationView}
-        //Toggling the visibility state on the clicking out side of the sheet
+<RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        closeOnPressMask={true}
+        height={400}
+        customStyles={{
+          wrapper: {
+            backgroundColor: "rgba(5, 5, 5, 0.32)",
+            borderTopEndRadius:15
+          },
+          draggableIcon: {
+            backgroundColor: "black",
+            width:70
+            
+          },
+          container:{
+            borderTopEndRadius:15,
+            borderTopStartRadius:15
+          }
+        }}
       >
+
         <View style={styles.bottomNavigationView}>
           <View
             style={{
@@ -126,7 +154,7 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
             >
               Mark Exit
             </Text>
-            <Pressable style={{position:"absolute", top:5,right:10}} onPress={toggleBottomNavigationView}>
+            <Pressable style={{position:"absolute", top:5,right:10}} onPress={()=>refRBSheet.current.close()}>
             <AntDesign  name="close" size={24} color="grey" />
             </Pressable>
             <View>
@@ -172,7 +200,7 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
 
               </View>
 
-              <Pressable style={styles.modelSubmitBtn} onPress={toggleBottomNavigationView} >
+              <Pressable style={styles.modelSubmitBtn} onPress={()=>refRBSheet.current.close()} >
                 <Text
                   style={{ textAlign: "center", color: "white", fontSize: 20 }}
                 >
@@ -183,7 +211,7 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
             </View>
           </View>
         </View>
-      </BottomSheet>
+      </RBSheet>
 
 
 
@@ -294,7 +322,7 @@ var timeValue = new Date(Time.nativeEvent.timestamp);
       <MaterialCommunityIcons name="circle-edit-outline" style={styles.editButton}  size={55} color="black"  onPress={()=>{navigation.navigate("VisitorsForm", {
                     item: item,
                   })}}/>
-      <Pressable onPress={()=>setVisible(true)} style={styles.visitBtn}>
+      <Pressable onPress={()=>refRBSheet.current.open()} style={styles.visitBtn}>
                 <Text
                   style={{ textAlign: "center", color: "white", fontSize: 20 }}
                 >

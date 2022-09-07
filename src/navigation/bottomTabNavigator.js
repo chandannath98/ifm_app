@@ -15,6 +15,10 @@ import ElecMeterForm from "../components/Meters/ElecMeter/ElecMeterForm";
 import MaterialInOut from "../components/MaterialInOut";
 import IView from "../components/Iview";
 import MaterialInDetails from "../components/MaterialInOut/MaterialIN/MaterialInDetails";
+import Example from "../components/modelViewer";
+
+
+
 
 
 
@@ -96,8 +100,8 @@ const BottemTabNav = () => {
     
 
       <Tab.Screen
-        name={"MVIew"}
-        component={MaterialInDetails}
+        name={"Example"}
+        component={Example}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
@@ -109,18 +113,7 @@ const BottemTabNav = () => {
       />
     
 
-      <Tab.Screen
-        name={"IVIew"}
-        component={IView}
-        options={{
-          tabBarIcon: ({ focused, size }) => {
-            // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
-            return <MaterialCommunityIcons name="boom-gate" size={25} color={color} />;
-          },
-          headerShown: false,
-        }}
-      />
+      
     
 
    

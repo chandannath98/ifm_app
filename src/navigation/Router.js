@@ -14,6 +14,9 @@ import DGMeterDetails from "../components/Meters/dgMeter/DGMeterDetailPage";
 import HTMeterDetails from "../components/Meters/htMeter/HTMeterDetails";
 import LTMeterDetails from "../components/Meters/LTMeter/LTMeterDetails";
 import ElecMeterDetails from "../components/Meters/ElecMeter/ElecMeterDetails";
+import IView from "../components/Iview";
+import MaterialInDetails from "../components/MaterialInOut/MaterialIN/MaterialInDetails";
+import { Button } from "react-native";
 
 // const navigation = useNavigation();
 
@@ -30,7 +33,10 @@ return(
             <stack.Screen name="Home" component={BottemTabNav} options={{headerShown:false}} />
             <stack.Screen name="PostDeatils" component={PostDeatils} options={{
                 title: 'Visiors Details',
-                headerTintColor:"white"
+                headerTintColor:"white",
+                headerStyle: { backgroundColor: 'rgb(0, 172, 194)',elevation: 0,
+                shadowOpacity: 0,
+                borderBottomWidth: 0, }
                 
         }} />
             <stack.Screen name="VisitorsForm" component={VisitorsForm} options={{
@@ -40,13 +46,26 @@ return(
         }}/>
             <stack.Screen name="Project Security Date Wise"  component={ProjectSecurityDateWiseGrouping} options={{
                 headerShown:true, title: 'Project Security', 
-                headerTintColor:"white"
+                headerTintColor:"rgb(0, 172, 194)",
+                headerStyle: { backgroundColor: 'none',elevation: 0,
+                shadowOpacity: 0,
+                borderBottomWidth: 0, }
                 
         }} />
             <stack.Screen name="Project Security Listing"  component={ProjectSecurityListing} options={{
                 headerShown:true, title: 'Project Security', 
-                headerTintColor:"white"
+                headerTintColor:"rgb(0, 172, 194)",
+                headerStyle: { backgroundColor: 'none',elevation: 0,
+                shadowOpacity: 0,
+                borderBottomWidth: 0, },
                 
+                // headerRight: (navigation) => (
+                //     <Button
+                //       onPress={() =>  navigation.navigate("Imagev")}
+                //       title="Info"
+                      
+                //     />
+                //   ),
         }} />
             <stack.Screen name="Project Security Detail Page"  component={ProjectSecurityDetailsPage} options={{
                 headerShown:true, title: 'Project Security Detail Page', 
@@ -75,6 +94,21 @@ return(
                 headerShown:true, title: 'Elec Detail Page', 
                 headerTintColor:"white",
                 headerStyle: { backgroundColor: 'rgb(0, 172, 194)' }
+                
+        }} />
+
+            <stack.Screen name="ImageV"  component={IView} options={{
+                headerShown:true,  title:"Image Viewer", presentation:"modal",
+                headerTintColor:"rgb(0, 172, 194)",
+                headerStyle: { backgroundColor: '#fff',elevation: 0,
+                shadowOpacity: 0,
+                borderBottomWidth: 0, }
+                
+        }} />
+            <stack.Screen name="MaterialInDetail"  component={MaterialInDetails} options={{
+                headerShown:true,  title:"Material In Detail", presentation:"card", 
+                headerTintColor:"#fff",
+                // headerStyle: { backgroundColor: '#fff' }
                 
         }} />
             

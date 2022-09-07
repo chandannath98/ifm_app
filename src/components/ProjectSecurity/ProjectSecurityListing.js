@@ -1,27 +1,41 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Pressable,
+  TouchableOpacity,
+  TouchableHighlight,
+} from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { getFields } from "../../CustomFunctions/CustomFunctions";
 import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign } from "@expo/vector-icons";
 import ProjectSecurityItems from "./ProjectSecurityItems";
-
-
-
-
+import { Button } from "react-native";
 
 // ******************Main Function*************************//
 
 const ProjectSecurityListing = ({ navigation, route }) => {
-  const [filteredData, setFilteredData] = useState([]);
-
   
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+          style={styles.buttonHeader}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Text style={styles.TopHeaderText}>Home</Text>
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
 
-
+  const [filteredData, setFilteredData] = useState([]);
 
   var data = route.params.data.filter((item) => {
     {
-     
       return item.date === route.params.value;
     }
   });
@@ -63,8 +77,7 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("All")}
             style={[
               styles.statusInnerContainer,
-              {borderBottomColor:"black",borderWidth:0.5}
-              ,
+              { borderBottomColor: "black", borderWidth: 0.5 },
               filter === "All"
                 ? { backgroundColor: "black" }
                 : { backgroundColor: "white" },
@@ -91,8 +104,7 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("Visited")}
             style={[
               styles.statusInnerContainer,
-              {borderColor:"green",borderWidth:0.5}
-              ,
+              { borderColor: "green", borderWidth: 0.5 },
               filter === "Visited"
                 ? { backgroundColor: "green" }
                 : { backgroundColor: "white" },
@@ -119,8 +131,7 @@ const ProjectSecurityListing = ({ navigation, route }) => {
             onPress={() => setFilter("NotVisited")}
             style={[
               styles.statusInnerContainer,
-              {borderColor:"red",borderWidth:0.5}
-              ,
+              { borderColor: "red", borderWidth: 0.5 },
               filter === "NotVisited"
                 ? { backgroundColor: "red" }
                 : { backgroundColor: "white" },
@@ -150,8 +161,6 @@ const ProjectSecurityListing = ({ navigation, route }) => {
           flex: 1,
         }}
       >
-        
-        
         <FlatList
           data={dataValues()}
           contentContainerStyle={{
@@ -219,6 +228,15 @@ const styles = StyleSheet.create({
   notVisitedText: {
     color: "red",
     fontSize: 15,
+  },
+  buttonHeader: {
+    // backgroundColor:"red",
+    marginHorizontal: 15,
+  },
+  TopHeaderText: {
+    color: "rgb(0, 172, 194)",
+    fontSize: 17,
+    textDecorationLine: "underline",
   },
 });
 

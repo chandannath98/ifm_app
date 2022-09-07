@@ -16,7 +16,7 @@ import { Image } from "react-native";
 import { ScrollView } from "react-native";
 import { Platform } from "react-native";
 
-// Platform
+
 
 // ******************Main Function*************************//
 
@@ -58,16 +58,25 @@ const MaterialInDetails = ({ navigation, route }) => {
               : { flexDirection: "column" },
           ]}
         >
-          <View
-            style={{
-              padding: 5,
-              alignItems: "center",
-              backgroundColor: "#fff",
-              borderRadius: 10,
-              marginHorizontal: 20,
-              marginVertical: 10,
-              paddingBottom: 20,
-            }}
+          <TouchableOpacity
+                    onPress={() => navigation.navigate('ImageV',{
+                      images:[
+                        {
+                          // Simplest usage.
+                          url: "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4",
+                    
+                          // width: number
+                          // height: number
+                          // Optional, if you know the image size, you can set the optimization performance
+                    
+                          // You can pass props to <Image />.
+                          props: {
+                            // headers: ...
+                          },
+                        },
+                      ]})}
+
+                      style={styles.imageCard}
           >
             <Image
               style={{ height: 300, width: 300 }}
@@ -78,17 +87,28 @@ const MaterialInDetails = ({ navigation, route }) => {
             <Text style={{ color: "grey", paddingVertical: 5 }}>
               Vehicle No. :-UK019A7443
             </Text>
-          </View>
-          <View
-            style={{
-              padding: 5,
-              alignItems: "center",
-              backgroundColor: "#fff",
-              borderRadius: 10,
-              marginHorizontal: 20,
-              marginVertical: 10,
-              paddingBottom: 20,
-            }}
+          </TouchableOpacity>
+          <TouchableOpacity
+                    
+                    onPress={() => navigation.navigate('ImageV',{
+                    images:[
+                      {
+                        // Simplest usage.
+                        url: "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4",
+                  
+                        // width: number
+                        // height: number
+                        // Optional, if you know the image size, you can set the optimization performance
+                  
+                        // You can pass props to <Image />.
+                        props: {
+                          // headers: ...
+                        },
+                      },
+                    ]})}
+                    
+
+            style={styles.imageCard}
           >
             <Image
               style={{ height: 300, width: 300 }}
@@ -99,7 +119,7 @@ const MaterialInDetails = ({ navigation, route }) => {
             <Text style={{ color: "grey", paddingVertical: 5 }}>
               Bill No. :-OCMGP-546
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -111,5 +131,14 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 5,
   },
+  imageCard:{
+    padding: 5,
+              alignItems: "center",
+              backgroundColor: "#fff",
+              borderRadius: 5,
+              marginHorizontal: 20,
+              marginVertical: 10,
+              paddingBottom: 20,
+  }
 });
 export default MaterialInDetails;
