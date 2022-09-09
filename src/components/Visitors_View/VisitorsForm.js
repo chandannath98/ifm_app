@@ -226,7 +226,7 @@ const VisitorsForm = ({ navigation, route }) => {
               data={[
                 {
                   value: "To Meet Sales Person",
-                  label: "To Meet Sales Person",
+                
                 },
                 {
                   value: "Site Visit",

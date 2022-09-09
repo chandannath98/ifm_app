@@ -6,6 +6,7 @@ import MaterialOut from './MaterialOut';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { StatusBar } from 'react-native';
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -28,7 +29,7 @@ function MaterialInOut({navigation}) {
     navigation.setOptions({
       headerLeft: () => (
         <TouchableOpacity style={{marginHorizontal:5}}  onPress={() => navigation.openDrawer()} >
-      <Feather name="menu" size={24} color="white" />
+      <Feather name="menu" size={24} color="rgb(0, 172, 194)" />
       </TouchableOpacity>
       ),
     });
@@ -43,6 +44,7 @@ function MaterialInOut({navigation}) {
 
 
   return (
+    
    
     <Tab.Navigator
     
@@ -55,12 +57,13 @@ function MaterialInOut({navigation}) {
       }} 
       
     >
+
       <Tab.Screen  name="Material In" component={MaterialIn} />
       <Tab.Screen name="Material Out" component={MaterialOut} />
       
     
     </Tab.Navigator>
-   
+ 
   );
 }
 

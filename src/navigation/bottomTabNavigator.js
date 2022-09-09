@@ -2,23 +2,36 @@ import Home from "../screens/Home";
 
 // import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome } from "@expo/vector-icons";
+
 
 import { Octicons } from "@expo/vector-icons";
 import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import Meters from "../components/Meters";
-import { Ionicons } from "@expo/vector-icons";
+
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import ElecMeterForm from "../components/Meters/ElecMeter/ElecMeterForm";
+
 import MaterialInOut from "../components/MaterialInOut";
-import IView from "../components/Iview";
-import MaterialInDetails from "../components/MaterialInOut/MaterialIN/MaterialInDetails";
-import Example from "../components/modelViewer";
-import MaterialOutDetails from "../components/MaterialInOut/MaterialOut/MaterialOutDetails";
+
 import { Text } from "react-native";
 import { View } from "react-native";
+import CheckListForm from "../components/CheckList/CheckListForm";
+import ProjectSecurityForm from "../components/ProjectSecurity/ProjectSecurityForm";
+
+
+
+
+
+
+
+
+
+
+
+// *********Main Function************
+
+
 
 const BottemTabNav = () => {
   const Tab = createBottomTabNavigator();
@@ -65,9 +78,9 @@ const BottemTabNav = () => {
             return <MaterialIcons name="security" size={25} color={color} />;
           },
           // headerShown: false,
-          headerTintColor: "white",
+          // headerTintColor: "white",
           headerStyle: {
-            backgroundColor: "rgb(0, 172, 194)",
+            // backgroundColor: "rgb(0, 172, 194)",
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -81,10 +94,10 @@ const BottemTabNav = () => {
                 flexDirection: "row",
               }}
             >
-              <MaterialIcons name="security" size={20} color="white" />
+              <MaterialIcons name="security" size={20} color="rgb(0, 172, 194)" />
               <Text
                 style={{
-                  color: "white",
+                  color: "rgb(0, 172, 194)",
                   fontSize: 20,
                   alignItems: "center",
                   justifyContent: "center",
@@ -109,7 +122,7 @@ const BottemTabNav = () => {
           // headerShown: false,
           headerTintColor: "white",
           headerStyle: {
-            backgroundColor: "rgb(0, 172, 194)",
+            // backgroundColor: "rgb(0, 172, 194)",
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -123,10 +136,10 @@ const BottemTabNav = () => {
                 flexDirection: "row",
               }}
             >
-              <Octicons name="meter" size={20} color={"white"} />
+              <Octicons name="meter" size={20} color={"rgb(0, 172, 194)"} />
               <Text
                 style={{
-                  color: "white",
+                  color: "rgb(0, 172, 194)",
                   fontSize: 20,
                   alignItems: "center",
                   justifyContent: "center",
@@ -159,7 +172,7 @@ const BottemTabNav = () => {
           
           headerTintColor: "white",
           headerStyle: {
-            backgroundColor: "rgb(0, 172, 194)",
+            // backgroundColor: "rgb(0, 172, 194)",
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -173,10 +186,10 @@ const BottemTabNav = () => {
                 flexDirection: "row",
               }}
             >
-              <MaterialCommunityIcons name="gate" size={20} color="white" />
+              <MaterialCommunityIcons name="gate" size={20} color="rgb(0, 172, 194)" />
               <Text
                 style={{
-                  color: "white",
+                  color: "rgb(0, 172, 194)",
                   fontSize: 20,
                   alignItems: "center",
                   justifyContent: "center",
@@ -192,9 +205,9 @@ const BottemTabNav = () => {
         }}
       />
 
-      {/* <Tab.Screen
-        name={"MaterialOutDetails"}
-        component={MaterialOutDetails}
+      <Tab.Screen
+        name={"ProjectSecurityForm"}
+        component={ProjectSecurityForm}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
@@ -204,7 +217,7 @@ const BottemTabNav = () => {
           headerShown: false,
         }}
       />
-     */}
+    
     </Tab.Navigator>
   );
 };

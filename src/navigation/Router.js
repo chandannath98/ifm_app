@@ -20,6 +20,8 @@ import { Button } from "react-native";
 import MaterialOutDetails from "../components/MaterialInOut/MaterialOut/MaterialOutDetails";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerNav from "./drawerNavigator";
+import CheckListDetails from "../components/CheckList/CheckListDetailPage";
+import CheckListForm from "../components/CheckList/CheckListForm";
 
 // const navigation = useNavigation();
 
@@ -137,6 +139,18 @@ return(
                 headerShown:true,  title:"Material Out Detail", presentation:"card", 
                 headerTintColor:"#fff",
                 // headerStyle: { backgroundColor: '#fff' }
+                
+        }} />
+            <stack.Screen name="CheckListDetailPage"  component={CheckListDetails} options={{
+                headerShown:true,  title:"Checklist Detail", presentation:"card", 
+                headerTintColor:"#fff",
+                // headerStyle: { backgroundColor: '#fff' }
+                
+        }} />
+            <stack.Screen name="CheckListForm"  component={CheckListForm} options={{
+                headerShown:true,  title:"Checklist Form", presentation:"card", 
+                headerTintColor:"rgb(0, 172, 194)",
+                headerStyle: { backgroundColor: '#fff' }
                 
         }} />
             

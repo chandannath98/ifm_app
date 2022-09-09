@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import Home from '../screens/Home';
-import Route from './Router';
+
 import BottemTabNav from './bottomTabNavigator';
+import CheckList from '../components/CheckList';
 
 function HomeScreen({ navigation }) {
   return (
@@ -50,7 +49,21 @@ export default function DrawerNav() {
             headerShown: false,
           }}
         />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="CheckList" component={CheckList} options={{
+            headerTintColor:"rgb(0, 172, 194)",
+            
+            // tabBarIcon:((color)=>(
+            //     <FontAwesome name="home" size={25} color={"#0d0d0d"} />
+            // ))
+            // tabBarIcon: ({ focused, size }) => {
+            //   // const icon=focused?"bell":"home";
+            //   const color = focused ? "rgb(0, 172, 194)" : "black";
+            //   return <MaterialIcons name="people" size={25} color={color} />;
+            // },
+            title:"Checklist",
+  
+            // headerShown: false,
+          }} />
       </Drawer.Navigator>
       
   );

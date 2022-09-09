@@ -2,35 +2,36 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
-import { DGData } from "../../Meters/dgMeter/data";
-import MaterialInItem from "./MaterialInItem";
-import { StatusBar } from "react-native";
-
+import { DGData } from "../Meters/dgMeter/data";
+import CheckListItem from "./ChecklistItem";
 
 
 
 // ******************Main Function*************************//
 
-const MaterialIn = ({ navigation, route }) => {
+const CheckList = ({ navigation, route }) => {
+
+
+
+
+
+
+
 var data= DGData
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <StatusBar backgroundColor="white" /> */}
-
       <FlatList
         style={styles.scrollView}
         data={data}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => item.DG_No?<MaterialInItem item={item} />:<View></View>}
+        renderItem={({ item }) => item.DG_No?<CheckListItem item={item} />:<View></View>}
       />
     
 
-      <TouchableOpacity style={styles.addButton} 
-    //   onPress={() => {
-    //       navigation.navigate("VisitorsForm");
-    //     }}
-        >
+      <TouchableOpacity style={styles.addButton} onPress={() => {
+          navigation.navigate("CheckListForm");
+        }}>
       <AntDesign
         
         name="pluscircle"
@@ -115,4 +116,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MaterialIn;
+export default CheckList;

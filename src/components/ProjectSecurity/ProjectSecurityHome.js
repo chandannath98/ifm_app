@@ -46,7 +46,7 @@ const ProjectSecurity = () => {
     navigation.setOptions({
       headerLeft: () => (
         <TouchableOpacity style={{marginHorizontal:5}}  onPress={() => navigation.openDrawer()} >
-      <Feather name="menu" size={24} color="white" />
+      <Feather name="menu" size={24} color="rgb(0, 172, 194)" />
       </TouchableOpacity>
       ),
     });
