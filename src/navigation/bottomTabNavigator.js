@@ -205,18 +205,7 @@ const BottemTabNav = () => {
         }}
       />
 
-      <Tab.Screen
-        name={"ProjectSecurityForm"}
-        component={ProjectSecurityForm}
-        options={{
-          tabBarIcon: ({ focused, size }) => {
-            // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
-            return <MaterialCommunityIcons name="boom-gate" size={25} color={color} />;
-          },
-          headerShown: false,
-        }}
-      />
+      
     
     </Tab.Navigator>
   );

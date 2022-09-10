@@ -177,6 +177,16 @@ const ProjectSecurityListing = ({ navigation, route }) => {
           )}
         />
       </View>
+
+      <AntDesign
+        style={styles.addButton}
+        name="pluscircle"
+        size={55}
+        color="black"
+        onPress={() => {
+          navigation.navigate("ProjectSecurityForm");
+        }}
+      />
     </SafeAreaView>
   );
 };
@@ -238,6 +248,15 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textDecorationLine: "underline",
   },
+  addButton: {
+    color: "rgb(0, 172, 194)",
+    flex: 1,
+    position: "absolute",
+    justifyContent: "flex-end",
+    bottom: 20,
+    right: 20,
+  },
+
 });
 
 export default ProjectSecurityListing;

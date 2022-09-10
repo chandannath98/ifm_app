@@ -22,6 +22,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerNav from "./drawerNavigator";
 import CheckListDetails from "../components/CheckList/CheckListDetailPage";
 import CheckListForm from "../components/CheckList/CheckListForm";
+import ProjectSecurityForm from "../components/ProjectSecurity/ProjectSecurityForm";
 
 // const navigation = useNavigation();
 
@@ -149,6 +150,13 @@ return(
         }} />
             <stack.Screen name="CheckListForm"  component={CheckListForm} options={{
                 headerShown:true,  title:"Checklist Form", presentation:"card", 
+                headerTintColor:"rgb(0, 172, 194)",
+                headerStyle: { backgroundColor: '#fff' }
+                
+        }} />
+            
+            <stack.Screen name="ProjectSecurityForm"  component={ProjectSecurityForm} options={{
+                headerShown:false,  title:"Project Security Form", presentation:"card", 
                 headerTintColor:"rgb(0, 172, 194)",
                 headerStyle: { backgroundColor: '#fff' }
                 

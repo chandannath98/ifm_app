@@ -117,6 +117,15 @@ return(
         )}
       />
     </View>
+    <AntDesign
+        style={styles.addButton}
+        name="pluscircle"
+        size={55}
+        color="black"
+        onPress={() => {
+          navigation.navigate("ProjectSecurityForm");
+        }}
+      />
   </SafeAreaView>
 )
 
@@ -168,6 +177,15 @@ const styles = StyleSheet.create({
     marginVertical: 2,
     borderRadius: 6,
   },
+  addButton: {
+    color: "rgb(0, 172, 194)",
+    flex: 1,
+    position: "absolute",
+    justifyContent: "flex-end",
+    bottom: 20,
+    right: 20,
+  },
+
 });
 
 export default ProjectSecurity;
