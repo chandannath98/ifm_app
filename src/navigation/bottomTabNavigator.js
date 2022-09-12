@@ -18,6 +18,8 @@ import { Text } from "react-native";
 import { View } from "react-native";
 import CheckListForm from "../components/CheckList/CheckListForm";
 import ProjectSecurityForm from "../components/ProjectSecurity/ProjectSecurityForm";
+import ProjectSecurityGropingItem from "../components/ProjectSecurity/ProjectSecurityGropingItem";
+import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
 
 
 
@@ -70,14 +72,14 @@ const BottemTabNav = () => {
       />
       <Tab.Screen
         name={"Proect Security"}
-        component={ProjectSecurity}
+        component={ProjectSecurityListing}
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
             const color = focused ? "rgb(0, 172, 194)" : "black";
             return <MaterialIcons name="security" size={25} color={color} />;
           },
-          // headerShown: false,
+          headerShown: false,
           // headerTintColor: "white",
           headerStyle: {
             // backgroundColor: "rgb(0, 172, 194)",

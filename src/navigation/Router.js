@@ -78,7 +78,7 @@ return(
                 
         }} />
             <stack.Screen name="Project Security Listing"  component={ProjectSecurityListing} options={{
-                headerShown:true, title: 'Project Security', 
+                headerShown:false, title: 'Project Security', 
                 headerTintColor:"rgb(0, 172, 194)",
                 headerStyle: { backgroundColor: 'none',elevation: 0,
                 shadowOpacity: 0,

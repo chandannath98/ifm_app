@@ -138,12 +138,14 @@ const ProjectSecurityForm = ({navigation,route}) => {
     setLocation("Location");
     setUniqueLocations(getuniqueLocations(item));
     filterdata(item, "Location");
+    setSearchFilterValue("")
   };
   const onchangeLocation = (item) => {
     refRBSheet2.current.close();
 
     setLocation(item);
     filterdata(project, item);
+    setSearchFilterValue("")
   };
 
 
@@ -163,7 +165,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
 
-// **********Flatlist header component****************
+
 
 
 
@@ -175,7 +177,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 // *******************************
 // *******************************
 // *******************************
-// **********Main retrun Funtion****************
+// ******Main retrun Funtion******
 // *******************************
 // *******************************
 // *******************************
@@ -211,7 +213,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
 {/* *****
-***********Header*********
+***********Header**************
 ****** */}
 
 
@@ -329,7 +331,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
      {/* *****
-     ********Bottom sheet popup 1*************
+     ********Bottom sheet popup 1 for project selector*************
      ***** */}
 
 
@@ -358,7 +360,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
         }}
       >
         <View>
-          <View style={{ marginTop: 5, marginBottom: 15 }}>
+          <View style={{ marginTop: 5, marginBottom: 10 }}>
             <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
               Projects
             </Text>
@@ -384,7 +386,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
 
-          <View style={styles.selectorItemContainer}>
+          <View style={styles.selectorItemContainerforProject}>
             <TouchableOpacity
               onPress={() => onProductChange("Project")}
               style={
@@ -406,7 +408,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
             </TouchableOpacity>
 
 
-<View >
+
 
 
             <FlatList
@@ -434,7 +436,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
                 </TouchableOpacity>
               )}
             />
-            </View>
+           
           </View>
         </View>
       </RBSheet>
@@ -443,7 +445,7 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
       {/* ******
-      *******Bottom sheet popup 2**********
+      *******Bottom sheet popup 2 location selector**********
       ******** */}
 
 
@@ -568,15 +570,11 @@ const ProjectSecurityForm = ({navigation,route}) => {
 
 
       {/* ******
-      *******Bottom sheet popup 3**********
+      *******Bottom sheet popup 3 for selectted units**********
       ******** */}
 
 
-
-
-
-
-      <RBSheet
+<RBSheet
         ref={refRBSheet3}
         closeOnDragDown={true}
         closeOnPressMask={true}
@@ -593,19 +591,44 @@ const ProjectSecurityForm = ({navigation,route}) => {
           container: {
             borderTopEndRadius: 15,
             borderTopStartRadius: 15,
+           
+           
+
           },
         }}
       >
-        <View>
-
-        
-
+        <View style={{flex:1}}>
           <View style={{ marginTop: 5, marginBottom: 15 }}>
             <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
               Selected Units
             </Text>
           </View>
 
+
+          <TouchableOpacity
+         onPress={() => {refRBSheet3.current.close()}}
+
+          style={{
+            backgroundColor: "#fff",
+            borderRadius: 15,
+            paddingHorizontal: 15,
+            paddingVertical: 5,
+           
+            position:"absolute",
+            top:-5,
+            right:1
+          }}
+        >
+                   <Entypo name="cross" size={24} color="grey" />
+
+        </TouchableOpacity>
+
+
+
+
+          <View style={styles.selectorItemContainer}>
+            
+         
 
           <View
         style={{
@@ -616,10 +639,10 @@ const ProjectSecurityForm = ({navigation,route}) => {
          
           padding: 10,
           marginHorizontal: 10,
-          right: 5,
-          left:5,
+          right: 15,
+          left:7,
           
-top:-10,
+top:-70,
 // maxWidth:200
         }}
       >
@@ -656,8 +679,6 @@ top:-10,
 
 
 
-          <View style={styles.selectorItemContainer}>
-           
 
 
           <FlatList
@@ -694,13 +715,20 @@ top:-10,
         )}
        
       />
-
-
-
-
           </View>
         </View>
       </RBSheet>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -832,10 +860,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "rgb(0, 172, 194)",
   },
-  selectorItemContainer: {
+  selectorItemContainerforProject: {
     paddingHorizontal: 20,
     
+    
+  },
+  selectorItemContainer: {
+    paddingHorizontal: 20,
     flex:1
+    
   },
 });
 

@@ -220,7 +220,7 @@ const item= route.params.item
                     images:[
                       {
                         // Simplest usage.
-                        url: "https://picsum.photos/1200/800",
+                        url: "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4",
                   
                         // width: number
                         // height: number
@@ -234,7 +234,7 @@ const item= route.params.item
                     ]})} >
           <Image
             style={[styles.image,]}
-            source={{ uri: "https://picsum.photos/1200/800" }}
+            source={{ uri: "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4" }}
             
           />
         </TouchableOpacity>
