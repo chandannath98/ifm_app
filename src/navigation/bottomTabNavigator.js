@@ -3,37 +3,17 @@ import Home from "../screens/Home";
 // import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-
 import { Octicons } from "@expo/vector-icons";
-import ProjectSecurity from "../components/ProjectSecurity/ProjectSecurityHome";
 import { MaterialIcons } from "@expo/vector-icons";
-
 import Meters from "../components/Meters";
-
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
 import MaterialInOut from "../components/MaterialInOut";
-
 import { Text } from "react-native";
 import { View } from "react-native";
-import CheckListForm from "../components/CheckList/CheckListForm";
-import ProjectSecurityForm from "../components/ProjectSecurity/ProjectSecurityForm";
-import ProjectSecurityGropingItem from "../components/ProjectSecurity/ProjectSecurityGropingItem";
 import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
-
-
-
-
-
-
-
-
-
-
+import { Platform } from "react-native";
 
 // *********Main Function************
-
-
 
 const BottemTabNav = () => {
   const Tab = createBottomTabNavigator();
@@ -43,11 +23,40 @@ const BottemTabNav = () => {
       style={{
         margin: 5,
       }}
-      screenOptions={{
-        // tabBarActiveBackgroundColor: "rgb(0, 172, 194)",
-        tabBarActiveTintColor: "rgb(0, 172, 194)",
-        // tabBarStyle: {position:'absolute',bottom:5,marginHorizontal:15,borderRadius:15 },
-      }}
+      screenOptions={
+        Platform.OS != "web"
+          ? {
+              // tabBarActiveBackgroundColor: "rgb(0, 172, 194)",
+              tabBarActiveTintColor: "rgb(0, 172, 194)",
+              // tabBarInactiveTintColor:"black",
+            }
+          : {
+              // tabBarActiveBackgroundColor: "rgb(0, 172, 194)",
+              tabBarActiveTintColor: "rgb(0, 172, 194)",
+              // tabBarInactiveTintColor:"black",
+              tabBarStyle: {
+                position: "absolute",
+                bottom: 10,
+                marginHorizontal: "auto",
+                borderRadius: 25,
+                maxWidth: 500,
+                alignSelf: "center",
+                justifyContent: "center",
+                paddingHorizontal: 10,
+                paddingVertical: 5,
+                borderTopWidth: 1,
+                shadowColor: "grey",
+
+                // shadowColor: "#000",
+                shadowOffset: {
+                  width: 1,
+                  height: 2,
+                },
+                shadowOpacity: 0.5,
+                shadowRadius: 15.35,
+              },
+            }
+      }
       sceneContainerStyle={
         {
           // backgroundColor: "#fff"
@@ -63,7 +72,7 @@ const BottemTabNav = () => {
           // ))
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
+            const color = focused ? "rgb(0, 172, 194)" : "grey";
             return <MaterialIcons name="people" size={25} color={color} />;
           },
 
@@ -76,7 +85,7 @@ const BottemTabNav = () => {
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
+            const color = focused ? "rgb(0, 172, 194)" : "grey";
             return <MaterialIcons name="security" size={25} color={color} />;
           },
           headerShown: false,
@@ -96,7 +105,11 @@ const BottemTabNav = () => {
                 flexDirection: "row",
               }}
             >
-              <MaterialIcons name="security" size={20} color="rgb(0, 172, 194)" />
+              <MaterialIcons
+                name="security"
+                size={20}
+                color="rgb(0, 172, 194)"
+              />
               <Text
                 style={{
                   color: "rgb(0, 172, 194)",
@@ -118,7 +131,7 @@ const BottemTabNav = () => {
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
+            const color = focused ? "rgb(0, 172, 194)" : "grey";
             return <Octicons name="meter" size={25} color={color} />;
           },
           // headerShown: false,
@@ -161,7 +174,7 @@ const BottemTabNav = () => {
         options={{
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
-            const color = focused ? "rgb(0, 172, 194)" : "black";
+            const color = focused ? "rgb(0, 172, 194)" : "grey";
             return (
               <MaterialCommunityIcons
                 name="boom-gate"
@@ -170,8 +183,7 @@ const BottemTabNav = () => {
               />
             );
           },
-          
-          
+
           headerTintColor: "white",
           headerStyle: {
             // backgroundColor: "rgb(0, 172, 194)",
@@ -188,7 +200,11 @@ const BottemTabNav = () => {
                 flexDirection: "row",
               }}
             >
-              <MaterialCommunityIcons name="gate" size={20} color="rgb(0, 172, 194)" />
+              <MaterialCommunityIcons
+                name="gate"
+                size={20}
+                color="rgb(0, 172, 194)"
+              />
               <Text
                 style={{
                   color: "rgb(0, 172, 194)",
@@ -202,13 +218,8 @@ const BottemTabNav = () => {
               </Text>
             </View>
           ),
-
-
         }}
       />
-
-      
-    
     </Tab.Navigator>
   );
 };
