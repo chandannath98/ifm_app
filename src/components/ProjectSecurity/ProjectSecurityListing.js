@@ -10,15 +10,16 @@ import {
   Platform
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import { getFields } from "../../CustomFunctions/CustomFunctions";
-import ProjectSecurityGropingItem from "./ProjectSecurityGropingItem";
 import { AntDesign, Entypo, Feather, Ionicons } from "@expo/vector-icons";
 import ProjectSecurityItems from "./ProjectSecurityItems";
-import { Button } from "react-native";
-import { TextInput } from "react-native";
 import { projectSecurityData } from "./projectsecuritydata";
 import { useRef } from "react";
 import RBSheet from "react-native-raw-bottom-sheet";
+
+
+
+
+
 
 // ******************Main Function*************************//
 
