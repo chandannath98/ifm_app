@@ -15,6 +15,8 @@ import ProjectSecurityItems from "./ProjectSecurityItems";
 import { projectSecurityData } from "./projectsecuritydata";
 import { useRef } from "react";
 import RBSheet from "react-native-raw-bottom-sheet";
+import HeaderFilterItem from "../GlobalComponents/HeaderFilterItem";
+import HeaderforComponents from "../GlobalComponents/HeaderForComponents";
 
 
 
@@ -100,7 +102,7 @@ var monthno=String(selectedMonth).padStart(2,"0")
 var dayno=String(selectedDay).padStart(2,"0")
 
 
-      console.log(yearno+"-"+monthno+"-"+dayno)
+      
       return item.date === (yearno+"-"+monthno+"-"+dayno);
       
     }
@@ -145,17 +147,7 @@ var dayno=String(selectedDay).padStart(2,"0")
 // ***************States of visited data and not visited data***************
 
 
-const [visitedData, setvisitedData] = useState(GetVisitedListData());
-const [notVisitedData, setNotVisitedData] = useState(GetNotVisitedListData());
 
-
-
-
-// ***************Use refs for bottom sheets***************
-
-  const refRBSheet1 = useRef();
-  const refRBSheet2 = useRef();
-  const refRBSheet3 = useRef();
 
 
 // *********Funtion for filter date month year******
@@ -198,448 +190,58 @@ const [notVisitedData, setNotVisitedData] = useState(GetNotVisitedListData());
   };
 
 
-// ***********************
-// **************************** Return function*********************
-// ***********************************
 
 
+const HeaderAndRbSheet=()=>{
+return(
 
-  return (
+<View>
 
 
 
-    <SafeAreaView style={styles.container}>
 
 
 
 
+ 
 
 
-  
 
-      {/* ******
-      *******Bottom sheet popup 1 for year selection**********
-      ******** */}
 
 
 
 
+      <HeaderforComponents
+        item={[
+          <HeaderFilterItem
+            filterName={"Year"}
+            FilterList={[2021, 2022, 2023]}
+            filterValue={selectedYear}
+            filerOnSelectionFunctions={(e) => {
+              setSelectedYear(e),filterDataFuntion(e,selectedMonth,selectedDay)
+            }}
+          />,
+          <HeaderFilterItem
+            filterName={"Month"}
+            FilterList={monthNames}
+            filterValue={selectedMonth}
+            filerOnSelectionFunctions={(e) => {
+              setselectedMonth(e),filterDataFuntion(selectedYear,e,selectedDay)
+            }}
+          />,
+          <HeaderFilterItem
+            filterName={"Dayes"}
+            FilterList={daysInMonth()}
+            filterValue={selectedDay}
+            filerOnSelectionFunctions={(e) => {
+              setselectedDay(e),filterDataFuntion(selectedYear,selectedMonth,e)
+            }}
+          />,
 
 
-      <RBSheet
-        ref={refRBSheet1}
-        closeOnDragDown={true}
-        closeOnPressMask={true}
-        height={400}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "rgba(5, 5, 5, 0.32)",
-            borderTopEndRadius: 15,
-          },
-          draggableIcon: {
-            backgroundColor: "black",
-            width: 70,
-          },
-          container: {
-            borderTopEndRadius: 15,
-            borderTopStartRadius: 15,
-           
-           
 
-          },
-        }}
-      >
-        <View style={{flex:1}}>
-          <View style={{ marginTop: 5, marginBottom: 15 }}>
-            <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
-              Year
-            </Text>
-          </View>
-
-
-          <TouchableOpacity
-         onPress={() => {refRBSheet1.current.close()}}
-
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 15,
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-           
-            position:"absolute",
-            top:-5,
-            right:5
-          }}
-        >
-                   <Entypo name="cross" size={24} color="grey" />
-
-        </TouchableOpacity>
-
-
-
-
-          <View style={styles.selectorItemContainer}>
-            
-            
-
-
-
-
-
-
-
-
-
-            <FlatList
-            
-              data={[2020,2021,2022,2023]}
-              contentContainerStyle={{ paddingBottom: 400 }}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  onPress={() => [refRBSheet1.current.close(),setSelectedYear(item),filterDataFuntion(item,selectedMonth,selectedDay)]}
-                  style={
-                    selectedYear === item ? styles.selecedItem : styles.selecorItem
-                  }
-                >
-                  <Text
-                    style={[
-                      { fontSize: 17 },
-
-                      selectedYear != item
-                        ? { color: "rgba(97, 96, 96, 0.79)" }
-                        : { color: "white" },
-                    ]}
-                  >
-                    {item}
-                  </Text>
-                  <AntDesign name="checkcircle" size={24} color="white" />
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-        </View>
-      </RBSheet>
-
-
-
-
-
- {/* ******
-      *******Bottom sheet popup 2 for Month selection**********
-      ******** */}
-
-
-
-
-
-
-<RBSheet
-        ref={refRBSheet2}
-        closeOnDragDown={true}
-        closeOnPressMask={true}
-        height={650}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "rgba(5, 5, 5, 0.32)",
-            borderTopEndRadius: 15,
-          },
-          draggableIcon: {
-            backgroundColor: "black",
-            width: 70,
-          },
-          container: {
-            borderTopEndRadius: 15,
-            borderTopStartRadius: 15,
-           
-           
-
-          },
-        }}
-      >
-        <View style={{flex:1}}>
-          <View style={{ marginTop: 5, marginBottom: 15 }}>
-            <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
-              Month
-            </Text>
-          </View>
-
-
-          <TouchableOpacity
-         onPress={() => {refRBSheet2.current.close()}}
-
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 15,
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-           
-            position:"absolute",
-            top:-5,
-            right:5
-          }}
-        >
-                   <Entypo name="cross" size={24} color="grey" />
-
-        </TouchableOpacity>
-
-
-
-
-          <View style={styles.selectorItemContainer}>
-            
-           
-
-
-
-
-
-
-
-
-
-            <FlatList
-            
-              data={monthNames}
-              contentContainerStyle={{ paddingBottom: 400 }}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                onPress={() => [refRBSheet2.current.close(),setselectedMonth(item),filterDataFuntion(selectedYear,item,selectedDay)]}
-
-                  style={
-                    selectedMonth === item ? styles.selecedItem : styles.selecorItem
-                  }
-                >
-                  <Text
-                    style={[
-                      { fontSize: 17 },
-
-                      selectedMonth != item
-                        ? { color: "rgba(97, 96, 96, 0.79)" }
-                        : { color: "white" },
-                    ]}
-                  >
-                    {item}
-                  </Text>
-                  <AntDesign name="checkcircle" size={24} color="white" />
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-        </View>
-      </RBSheet>
-
-
-
-
- {/* ******
-      *******Bottom sheet popup 3 for Day selection**********
-      ******** */}
-
-
-
-
-
-
-<RBSheet
-        ref={refRBSheet3}
-        closeOnDragDown={true}
-        closeOnPressMask={true}
-        height={650}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "rgba(5, 5, 5, 0.32)",
-            borderTopEndRadius: 15,
-          },
-          draggableIcon: {
-            backgroundColor: "black",
-            width: 70,
-          },
-          container: {
-            borderTopEndRadius: 15,
-            borderTopStartRadius: 15,
-           
-           
-
-          },
-        }}
-      >
-        <View style={{flex:1}}>
-          <View style={{ marginTop: 5, marginBottom: 15 }}>
-            <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
-              Month
-            </Text>
-          </View>
-
-
-          <TouchableOpacity
-         onPress={() => {refRBSheet3.current.close()}}
-
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 15,
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-           
-            position:"absolute",
-            top:-5,
-            right:5
-          }}
-        >
-                   <Entypo name="cross" size={24} color="grey" />
-
-        </TouchableOpacity>
-
-
-
-
-          <View style={styles.selectorItemContainer}>
-            
-            
-
-
-
-
-
-
-
-
-
-            <FlatList
-            
-              data={daysInMonth()}
-              contentContainerStyle={{ paddingBottom: 400 }}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                onPress={() => [refRBSheet3.current.close(),setselectedDay(item),filterDataFuntion(selectedYear,selectedMonth,item)]}
-
-                  style={
-                    selectedDay === item ? styles.selecedItem : styles.selecorItem
-                  }
-                >
-                  <Text
-                    style={[
-                      { fontSize: 17 },
-
-                      selectedDay != item
-                        ? { color: "rgba(97, 96, 96, 0.79)" }
-                        : { color: "white" },
-                    ]}
-                  >
-                    {item}
-                  </Text>
-                  <AntDesign name="checkcircle" size={24} color="white" />
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-        </View>
-      </RBSheet>
-
-
-
-
-
-
-
-
-
-
-{/* 
-*************************
-*****Header*************
-***************************** */}
-
-<View style={{display:"flex",flexDirection:"row", backgroundColor:"white"}}>
-
-<Feather onPress={() => navigation.openDrawer()}  style={{flex:1,alignSelf:"center",paddingHorizontal:2}} name="menu" size={25} color="rgb(0, 172, 194)" />
-
-
-
-
-<View style={{
-          display: "flex",
-          flexDirection: "row",
-          marginHorizontal: 10,
-          margin: 15,
-          flex:20,
-          // justifyContent:"space-between"
-        }}>
-
-
-
-        <TouchableOpacity
-          onPress={() => refRBSheet1.current.open()}
-          
-          style={[{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 3,
-            borderColor: "rgb(0, 172, 194)",
-            borderWidth: 0.3,
-            borderRadius: 15,
-            maxWidth: 800,
-            justifyContent: "center",
-            paddingHorizontal: 10,
-            marginHorizontal: 10,
-            
-          },Platform.OS === "web" ? {paddingHorizontal:15 } : { paddingHorizontal: 10, }]}
-        >
-          <Text style={{ fontSize: 17,color:"rgb(0, 172, 194)" }}>{selectedYear}</Text>
-          <Entypo  name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => refRBSheet2.current.open()}
-          style={[{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 3,
-            borderColor: "rgb(0, 172, 194)",
-            borderWidth: 0.3,
-            borderRadius: 15,
-            maxWidth: 200,
-            justifyContent: "center",
-            paddingHorizontal: 10,
-            
-          },Platform.OS === "web" ? {paddingHorizontal:15 } : { paddingHorizontal: 10, }]}
-        >
-          <Text style={{ fontSize: 17 ,color:"rgb(0, 172, 194)"}}>{selectedMonth}</Text>
-          <Entypo  name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-        </TouchableOpacity>
-
-
-        <TouchableOpacity
-          onPress={() => refRBSheet3.current.open()}
-          style={[{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 3,
-            borderColor: "rgb(0, 172, 194)",
-            borderWidth: 0.3,
-            borderRadius: 15,
-            maxWidth: 200,
-            justifyContent: "center",
-            paddingHorizontal: 10,
-            marginHorizontal: 10,
-
-            
-          },Platform.OS === "web" ? {paddingHorizontal:15 } : { paddingHorizontal: 10, }]}
-        >
-          <Text  style={{ fontSize: 17 ,color:"rgb(0, 172, 194)"}}>{selectedDay}</Text>
-          <Entypo  name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-        </TouchableOpacity>
-
-        
-{/* ***********
-if date is not today then today button for set date to today*****
-********** */}
-
-
-        {(String(selectedDay).padStart(2,"0")+"-"+String(selectedMonth)+"-"+String(selectedYear))===(String(dt.getDate()).padStart(2,"0")+"-"+String(monthNames[(dt.getMonth())])+"-"+String(dt.getFullYear()))?
-        <Text></Text>:
+          (String(selectedDay).padStart(2,"0")+"-"+String(selectedMonth)+"-"+String(selectedYear))===(String(dt.getDate()).padStart(2,"0")+"-"+String(monthNames[(dt.getMonth())])+"-"+String(dt.getFullYear()))?
+        <></>:
         
         <TouchableOpacity
           onPress={() => [
@@ -670,7 +272,26 @@ if date is not today then today button for set date to today*****
           <Text  style={{ fontSize: 17 ,color:"#fff"}}>Today</Text>
           
         </TouchableOpacity>
-            }
+            
+
+
+        ]}
+      />
+
+
+
+
+
+
+
+
+        
+{/* ***********
+if date is not today then today button for set date to today*****
+********** */}
+
+
+        
 
         
 
@@ -681,9 +302,38 @@ if date is not today then today button for set date to today*****
 
 
       </View>
-</View>
 
 
+)
+
+}
+
+
+
+
+
+
+
+
+
+// ***********************
+// **************************** Return function*********************
+// ***********************************
+
+
+
+  return (
+
+
+
+    <SafeAreaView style={styles.container}>
+
+
+
+
+
+<HeaderAndRbSheet/>
+  
 
 
 
@@ -854,7 +504,7 @@ if date is not today then today button for set date to today*****
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 5,
+   
   },
   header: {
     display: "flex",

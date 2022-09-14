@@ -33,6 +33,8 @@ import {
   MenuOption,
   MenuTrigger,
 } from "react-native-popup-menu";
+import HeaderFilterItem from "../../components/GlobalComponents/HeaderFilterItem";
+import HeaderforComponents from "../../components/GlobalComponents/HeaderForComponents";
 
 export default function Home({ navigation }) {
   var data = visitorsdata;
@@ -59,6 +61,8 @@ export default function Home({ navigation }) {
     "November",
     "December",
   ];
+
+  const ratingList = ["All", "⭐⭐⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐", "⭐⭐", "⭐"];
 
   // ************states for month and year*****************
   const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
@@ -125,230 +129,40 @@ export default function Home({ navigation }) {
   const HeaderAndRbSHeet = () => {
     return (
       <View>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            backgroundColor: "white",
-          }}
-        >
-          {/* ******
-           *******Bottom sheet popup 1 for year selection**********
-           ******** */}
+        <HeaderforComponents
+          item={[
+            <HeaderFilterItem
+              filterName={"Year"}
+              FilterList={[2021, 2022, 2023]}
+              filterValue={selectedYear}
+              filerOnSelectionFunctions={(e) => {
+                setSelectedYear(e);
+                setSelectedRating("All");
+                filterDataFunction("All", e, selectedMonth);
+              }}
+            />,
+            <HeaderFilterItem
+              filterName={"Month"}
+              FilterList={monthNames}
+              filterValue={selectedMonth}
+              filerOnSelectionFunctions={(e) => {
+                setselectedMonth(e);
+                setSelectedRating("All");
+                filterDataFunction("All", selectedYear, e);
+              }}
+            />,
 
-          <RBSheet
-            ref={refRBSheet1}
-            closeOnDragDown={true}
-            closeOnPressMask={true}
-            height={400}
-            customStyles={rbSheetandBtnstyles.rbSheetStyle}
-          >
-            <View style={{ flex: 1 }}>
-              <RBSheetHeader name={"Year"} />
-
-              <TouchableOpacity
-                onPress={() => {
-                  refRBSheet1.current.close();
-                }}
-                style={rbSheetandBtnstyles.modelClose}
-              >
-                <Entypo name="cross" size={24} color="grey" />
-              </TouchableOpacity>
-
-              <View style={rbSheetandBtnstyles.selectorItemContainer}>
-                <FlatList
-                  data={[2020, 2021, 2022, 2023]}
-                  contentContainerStyle={{ paddingBottom: 400 }}
-                  renderItem={({ item }) => (
-                    <TouchableOpacity
-                      onPress={() => [
-                        refRBSheet1.current.close(),
-                        setSelectedYear(item),
-                        filterDataFunction("All", item, selectedMonth),
-                      ]}
-                    >
-                      <RBSheetListItem value={selectedYear} item={item} />
-                    </TouchableOpacity>
-                  )}
-                />
-              </View>
-            </View>
-          </RBSheet>
-
-          {/* ******
-           *******Bottom sheet popup 2 for Month selection**********
-           ******** */}
-
-          <RBSheet
-            ref={refRBSheet2}
-            closeOnDragDown={true}
-            closeOnPressMask={true}
-            height={650}
-            customStyles={rbSheetandBtnstyles.rbSheetStyle}
-          >
-            <View style={{ flex: 1 }}>
-              <RBSheetHeader name={"Month"} />
-
-              <TouchableOpacity
-                onPress={() => {
-                  refRBSheet2.current.close();
-                }}
-                style={rbSheetandBtnstyles.modelClose}
-              >
-                <Entypo name="cross" size={24} color="grey" />
-              </TouchableOpacity>
-
-              <View style={rbSheetandBtnstyles.selectorItemContainer}>
-                <FlatList
-                  data={monthNames}
-                  contentContainerStyle={{ paddingBottom: 400 }}
-                  renderItem={({ item }) => (
-                    <TouchableOpacity
-                      onPress={() => [
-                        refRBSheet2.current.close(),
-                        setselectedMonth(item),
-                        filterDataFunction("All", selectedYear, item),
-                      ]}
-                    >
-                      <RBSheetListItem value={selectedMonth} item={item} />
-                    </TouchableOpacity>
-                  )}
-                />
-              </View>
-            </View>
-          </RBSheet>
-
-          {/* ******
-           *******Bottom sheet popup 3 for Rating selection**********
-           ******** */}
-
-          <RBSheet
-            ref={refRBSheet3}
-            closeOnDragDown={true}
-            closeOnPressMask={true}
-            height={650}
-            customStyles={rbSheetandBtnstyles.rbSheetStyle}
-          >
-            <View style={{ flex: 1 }}>
-              <RBSheetHeader name={"Rating"} />
-
-              <TouchableOpacity
-                onPress={() => {
-                  refRBSheet3.current.close();
-                }}
-                style={rbSheetandBtnstyles.modelClose}
-              >
-                <Entypo name="cross" size={24} color="grey" />
-              </TouchableOpacity>
-
-              <View style={rbSheetandBtnstyles.selectorItemContainer}>
-                <TouchableOpacity
-                  onPress={() => [
-                    refRBSheet3.current.close(),
-                    setSelectedRating("All"),
-                    filterDataFunction("All", selectedYear, selectedMonth),
-                  ]}
-                >
-                  <RBSheetListItem value={selectedRating} item={"All"} />
-                </TouchableOpacity>
-
-                <FlatList
-                  data={["⭐⭐⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐", "⭐⭐", "⭐"]}
-                  contentContainerStyle={{ paddingBottom: 400 }}
-                  renderItem={({ item }) => (
-                    <TouchableOpacity
-                      onPress={() => [
-                        refRBSheet3.current.close(),
-                        setSelectedRating(item),
-                        filterDataFunction(item, selectedYear, selectedMonth),
-                      ]}
-                    >
-                      <RBSheetListItem value={selectedRating} item={item} />
-                    </TouchableOpacity>
-                  )}
-                />
-              </View>
-            </View>
-          </RBSheet>
-
-          <Feather
-            onPress={() => navigation.openDrawer()}
-            style={{ flex: 1, alignSelf: "center", paddingHorizontal: 2 }}
-            name="menu"
-            size={25}
-            color="rgb(0, 172, 194)"
-          />
-
-          {/* *********First Line********* */}
-
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              marginHorizontal: 10,
-              margin: 15,
-              flex: 20,
-              // justifyContent:"space-between"
-            }}
-          >
-            <TouchableOpacity
-              onPress={() => refRBSheet1.current.open()}
-              style={[
-                rbSheetandBtnstyles.filterbtn,
-                Platform.OS === "web"
-                  ? { paddingHorizontal: 15 }
-                  : { paddingHorizontal: 10 },
-              ]}
-            >
-              <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
-                {selectedYear}
-              </Text>
-              <Entypo name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => refRBSheet2.current.open()}
-              style={[
-                rbSheetandBtnstyles.filterbtn,
-                Platform.OS === "web"
-                  ? { paddingHorizontal: 15 }
-                  : { paddingHorizontal: 10 },
-              ]}
-            >
-              <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
-                {/* {selectedMonth} */}
-
-                {selectedMonth}
-              </Text>
-              <Entypo name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => refRBSheet3.current.open()}
-              style={[
-                rbSheetandBtnstyles.filterbtn,
-                Platform.OS === "web"
-                  ? { paddingHorizontal: 15 }
-                  : { paddingHorizontal: 10 },
-              ]}
-            >
-              <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
-                {selectedRating === "All" ? (
-                  <AntDesign
-                    style={{ paddingHorizontal: 5 }}
-                    name="star"
-                    size={20}
-                    color="rgb(0, 172, 194)"
-                  />
-                ) : (
-                  <Text></Text>
-                )}
-                {selectedRating}
-              </Text>
-              <Entypo name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-            </TouchableOpacity>
-          </View>
-        </View>
+            <HeaderFilterItem
+              filterName={"Rating"}
+              FilterList={ratingList}
+              filterValue={selectedRating}
+              filerOnSelectionFunctions={(e) => {
+                setSelectedRating(e);
+                filterDataFunction(e, selectedYear, selectedMonth);
+              }}
+            />,
+          ]}
+        />
 
         {/* *********Second Line********* */}
         {/* *********For seleted units*********** */}
@@ -420,22 +234,6 @@ export default function Home({ navigation }) {
 
   return (
     <View style={[styles.safeAreaViewStyle]}>
-      <TouchableOpacity
-        onPress={() => navigation.openDrawer()}
-        style={{ position: "absolute", top: 15, left: 10, zIndex: 1 }}
-      >
-        <Feather name="menu" size={24} color="white" />
-      </TouchableOpacity>
-
-      {/* 
-
-      <HeaderForMobile
-        getMonthYear={getMonthYear}
-        data={getFields("visitor_name", data)}
-        getFields={getFields}
-        filterData={filterData}
-      /> */}
-
       <HeaderAndRbSHeet />
 
       <FlatList
@@ -479,6 +277,4 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
   },
-
-  
 });

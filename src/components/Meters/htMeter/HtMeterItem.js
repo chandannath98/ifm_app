@@ -11,7 +11,11 @@ const HTMeterItem = ( props ) => {
     const navigation = useNavigation();
 
 
-// var item=props.item
+    
+
+
+
+    
 
   return (
     
@@ -41,7 +45,7 @@ const HTMeterItem = ( props ) => {
           <View style={[styles.listing_inline_first_row,styles.infomationLine]}>
             <Text style={styles.listing_top_line}>
               {" "}
-              01/05/2022
+              {props.item.date}
             </Text>
             {/* <Text> {item.Date} </Text> */}
           </View>
@@ -49,13 +53,14 @@ const HTMeterItem = ( props ) => {
 
           <View style={styles.listing_inline_second_row}>
             {/* <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text> */}
-            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> 10:10 AM</Text></Text>
+            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {props.item.time}</Text></Text>
             
           </View>
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>KWH Consumed : <Text style={styles.infoValue}> 1250</Text></Text>
-            <Text style={styles.listing_second_line}>KVAH Consumed : <Text style={styles.infoValue}> 1532</Text></Text>
+            <Text style={styles.listing_second_line}>KWH Consumed : <Text style={styles.infoValue}> {200000-props.item.kwh_reading}
+            </Text></Text>
+            <Text style={styles.listing_second_line}>KVAH Consumed : <Text style={styles.infoValue}> {200000-props.item.kvah_reading}</Text></Text>
             
           </View>
 

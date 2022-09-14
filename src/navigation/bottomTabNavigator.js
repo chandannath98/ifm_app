@@ -134,7 +134,7 @@ const BottemTabNav = () => {
             const color = focused ? "rgb(0, 172, 194)" : "grey";
             return <Octicons name="meter" size={25} color={color} />;
           },
-          // headerShown: false,
+          headerShown: false,
           headerTintColor: "white",
           headerStyle: {
             // backgroundColor: "rgb(0, 172, 194)",

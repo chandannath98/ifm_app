@@ -1,7 +1,7 @@
 var DGData=[
     {
      "UNIQUE_ID": "bec2e37b",
-     "Date": "25-04-2022",
+     "Date": "2022/04/25",
      "DG_No": "DG-2",
      "DG_Capacity_KVA": 1010,
      "DG_Start_Time": "12:00:00",
@@ -25,10 +25,10 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "f099b2e5",
-     "Date": "26-04-2022",
+     "Date": "2022/04/26",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
-     "Diesel_Meter_Reading_DateTime": "26-04-2022_10:53:00",
+     "Diesel_Meter_Reading_DateTime": "2022/04/26_10:53:00",
      "Diesel_Issued_for_other_site_Ltrs": 20,
      "Site_Name": "Hamelt_tractor_order_by_Mr_sudama",
      "Balance_Diesel_Ltrs": 1049,
@@ -36,7 +36,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "c62e2613",
-     "Date": "26-04-2022",
+     "Date": "2022/04/26",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "18:24:00",
@@ -55,13 +55,13 @@ var DGData=[
      "Load_KW": 95,
      "PF": 0.99,
      "KWH_Closing_Reading": 84539,
-     "Diesel_Meter_Reading_DateTime": "26-04-2022_18:26:00",
+     "Diesel_Meter_Reading_DateTime": "2022/04/26_18:26:00",
      "Balance_Diesel_Ltrs": 1047,
      "Duty_Technician": "Sandeep"
     },
     {
      "UNIQUE_ID": "630026d7",
-     "Date": "28-04-2022",
+     "Date": "2022/04/26",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "28-04-2022_19:01:42",
@@ -72,7 +72,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3e1ea3f8",
-     "Date": "28-04-2022",
+     "Date": "2022/04/26",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "23:37:00",
@@ -97,7 +97,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "b566a253",
-     "Date": "29-04-2022",
+     "Date": "2022/04/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "29-04-2022_12:31:01",
@@ -108,7 +108,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "f82b9a76",
-     "Date": "29-04-2022",
+     "Date": "2022/04/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "16:28:00",
@@ -133,7 +133,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "4393b16a",
-     "Date": "29-04-2022",
+     "Date": "2022/04/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "29-04-2022_21:07:18",
@@ -144,7 +144,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "c38f60ea",
-     "Date": "30-04-2022",
+     "Date": "2022/04/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "30-04-2022_09:12:22",
@@ -155,7 +155,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "0b52b708",
-     "Date": "17-04-2022",
+     "Date": "2022/05/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "20:54:00",
@@ -168,7 +168,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "0f7c13cb",
-     "Date": "17-04-2022",
+     "Date": "2022/05/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "23:52:00",
@@ -183,7 +183,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e3b2dfa6",
-     "Date": "02-05-2022",
+     "Date": "2022/05/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "02-05-2022_09:32:44",
@@ -194,7 +194,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e7827905",
-     "Date": "03-05-2022",
+     "Date": "2022/05/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "03-05-2022_23:10:07",
@@ -203,7 +203,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "235e72b2",
-     "Date": "04-05-2022",
+     "Date": "2022/05/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "04-05-2022_10:15:24",
@@ -214,7 +214,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3189a27a",
-     "Date": "04-05-2022",
+     "Date": "2022/05/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "14:20:00",
@@ -239,7 +239,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "737c0a36",
-     "Date": "05-05-2022",
+     "Date": "2022/05/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "08:30:00",
@@ -264,7 +264,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e7a03e43",
-     "Date": "06-05-2022",
+     "Date": "2022/05/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "06-05-2022_10:08:34",
@@ -275,7 +275,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3354fbdf",
-     "Date": "06-05-2022",
+     "Date": "2022/05/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "06-05-2022_15:52:18",
@@ -286,7 +286,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3ffc436e",
-     "Date": "07-05-2022",
+     "Date": "2022/06/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "07-05-2022_15:37:59",
@@ -297,7 +297,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "d7092830",
-     "Date": "07-05-2022",
+     "Date": "2022/06/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "22:38:00",
