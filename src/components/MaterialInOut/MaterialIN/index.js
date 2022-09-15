@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
+import { StyleSheet,  View, SafeAreaView, Pressable, TouchableOpacity,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
-import { DGData } from "../../Meters/dgMeter/data";
 import MaterialInItem from "./MaterialInItem";
-import { StatusBar } from "react-native";
+import { MINData } from "./MINData";
+import { useEffect } from "react";
+import HeaderforComponents from "../../GlobalComponents/HeaderForComponents";
+import HeaderFilterItem from "../../GlobalComponents/HeaderFilterItem";
 
 
 
@@ -12,17 +14,92 @@ import { StatusBar } from "react-native";
 // ******************Main Function*************************//
 
 const MaterialIn = ({ navigation, route }) => {
-var data= DGData
+var data= MINData
+
+
+var dt = new Date();
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
+  const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
+  const [filteredData, setFilteredData] = useState(data);
+
+  const filterDataFunction = (year, month) => {
+    var data2 = data.filter((item) => {
+      return (
+        (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
+        (new Date(item.date).getFullYear() === year)
+      );
+    });
+    setFilteredData(data2);
+    return data2;
+  };
+
+  useEffect(() => {
+    filterDataFunction(selectedYear, selectedMonth);
+  }, []);
+
+  const HeaderAndRbSHeet = () => {
+    return (
+      <HeaderforComponents
+        item={[
+          <HeaderFilterItem
+            filterName={"Year"}
+            FilterList={[2021, 2022, 2023]}
+            filterValue={selectedYear}
+            filerOnSelectionFunctions={(e) => {
+              setSelectedYear(e);
+              filterDataFunction(e, selectedMonth);
+            }}
+          />,
+          <HeaderFilterItem
+            filterName={"Month"}
+            FilterList={monthNames}
+            filterValue={selectedMonth}
+            filerOnSelectionFunctions={(e) => {
+              setselectedMonth(e);
+              filterDataFunction(selectedYear, e);
+            }}
+          />,
+        ]}
+      />
+    );
+  };
+
+
+
+
+
+
+
+
+
+
 
   return (
     <SafeAreaView style={styles.container}>
       {/* <StatusBar backgroundColor="white" /> */}
 
+<HeaderAndRbSHeet/>
+
       <FlatList
         style={styles.scrollView}
-        data={data}
+        data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => item.DG_No?<MaterialInItem item={item} />:<View></View>}
+        renderItem={({ item }) => <MaterialInItem item={item} />}
       />
     
 
@@ -48,7 +125,7 @@ var data= DGData
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 5,
+    // marginHorizontal: 5,
   },
   listing_1container: {
     flex: 4,

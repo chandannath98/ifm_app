@@ -56,11 +56,8 @@ const TwoButtonAlert = () =>
   
   return (
     <View style={[styles.listing_container, styles.shadowProp]}>
-      {/* {selectedVisitorsItems.includes(props.item.visitor_name) ? (
-          <AntDesign name="checkcircle" size={15} color="rgb(0, 172, 194)" />
-        ) : (
-          <Text></Text>
-        )} */}
+  
+  
 
       <TouchableOpacity
         style={[styles.listing_1container]}
@@ -72,7 +69,7 @@ const TwoButtonAlert = () =>
       >
         <View style={[styles.listing_inline_first_row, styles.infomationLine]}>
           <Text style={styles.listing_top_line}> {item.Unit_No}</Text>
-          <Text> June-2022 </Text>
+          <Text> {props.item.Month}-{props.item.Year} </Text>
         </View>
 
         <View style={styles.listing_inline_second_row}>

@@ -40,7 +40,7 @@ const MaterialInItem = ( props ) => {
           <View style={[styles.listing_inline_first_row,styles.infomationLine]}>
             <Text style={styles.listing_top_line}>
               {" "}
-              01/05/2022
+              {props.item.date}
             </Text>
             {/* <Text> {item.Date} </Text> */}
           </View>
@@ -48,13 +48,13 @@ const MaterialInItem = ( props ) => {
 
           <View style={styles.listing_inline_second_row}>
             {/* <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text> */}
-            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> 10:10 AM</Text></Text>
+            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {props.item.time_in}</Text></Text>
             
           </View>
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>Gate Pass ID : <Text style={styles.infoValue}> OCMGP452</Text></Text>
-            <Text style={styles.listing_second_line}>Bill No. : <Text style={styles.infoValue}> 452</Text></Text>
+            <Text style={styles.listing_second_line}>Gate Pass ID : <Text style={styles.infoValue}> {props.item.gate_pass_id}</Text></Text>
+            <Text style={styles.listing_second_line}>Bill No. : <Text style={styles.infoValue}> {props.item.bill_no}</Text></Text>
             
           </View>
 

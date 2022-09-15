@@ -1,61 +1,43 @@
 import {
-    Button,
-    Platform,
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    View,
-    FlatList,
-    Pressable,
-  } from "react-native";
 
-  import { AntDesign, Entypo } from "@expo/vector-icons";
-  import { useNavigation } from "@react-navigation/native";
+  Platform,
+  
+  Text,
+  View,
+  FlatList,
  
-  import { useState, useEffect } from "react";
-  import { setfilterdVisitorsData } from "../../redux/actions";
+} from "react-native";
 
-  import { StatusBar } from "expo-status-bar";
-  import { TouchableOpacity } from "react-native";
-  import { Feather } from '@expo/vector-icons';
-  import RBSheet from "react-native-raw-bottom-sheet";
-  import { useRef } from "react";
+import { AntDesign, Entypo } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
+import RBSheet from "react-native-raw-bottom-sheet";
+import { useRef } from "react";
 import { rbSheetandBtnstyles } from "../rbSheetAndBtnStyle";
+
+
+
+
+
+
+
+
+
+
+// *****************Main Function*********************
+const HeaderFilterItem = (props) => {
+
+
+  
+  // ***************Use refs for bottom sheets***************
+
+  const refRBSheet1 = useRef();
+  const filterName = props.filterName;
+
   
 
-
-
-
-
-const HeaderFilterItem=(props)=>{
-
-
-
-// ***************Use refs for bottom sheets***************
-
-const refRBSheet1 = useRef();
-const filterName=props.filterName
-
-// const filerOnSelectionFunctions=()=>{
-    
-// }
-
-
-
-
-
-
-
-
-return(
-
-
-<View>
-
-
-
-
-<RBSheet
+  return (
+    <View>
+      <RBSheet
         ref={refRBSheet1}
         closeOnDragDown={true}
         closeOnPressMask={true}
@@ -72,54 +54,48 @@ return(
           container: {
             borderTopEndRadius: 15,
             borderTopStartRadius: 15,
-           
-           
-
           },
         }}
       >
-        <View style={{flex:1}}>
+        <View style={{ flex: 1 }}>
           <View style={{ marginTop: 5, marginBottom: 15 }}>
             <Text style={{ alignSelf: "center", fontSize: 17, color: "grey" }}>
               {filterName}
-              
             </Text>
           </View>
 
-
           <TouchableOpacity
-         onPress={() => {refRBSheet1.current.close()}}
+            onPress={() => {
+              refRBSheet1.current.close();
+            }}
+            style={{
+              backgroundColor: "#fff",
+              borderRadius: 15,
+              paddingHorizontal: 15,
+              paddingVertical: 5,
 
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: 15,
-            paddingHorizontal: 15,
-            paddingVertical: 5,
-           
-            position:"absolute",
-            top:-5,
-            right:5
-          }}
-        >
-                   <Entypo name="cross" size={24} color="grey" />
-
-        </TouchableOpacity>
-
-
-
+              position: "absolute",
+              top: -5,
+              right: 5,
+            }}
+          >
+            <Entypo name="cross" size={24} color="grey" />
+          </TouchableOpacity>
 
           <View style={rbSheetandBtnstyles.selectorItemContainer}>
-            
-            
             <FlatList
-            
               data={props.FilterList}
               contentContainerStyle={{ paddingBottom: 100 }}
               renderItem={({ item }) => (
                 <TouchableOpacity
-                  onPress={() => [refRBSheet1.current.close(),props.filerOnSelectionFunctions(item)]}
+                  onPress={() => [
+                    refRBSheet1.current.close(),
+                    props.filerOnSelectionFunctions(item),
+                  ]}
                   style={
-                    props.filterValue === item ? rbSheetandBtnstyles.selecedItem : rbSheetandBtnstyles.selecorItem
+                    props.filterValue === item
+                      ? rbSheetandBtnstyles.selecedItem
+                      : rbSheetandBtnstyles.selecorItem
                   }
                 >
                   <Text
@@ -141,19 +117,10 @@ return(
         </View>
       </RBSheet>
 
-
-
-
-
-
-
- 
-
-    <TouchableOpacity
-    onPress={() => refRBSheet1.current.open()}
-
-          
-          style={[{
+      <TouchableOpacity
+        onPress={() => refRBSheet1.current.open()}
+        style={[
+          {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -165,25 +132,19 @@ return(
             justifyContent: "center",
             paddingHorizontal: 10,
             marginHorizontal: 5,
-            
-          },Platform.OS === "web" ? {paddingHorizontal:15 } : { paddingHorizontal: 10, }]}
-        >
-          <Text style={{ fontSize: 17,color:"rgb(0, 172, 194)" }}>
-            {props.filterValue}
-            </Text>
-          <Entypo  name="chevron-down" size={17} color="rgb(0, 172, 194)" />
-        </TouchableOpacity>
-        
-
-
-
-      </View>
-
-
-)
-
-
-
-}
+          },
+          Platform.OS === "web"
+            ? { paddingHorizontal: 15 }
+            : { paddingHorizontal: 10 },
+        ]}
+      >
+        <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
+          {props.filterValue}
+        </Text>
+        <Entypo name="chevron-down" size={17} color="rgb(0, 172, 194)" />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default HeaderFilterItem;

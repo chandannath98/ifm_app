@@ -11,14 +11,16 @@ const LTMeterItem = ( props ) => {
     const navigation = useNavigation();
 
 
-// var item=props.item
+// console.log(props.item)
+var item=props.item
+
 
   return (
     
       
       <View
         style={[
-           styles.listing_container,
+           styles.listing_container,    
           styles.shadowProp,
         ]}
       >
@@ -33,7 +35,7 @@ const LTMeterItem = ( props ) => {
           onPress={
             () => {
                   navigation.navigate("LT Detail Page", {
-                    item: props.item,
+                    item: item,
                   });
                 }
           }
@@ -41,21 +43,21 @@ const LTMeterItem = ( props ) => {
           <View style={[styles.listing_inline_first_row,styles.infomationLine]}>
             <Text style={styles.listing_top_line}>
               {" "}
-              TR No.-1
+              {item.Tr_No}
             </Text>
-            <Text> 01/05/2022 </Text>
+            <Text> {item.date} </Text>
           </View>
 
 
           <View style={styles.listing_inline_second_row}>
             {/* <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text> */}
-            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> 10:10 AM</Text></Text>
+            <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.Time}</Text></Text>
             
           </View>
 
           <View style={styles.listing_inline_second_row}>
-            <Text style={styles.listing_second_line}>KWH Consumed : <Text style={styles.infoValue}> 1250</Text></Text>
-            <Text style={styles.listing_second_line}>KVAH Consumed : <Text style={styles.infoValue}> 1532</Text></Text>
+            <Text style={styles.listing_second_line}>KWH Consumed : <Text style={styles.infoValue}> {500000-item.KWH_Reading}</Text></Text>
+            <Text style={styles.listing_second_line}>KVAH Consumed : <Text style={styles.infoValue}> {400000-item.KVAH_Reading}</Text></Text>
             
           </View>
 

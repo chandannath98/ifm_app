@@ -155,7 +155,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "0b52b708",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "20:54:00",
@@ -168,7 +168,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "0f7c13cb",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "23:52:00",
@@ -183,7 +183,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e3b2dfa6",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "02-05-2022_09:32:44",
@@ -194,7 +194,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e7827905",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "03-05-2022_23:10:07",
@@ -203,7 +203,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "235e72b2",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "04-05-2022_10:15:24",
@@ -214,7 +214,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3189a27a",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "14:20:00",
@@ -239,7 +239,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "737c0a36",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_No": "DG-1",
      "DG_Capacity_KVA": 500,
      "DG_Start_Time": "08:30:00",
@@ -264,7 +264,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "e7a03e43",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "06-05-2022_10:08:34",
@@ -275,7 +275,7 @@ var DGData=[
     },
     {
      "UNIQUE_ID": "3354fbdf",
-     "Date": "2022/05/28",
+     "Date": "2022/09/28",
      "DG_Capacity_KVA": 0,
      "DG_Run_Time": "00:00:00",
      "Diesel_Meter_Reading_DateTime": "06-05-2022_15:52:18",

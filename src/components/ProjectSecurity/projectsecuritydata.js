@@ -29,8 +29,8 @@ const projectSecurityData=[
        },
        {
         "ID": "abc123xs54",
-        "date_and_Time": "04-03-2022_06:00:00",
-        "date": "2022-04-03",
+        "date_and_Time": "15-03-2022_06:00:00",
+        "date": "2022-15-03",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Name_of_the_guard": "Ee",
@@ -40,72 +40,72 @@ const projectSecurityData=[
        },
        {
         "ID": "abc123xs55",
-        "date_and_Time": "04-05-2022_06:00:00",
-        "date": "2022-05-04",
+        "date_and_Time": "15-05-2022_06:00:00",
+        "date": "2022-05-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "Basement"
        },
        {
         "ID": "abc123xs56",
-        "date_and_Time": "04-05-2022_06:00:00",
-        "date": "2022-05-04",
+        "date_and_Time": "15-05-2022_06:00:00",
+        "date": "2022-05-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "STP_Room"
        },
        {
         "ID": "abc123xs57",
-        "date_and_Time": "04-05-2022_06:00:00",
-        "date": "2022-05-04",
+        "date_and_Time": "15-05-2022_06:00:00",
+        "date": "2022-05-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "Pump_Room"
        },
        {
         "ID": "abc123xs58",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "FCA-00-002-Store"
        },
        {
         "ID": "abc123xs59",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "FCB-00-002-Store"
        },
        {
         "ID": "abc123xs60",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "FCC-00-001-Store"
        },
        {
         "ID": "abc123xs62",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "GBK-Basment-Store"
        },
        {
         "ID": "abc123xs63",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Area_visited": "GBK-Basment-Store"
        },
        {
         "ID": "abc123xs64",
-        "date_and_Time": "04-02-2022_06:00:00",
-        "date": "2022-02-04",
+        "date_and_Time": "15-09-2022_06:00:00",
+        "date": "2022-09-15",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",
         "Name_of_the_guard": "Dharmendra_Singh",
@@ -117,11 +117,11 @@ const projectSecurityData=[
         "Description_of_the_issue": "Test",
         "Assigned_To": "Gulzar",
         "Issue_Resolved": "Yes",
-        "Issue_Resolved_date_and_Time": "04-02-2022_18:43:00"
+        "Issue_Resolved_date_and_Time": "15-09-2022_18:43:00"
        },
        {
         "ID": "abc123xs65",
-        "date_and_Time": "05-02-2022_06:00:00",
+        "date_and_Time": "05-09-2022_06:00:00",
         "date": "2022-05-02",
         "Time": "06:00:00",
         "Project": "One_City_Mohali",

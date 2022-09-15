@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
@@ -8,6 +8,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import ElecMeterItem from "./ElecMeterItem";
 import { ElecData } from "./elecData";
 import { Button } from "native-base";
+import HeaderFilterItem from "../../GlobalComponents/HeaderFilterItem";
+import HeaderforComponents from "../../GlobalComponents/HeaderForComponents";
 
 
 
@@ -23,13 +25,100 @@ const flatList = useRef();
 const moveToTop = () => flatList.current.scrollToIndex({ index: 0 });
 var data= ElecData
 
+var dt = new Date();
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const ltMeterList = ["All", "Tr No-1", "Tr No-2"];
+const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
+const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
+const [filteredData, setFilteredData] = useState(data);
+
+
+
+
+const filterDataFunction = ( year, month) => {
+ 
+    var data2 = data.filter((item) => {
+      return (
+        
+        item.Month === month &
+        (item.Year === year)
+      );
+    });
+    setFilteredData(data2);
+    
+  
+};
+
+useEffect(() => {
+  filterDataFunction(selectedYear, selectedMonth);
+}, []);
+
+// *****************Header **********************
+const HeaderAndRbSHeet = () => {
+  return (
+    <HeaderforComponents
+      item={[
+        <HeaderFilterItem
+          filterName={"Year"}
+          FilterList={[2021, 2022, 2023]}
+          filterValue={selectedYear}
+          filerOnSelectionFunctions={(e) => {
+            setSelectedYear(e);
+            filterDataFunction(e, selectedMonth);
+          }}
+        />,
+        <HeaderFilterItem
+          filterName={"Month"}
+          FilterList={monthNames}
+          filterValue={selectedMonth}
+          filerOnSelectionFunctions={(e) => {
+            setselectedMonth(e);
+            filterDataFunction(selectedYear, e);
+          }}
+        />,
+       
+      ]}
+    />
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <SafeAreaView style={styles.container}>
+      <HeaderAndRbSHeet/>
       <FlatList
       ref={flatList}
         style={styles.scrollView}
-        data={data}
+        data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
         renderItem={({ item }) => <ElecMeterItem item={item} editMode={editMode}/>}
       />
@@ -50,65 +139,9 @@ var data= ElecData
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 5,
+   
   },
-  listing_1container: {
-    flex: 4,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    // backgroundColor:"white",
-  },
-  
-
-  listing_container: {
-    backgroundColor: "white",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-
-    paddingVertical: 10,
-
-    marginHorizontal: 10,
-    paddingHorizontal: 10,
-    borderRadius:15,
-    marginVertical: 2,
-    // borderColor:"grey",
-  },
-
-  
-
-  shadowProp: {
-    shadowColor: "grey",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 5,
-  },
-
-
-  listing_inline_first_row: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  listing_top_line: {
-    fontSize: 17,
-    fontWeight:"bold"
-    // fontFamily: 'monospace'
-  },
-  listing_second_line: {
-    color: "grey",
-  },
- 
-  infomationLine:{
-    paddingVertical:5
-  },
-  infoValue:{
-    color:"rgb(0, 172, 194)"
-  }
-  ,addButton:{
+  addButton:{
     position:"absolute",
     right:5,
     bottom:15,

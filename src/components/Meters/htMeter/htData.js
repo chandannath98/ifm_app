@@ -1,6 +1,6 @@
 const htData=[
     {
-     "date": "2022/02/19",
+     "date": "2022/09/19",
      "time": "09:08:00",
      "voltage_r": 5833,
      "voltage_y": 5840,
@@ -12,7 +12,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/19",
+     "date": "2022/09/19",
      "time": "16:12:00",
      "voltage_r": 6023,
      "voltage_y": 6003,
@@ -24,7 +24,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/20",
+     "date": "2022/09/20",
      "time": "21:13:00",
      "voltage_r": 6056,
      "voltage_y": 6024,
@@ -36,7 +36,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/21",
+     "date": "2022/09/21",
      "time": "21:10:00",
      "voltage_r": 6117,
      "voltage_y": 6027,
@@ -48,7 +48,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/22",
+     "date": "2022/09/22",
      "time": "09:29:11",
      "voltage_r": 5886,
      "voltage_y": 5860,
@@ -60,7 +60,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/22",
+     "date": "2022/09/22",
      "time": "19:00:03",
      "voltage_r": 5963,
      "voltage_y": 5967,
@@ -72,7 +72,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/23",
+     "date": "2022/09/23",
      "time": "09:20:00",
      "voltage_r": 5992,
      "voltage_y": 5891,
@@ -84,7 +84,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/23",
+     "date": "2022/09/23",
      "time": "18:32:42",
      "voltage_r": 5923,
      "voltage_y": 5985,
@@ -96,7 +96,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/24",
+     "date": "2022/09/24",
      "time": "06:05:00",
      "voltage_r": 6143,
      "voltage_y": 6125,
@@ -108,7 +108,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/24",
+     "date": "2022/09/24",
      "time": "09:28:13",
      "voltage_r": 5944,
      "voltage_y": 5908,
@@ -120,7 +120,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/24",
+     "date": "2022/09/24",
      "time": "18:25:04",
      "voltage_r": 6020,
      "voltage_y": 6000,
@@ -132,7 +132,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/25",
+     "date": "2022/09/25",
      "time": "06:01:00",
      "voltage_r": 6189,
      "voltage_y": 6186,
@@ -144,7 +144,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/25",
+     "date": "2022/09/25",
      "time": "16:20:45",
      "voltage_r": 6003,
      "voltage_y": 5992,
@@ -156,7 +156,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/26",
+     "date": "2022/09/26",
      "time": "06:00:00",
      "voltage_r": 6171,
      "voltage_y": 6149,
@@ -168,7 +168,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/27",
+     "date": "2022/09/27",
      "time": "06:58:11",
      "voltage_r": 6194,
      "voltage_y": 6176,
@@ -180,7 +180,7 @@ const htData=[
      "duty_technician": "Sandeep"
     },
     {
-     "date": "2022/02/28",
+     "date": "2022/09/28",
      "time": "06:38:56",
      "voltage_r": 6147,
      "voltage_y": 6154,

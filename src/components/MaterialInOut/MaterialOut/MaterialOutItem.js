@@ -30,23 +30,27 @@ const MaterialOutItem = (props) => {
           });
         }}
       >
+
+
         <View style={[styles.listing_inline_first_row, styles.infomationLine]}>
-          <Text style={styles.listing_top_line}> 01/05/2022</Text>
+          <Text style={styles.listing_top_line}> {props.item.out_date}</Text>
           {/* <Text> {item.Date} </Text> */}
         </View>
 
         <View style={styles.listing_inline_second_row}>
           {/* <Text style={styles.listing_second_line}>Time : <Text style={styles.infoValue}> {item.DG_Start_Time}</Text></Text> */}
           <Text style={styles.listing_second_line}>
-            Time : <Text style={styles.infoValue}> 10:10 AM</Text>
+            Time : <Text style={styles.infoValue}> {props.item.time}</Text>
           </Text>
         </View>
 
         <View style={[styles.listing_inline_second_row]}>
           <Text style={[styles.listing_second_line]}>
-            Material : <Text style={[styles.infoValue]}>MS BINDING WIRE</Text>
+            Material : <Text style={[styles.infoValue]}>{props.item.item_name}</Text>
           </Text>
         </View>
+
+
       </TouchableOpacity>
     </View>
   );

@@ -230,7 +230,7 @@ return(
             }}
           />,
           <HeaderFilterItem
-            filterName={"Dayes"}
+            filterName={"Days"}
             FilterList={daysInMonth()}
             filterValue={selectedDay}
             filerOnSelectionFunctions={(e) => {
@@ -248,7 +248,7 @@ return(
             setSelectedYear(dt.getFullYear()),
             setselectedMonth(monthNames[(dt.getMonth())]),
             setselectedDay(dt.getDate()),
-            filterDataFuntion(dt.getFullYear(),(dt.getMonth()),dt.getDate())
+            filterDataFuntion(dt.getFullYear(),(monthNames[(dt.getMonth())]),dt.getDate())
             
           ]}
           style={[{
@@ -569,40 +569,6 @@ const styles = StyleSheet.create({
 
 
 
-
-  selecorItem: {
-    paddingVertical: 7,
-    marginVertical: 3,
-    borderColor: "grey",
-    borderWidth: 0.3,
-    paddingHorizontal: 10,
-    borderRadius: 15,
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-  },
-  selecedItem: {
-    paddingVertical: 7,
-    marginVertical: 3,
-    borderColor: "grey",
-    borderWidth: 0.3,
-    paddingHorizontal: 10,
-    borderRadius: 15,
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    backgroundColor: "rgb(0, 172, 194)",
-  },
-  selectorItemContainerforProject: {
-    paddingHorizontal: 20,
-    
-    
-  },
-  selectorItemContainer: {
-    paddingHorizontal: 20,
-    flex:1
-    
-  },
 
 
 

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import {
   StyleSheet,
-  Text,
   View,
   SafeAreaView,
-  Pressable,
   TouchableOpacity,
-  TouchableHighlight,
   FlatList,
 } from "react-native";
 import { DGData } from "./data";
@@ -110,6 +107,7 @@ const DGMeter = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+
       <HeaderAndRbSHeet />
 
       <FlatList
@@ -132,6 +130,16 @@ const DGMeter = ({ navigation, route }) => {
     </SafeAreaView>
   );
 };
+
+
+
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

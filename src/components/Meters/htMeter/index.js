@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
 import HTMeterItem from "./HtMeterItem";
@@ -8,15 +13,12 @@ import { useEffect } from "react";
 import HeaderforComponents from "../../GlobalComponents/HeaderForComponents";
 import HeaderFilterItem from "../../GlobalComponents/HeaderFilterItem";
 
-
-
 // ******************Main Function*************************//
 
 const HTMeter = ({ navigation, route }) => {
-var data= htData
+  var data = htData;
 
-
-var dt = new Date();
+  var dt = new Date();
   const monthNames = [
     "January",
     "February",
@@ -32,32 +34,24 @@ var dt = new Date();
     "December",
   ];
 
-  
-
   const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
   const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
   const [filteredData, setFilteredData] = useState(data);
 
   const filterDataFunction = (year, month) => {
-   
-      var data2 = data.filter((item) => {
-       
-        return (
-          
-          (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
-          (new Date(item.date).getFullYear() === year)
-        );
-      });
-      setFilteredData(data2);
-      return data2;
-    
+    var data2 = data.filter((item) => {
+      return (
+        (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
+        (new Date(item.date).getFullYear() === year)
+      );
+    });
+    setFilteredData(data2);
+    return data2;
   };
 
   useEffect(() => {
     filterDataFunction(selectedYear, selectedMonth);
   }, []);
-
-
 
   const HeaderAndRbSHeet = () => {
     return (
@@ -69,7 +63,7 @@ var dt = new Date();
             filterValue={selectedYear}
             filerOnSelectionFunctions={(e) => {
               setSelectedYear(e);
-              filterDataFunction( e, selectedMonth);
+              filterDataFunction(e, selectedMonth);
             }}
           />,
           <HeaderFilterItem
@@ -81,23 +75,14 @@ var dt = new Date();
               filterDataFunction(selectedYear, e);
             }}
           />,
-        
         ]}
       />
     );
   };
 
-
-
-
-
-
-
-
   return (
     <SafeAreaView style={styles.container}>
-
-<HeaderAndRbSHeet/>
+      <HeaderAndRbSHeet />
 
       <FlatList
         style={styles.scrollView}
@@ -105,21 +90,15 @@ var dt = new Date();
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
         renderItem={({ item }) => <HTMeterItem item={item} />}
       />
-    
 
-      <TouchableOpacity style={styles.addButton} onPress={() => {
+      <TouchableOpacity
+        style={styles.addButton}
+        onPress={() => {
           navigation.navigate("VisitorsForm");
-        }}>
-      <AntDesign
-        
-        name="pluscircle"
-        size={55}
-        color="rgb(0, 172, 194)"
-        
-      />
+        }}
+      >
+        <AntDesign name="pluscircle" size={55} color="rgb(0, 172, 194)" />
       </TouchableOpacity>
-    
-
     </SafeAreaView>
   );
 };
@@ -136,7 +115,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     // backgroundColor:"white",
   },
-  
 
   listing_container: {
     backgroundColor: "white",
@@ -149,12 +127,10 @@ const styles = StyleSheet.create({
 
     marginHorizontal: 10,
     paddingHorizontal: 10,
-    borderRadius:15,
+    borderRadius: 15,
     marginVertical: 2,
     // borderColor:"grey",
   },
-
-  
 
   shadowProp: {
     shadowColor: "grey",
@@ -164,7 +140,6 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-
   listing_inline_first_row: {
     display: "flex",
     flexDirection: "row",
@@ -172,26 +147,26 @@ const styles = StyleSheet.create({
   },
   listing_top_line: {
     fontSize: 17,
-    fontWeight:"bold"
+    fontWeight: "bold",
     // fontFamily: 'monospace'
   },
   listing_second_line: {
     color: "grey",
   },
- 
-  infomationLine:{
-    paddingVertical:5
+
+  infomationLine: {
+    paddingVertical: 5,
   },
-  infoValue:{
-    color:"rgb(0, 172, 194)"
-  }
-  ,addButton:{
-    position:"absolute",
-    right:5,
-    bottom:15,
-    backgroundColor:"white",
-    borderRadius:50
-  }
+  infoValue: {
+    color: "rgb(0, 172, 194)",
+  },
+  addButton: {
+    position: "absolute",
+    right: 5,
+    bottom: 15,
+    backgroundColor: "white",
+    borderRadius: 50,
+  },
 });
 
 export default HTMeter;

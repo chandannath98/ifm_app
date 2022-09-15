@@ -172,6 +172,8 @@ const BottemTabNav = () => {
         name={"Maaterial In/Out"}
         component={MaterialInOut}
         options={{
+          headerShown: false,
+
           tabBarIcon: ({ focused, size }) => {
             // const icon=focused?"bell":"home";
             const color = focused ? "rgb(0, 172, 194)" : "grey";

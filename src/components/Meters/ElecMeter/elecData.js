@@ -1,6 +1,6 @@
 var ElecData=[
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-00-001",
@@ -14,7 +14,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-00-002",
@@ -28,7 +28,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-00-003",
@@ -42,7 +42,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-00-004",
@@ -55,7 +55,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-01-001",
@@ -69,7 +69,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-01-002",
@@ -83,7 +83,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-01-003",
@@ -97,7 +97,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-01-004",
@@ -111,7 +111,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-02-001",
@@ -125,7 +125,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-02-002",
@@ -139,7 +139,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-02-003",
@@ -153,7 +153,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-02-004",
@@ -167,7 +167,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-03-001",
@@ -181,7 +181,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-03-002",
@@ -195,7 +195,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-03-003",
@@ -209,7 +209,7 @@ var ElecData=[
      "DG_Consumed_Units": 11
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-03-004",
@@ -223,7 +223,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-04-001",
@@ -236,7 +236,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-04-002",
@@ -250,7 +250,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-04-003",
@@ -264,7 +264,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-04-004",
@@ -277,7 +277,7 @@ var ElecData=[
      "DG_Consumed_Units": 12
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-05-001",
@@ -291,14 +291,14 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "Common Area",
      "Unit_No": "Borewell",
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-05-003",
@@ -312,7 +312,7 @@ var ElecData=[
      "DG_Consumed_Units": 7
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-05-004",
@@ -326,7 +326,7 @@ var ElecData=[
      "DG_Consumed_Units": 7
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-06-001",
@@ -340,7 +340,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-06-002",
@@ -354,7 +354,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-06-003",
@@ -368,7 +368,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-06-004",
@@ -382,7 +382,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-07-001",
@@ -396,7 +396,7 @@ var ElecData=[
      "DG_Consumed_Units": 15
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-07-002",
@@ -410,7 +410,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-07-003",
@@ -424,7 +424,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCA",
      "Unit_No": "CCA-07-004",
@@ -438,7 +438,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-00-001",
@@ -452,7 +452,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-00-002",
@@ -466,7 +466,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-00-003",
@@ -480,7 +480,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-00-004",
@@ -494,7 +494,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-01-001",
@@ -508,7 +508,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-01-002",
@@ -522,7 +522,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-01-003",
@@ -536,7 +536,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-01-004",
@@ -550,7 +550,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-02-001",
@@ -563,7 +563,7 @@ var ElecData=[
      "DG_Consumed_Units": 7
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-02-002",
@@ -577,7 +577,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-02-003",
@@ -591,7 +591,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-02-004",
@@ -603,7 +603,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-03-001",
@@ -617,7 +617,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-03-002",
@@ -631,7 +631,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-03-003",
@@ -645,7 +645,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-03-004",
@@ -659,7 +659,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-04-001",
@@ -672,7 +672,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-04-002",
@@ -684,7 +684,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-04-003",
@@ -697,7 +697,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-04-004",
@@ -710,7 +710,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-05-001",
@@ -724,7 +724,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-05-002",
@@ -737,7 +737,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-05-003",
@@ -750,7 +750,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-05-004",
@@ -764,7 +764,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-06-001",
@@ -778,7 +778,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-06-002",
@@ -791,7 +791,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-06-003",
@@ -805,7 +805,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-06-004",
@@ -819,7 +819,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-07-001",
@@ -832,7 +832,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-07-002",
@@ -846,7 +846,7 @@ var ElecData=[
      "DG_Consumed_Units": 5
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCB",
      "Unit_No": "CCB-07-004",
@@ -860,7 +860,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-00-001",
@@ -874,7 +874,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-00-002",
@@ -888,7 +888,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-00-003",
@@ -902,7 +902,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-00-004",
@@ -916,7 +916,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-01-001",
@@ -930,7 +930,7 @@ var ElecData=[
      "DG_Consumed_Units": 14
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-01-002",
@@ -944,7 +944,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-01-003",
@@ -958,7 +958,7 @@ var ElecData=[
      "DG_Consumed_Units": 14
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-01-004",
@@ -972,7 +972,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-02-001",
@@ -986,7 +986,7 @@ var ElecData=[
      "DG_Consumed_Units": 9
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-02-002",
@@ -1000,7 +1000,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-02-003",
@@ -1013,7 +1013,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-02-004",
@@ -1027,7 +1027,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-03-001",
@@ -1041,7 +1041,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-03-002",
@@ -1055,7 +1055,7 @@ var ElecData=[
      "DG_Consumed_Units": 11
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-03-003",
@@ -1069,7 +1069,7 @@ var ElecData=[
      "DG_Consumed_Units": 9
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-03-004",
@@ -1081,7 +1081,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-04-001",
@@ -1095,7 +1095,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-04-002",
@@ -1109,7 +1109,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-04-003",
@@ -1123,7 +1123,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-04-004",
@@ -1137,7 +1137,7 @@ var ElecData=[
      "DG_Consumed_Units": 12
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-05-001",
@@ -1150,7 +1150,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-05-002",
@@ -1163,7 +1163,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-05-003",
@@ -1177,7 +1177,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-05-004",
@@ -1191,7 +1191,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-06-001",
@@ -1205,7 +1205,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-06-002",
@@ -1218,7 +1218,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-06-003",
@@ -1232,7 +1232,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-06-004",
@@ -1245,7 +1245,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-07-001",
@@ -1259,7 +1259,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-07-002",
@@ -1273,7 +1273,7 @@ var ElecData=[
      "DG_Consumed_Units": 21
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-07-003",
@@ -1286,7 +1286,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCC",
      "Unit_No": "CCC-07-004",
@@ -1300,7 +1300,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-00-001",
@@ -1314,7 +1314,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-00-002",
@@ -1328,7 +1328,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-00-003",
@@ -1342,7 +1342,7 @@ var ElecData=[
      "DG_Consumed_Units": 16
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-00-004",
@@ -1356,7 +1356,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-01-001",
@@ -1370,7 +1370,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-01-002",
@@ -1384,7 +1384,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-01-003",
@@ -1398,7 +1398,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-01-004",
@@ -1412,7 +1412,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-02-001",
@@ -1426,7 +1426,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-02-002",
@@ -1440,7 +1440,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-02-003",
@@ -1454,7 +1454,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-02-004",
@@ -1467,7 +1467,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-03-001",
@@ -1481,7 +1481,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-03-002",
@@ -1495,7 +1495,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-03-003",
@@ -1509,7 +1509,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-03-004",
@@ -1523,7 +1523,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-04-001",
@@ -1537,7 +1537,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-04-002",
@@ -1551,7 +1551,7 @@ var ElecData=[
      "DG_Consumed_Units": 9
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-04-003",
@@ -1565,7 +1565,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-04-004",
@@ -1579,7 +1579,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-05-001",
@@ -1592,7 +1592,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-05-002",
@@ -1606,7 +1606,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-05-003",
@@ -1620,7 +1620,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-05-004",
@@ -1634,7 +1634,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-06-001",
@@ -1648,7 +1648,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-06-002",
@@ -1662,7 +1662,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-06-003",
@@ -1676,7 +1676,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-06-004",
@@ -1690,7 +1690,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-07-001",
@@ -1704,7 +1704,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-07-002",
@@ -1718,7 +1718,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-07-003",
@@ -1732,7 +1732,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "CCD",
      "Unit_No": "CCD-07-004",
@@ -1746,7 +1746,7 @@ var ElecData=[
      "DG_Consumed_Units": 13
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Unit_No": "COMMON AREA-1",
      "Sanctioned_Load": 0,
@@ -1754,7 +1754,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Unit_No": "COMMON AREA-Manager Office",
      "Sanctioned_Load": 0,
@@ -1762,7 +1762,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-00-001",
@@ -1771,7 +1771,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-00-002",
@@ -1780,7 +1780,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-00-003",
@@ -1789,7 +1789,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-00-004",
@@ -1803,7 +1803,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-01-001",
@@ -1816,7 +1816,7 @@ var ElecData=[
      "DG_Consumed_Units": 9
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-01-002",
@@ -1830,7 +1830,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-01-003",
@@ -1844,7 +1844,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-01-004",
@@ -1858,7 +1858,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-02-001",
@@ -1866,7 +1866,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-02-002",
@@ -1879,7 +1879,7 @@ var ElecData=[
      "DG_Consumed_Units": 7
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-02-003",
@@ -1891,7 +1891,7 @@ var ElecData=[
      "DG_Consumed_Units": 9
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-02-004",
@@ -1899,7 +1899,7 @@ var ElecData=[
      "Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-03-001",
@@ -1913,7 +1913,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-03-002",
@@ -1927,7 +1927,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-03-003",
@@ -1941,7 +1941,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-03-004",
@@ -1955,7 +1955,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-04-001",
@@ -1969,7 +1969,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-04-002",
@@ -1983,7 +1983,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-04-003",
@@ -1997,7 +1997,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-04-004",
@@ -2011,7 +2011,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-05-001",
@@ -2025,7 +2025,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-05-002",
@@ -2038,7 +2038,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-05-003",
@@ -2052,7 +2052,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-05-004",
@@ -2063,7 +2063,7 @@ var ElecData=[
      "DG_Old_Reading": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-06-001",
@@ -2077,7 +2077,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-06-002",
@@ -2091,7 +2091,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-06-003",
@@ -2105,7 +2105,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-06-004",
@@ -2119,7 +2119,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-07-001",
@@ -2133,7 +2133,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-07-002",
@@ -2147,7 +2147,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-07-003",
@@ -2161,7 +2161,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-07-004",
@@ -2175,7 +2175,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-08-001",
@@ -2189,7 +2189,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-08-002",
@@ -2201,7 +2201,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-08-003",
@@ -2213,7 +2213,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCA",
      "Unit_No": "FCA-08-004",
@@ -2227,7 +2227,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-00-001",
@@ -2241,7 +2241,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-00-002",
@@ -2254,7 +2254,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-00-003",
@@ -2267,7 +2267,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-00-004",
@@ -2281,7 +2281,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-01-001",
@@ -2295,7 +2295,7 @@ var ElecData=[
      "DG_Consumed_Units": 10
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-01-002",
@@ -2309,7 +2309,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-01-003",
@@ -2320,7 +2320,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-01-004",
@@ -2332,7 +2332,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-02-001",
@@ -2345,7 +2345,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-02-002",
@@ -2359,7 +2359,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-02-003",
@@ -2373,7 +2373,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-02-004",
@@ -2387,7 +2387,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-03-001",
@@ -2400,7 +2400,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-03-002",
@@ -2414,7 +2414,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-03-003",
@@ -2427,7 +2427,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-03-004",
@@ -2441,7 +2441,7 @@ var ElecData=[
      "DG_Consumed_Units": 8
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-04-001",
@@ -2455,7 +2455,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-04-002",
@@ -2469,7 +2469,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-04-003",
@@ -2483,7 +2483,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-04-004",
@@ -2497,7 +2497,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-05-001",
@@ -2511,7 +2511,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-05-002",
@@ -2525,7 +2525,7 @@ var ElecData=[
      "DG_Consumed_Units": 2
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-05-003",
@@ -2539,7 +2539,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-05-004",
@@ -2553,7 +2553,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-06-001",
@@ -2566,7 +2566,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-06-002",
@@ -2580,7 +2580,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-06-003",
@@ -2594,7 +2594,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-06-004",
@@ -2607,7 +2607,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-07-001",
@@ -2621,7 +2621,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-07-002",
@@ -2635,7 +2635,7 @@ var ElecData=[
      "DG_Consumed_Units": 60
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-07-003",
@@ -2649,7 +2649,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-07-004",
@@ -2663,7 +2663,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-08-001",
@@ -2677,7 +2677,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-08-002",
@@ -2691,7 +2691,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-08-003",
@@ -2705,7 +2705,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCB",
      "Unit_No": "FCB-08-004",
@@ -2719,7 +2719,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-00-001",
@@ -2733,7 +2733,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-00-002",
@@ -2747,7 +2747,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-00-003",
@@ -2761,7 +2761,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-00-004",
@@ -2774,7 +2774,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-01-001",
@@ -2788,7 +2788,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-01-002",
@@ -2802,7 +2802,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-01-003",
@@ -2816,7 +2816,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-01-004",
@@ -2829,7 +2829,7 @@ var ElecData=[
      "DG_Consumed_Units": 4
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-02-001",
@@ -2843,7 +2843,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-02-002",
@@ -2857,7 +2857,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-02-003",
@@ -2871,7 +2871,7 @@ var ElecData=[
      "DG_Consumed_Units": 3
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-02-004",
@@ -2884,7 +2884,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-03-001",
@@ -2897,7 +2897,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-03-002",
@@ -2911,7 +2911,7 @@ var ElecData=[
      "DG_Consumed_Units": 1
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-03-003",
@@ -2925,7 +2925,7 @@ var ElecData=[
      "DG_Consumed_Units": 6
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-03-004",
@@ -2938,7 +2938,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-04-001",
@@ -2952,7 +2952,7 @@ var ElecData=[
      "DG_Consumed_Units": 7
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-04-002",
@@ -2965,7 +2965,7 @@ var ElecData=[
      "DG_Consumed_Units": 0
     },
     {
-     "Month": "August-2022",
+     "Month": "September","Year": 2022,
      "Project": "Rise",
      "Location": "FCC",
      "Unit_No": "FCC-04-003",
