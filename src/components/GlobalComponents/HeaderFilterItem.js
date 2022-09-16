@@ -117,6 +117,17 @@ const HeaderFilterItem = (props) => {
         </View>
       </RBSheet>
 
+
+
+
+{/* **************Button**************** */}
+
+
+
+
+
+
+
       <TouchableOpacity
         onPress={() => refRBSheet1.current.open()}
         style={[
@@ -128,10 +139,10 @@ const HeaderFilterItem = (props) => {
             borderColor: "rgb(0, 172, 194)",
             borderWidth: 0.3,
             borderRadius: 15,
-            maxWidth: 800,
+            
             justifyContent: "center",
             paddingHorizontal: 10,
-            marginHorizontal: 5,
+            marginHorizontal: 4,
           },
           Platform.OS === "web"
             ? { paddingHorizontal: 15 }
@@ -139,7 +150,12 @@ const HeaderFilterItem = (props) => {
         ]}
       >
         <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
-          {props.filterValue}
+          {/* {
+          String(props.filterValue).length>5&Platform.OS!="web"?String(props.filterValue).substring(0,6):props.filterValue
+          } */}
+          {
+          props.filterValue
+          }
         </Text>
         <Entypo name="chevron-down" size={17} color="rgb(0, 172, 194)" />
       </TouchableOpacity>

@@ -17,6 +17,8 @@ import { useRef } from "react";
 import RBSheet from "react-native-raw-bottom-sheet";
 import HeaderFilterItem from "../GlobalComponents/HeaderFilterItem";
 import HeaderforComponents from "../GlobalComponents/HeaderForComponents";
+import { useDispatch, useSelector } from "react-redux";
+
 
 
 
@@ -27,7 +29,7 @@ import HeaderforComponents from "../GlobalComponents/HeaderForComponents";
 
 const ProjectSecurityListing = ({ navigation, route }) => {
   
- 
+
   // **********All Data**********
   var data = projectSecurityData
 
@@ -44,8 +46,11 @@ const ProjectSecurityListing = ({ navigation, route }) => {
 // ************states for month and year*****************
 const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
 const [selectedMonth, setselectedMonth] = useState(monthNames[(dt.getMonth())]);
+const [hideHeader, setHideHeader] = useState(false);
 
-
+const { selectedVisitorsItems } = useSelector(
+  (state) => state.visitorReducer
+);
 
 
 
@@ -330,9 +335,9 @@ if date is not today then today button for set date to today*****
 
 
 
+{hideHeader?<></>:<HeaderAndRbSheet/>}
 
 
-<HeaderAndRbSheet/>
   
 
 
@@ -485,6 +490,7 @@ if date is not today then today button for set date to today*****
               <ProjectSecurityItems item={item} />
             </View>
           )}
+          onScrollBeginDrag={()=>setHideHeader(true)}
         />
       </View>
 
@@ -577,4 +583,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ProjectSecurityListing;
+export default React.memo(ProjectSecurityListing);

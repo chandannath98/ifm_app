@@ -19,6 +19,7 @@ import HeaderforComponents from "../../GlobalComponents/HeaderForComponents";
 
 const ElecMeter = ({ navigation, route }) => {
 const [editMode, setEditMode] = useState(false);
+const [hideHeader, setHideHeader] = useState(false);
     
 
 const flatList = useRef();
@@ -114,13 +115,15 @@ const HeaderAndRbSHeet = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderAndRbSHeet/>
+      {hideHeader?<></>:<HeaderAndRbSHeet/>}
+
       <FlatList
       ref={flatList}
         style={styles.scrollView}
         data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
         renderItem={({ item }) => <ElecMeterItem item={item} editMode={editMode}/>}
+
       />
     
    {editMode?

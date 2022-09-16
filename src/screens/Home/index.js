@@ -9,11 +9,11 @@ import {
   Pressable,
 } from "react-native";
 import Visitors_List from "../../components/Visitors_View";
-import HeaderForMobile from "../../components/HeaderForMobile";
+
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import VisitorsItem from "../../components/Visitors_View/VisitorsItem";
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import { setfilterdVisitorsData } from "../../redux/actions";
 import { visitorsdata } from "../../components/Visitors_View/data";
 import { StatusBar } from "expo-status-bar";
@@ -35,17 +35,15 @@ import {
 } from "react-native-popup-menu";
 import HeaderFilterItem from "../../components/GlobalComponents/HeaderFilterItem";
 import HeaderforComponents from "../../components/GlobalComponents/HeaderForComponents";
+import { TextInput } from "react-native";
 
-export default function Home({ navigation }) {
+ function Home({ navigation }) {
   var data = visitorsdata;
   var dt = new Date();
 
   // ***************Use refs for bottom sheets***************
 
-  const refRBSheet1 = useRef();
-  const refRBSheet2 = useRef();
-  const refRBSheet3 = useRef();
-  const refRBSheet4 = useRef();
+ 
 
   const monthNames = [
     "January",
@@ -68,8 +66,10 @@ export default function Home({ navigation }) {
   const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
   const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
   const [selectedRating, setSelectedRating] = useState("All");
+const [searchInputVisible,setSearchInputVisible] = useState(false);
+const [searchvalue, setSearchvalue] = useState("");
+  
 
-  // const navigation = useNavigation();
 
   // **************Redux State**************
 
@@ -94,7 +94,31 @@ export default function Home({ navigation }) {
 
   // ****************Filter data function  for filtering data*********
 
-  const filterDataFunction = (rating, year, month) => {
+  var filterDataFunction = (rating, year, month) => {
+    if (rating === "All") {
+      setFilterdVisitorsData(data);
+      var data2 = data.filter((item) => {
+        return (
+          (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
+          (new Date(item.date).getFullYear() === year)
+        );
+      });
+      setFilterdVisitorsData(data2);
+      return data2;
+    } else {
+      var data2 = data.filter((item) => {
+        return (
+          (item.rating === rating) &
+          (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
+          (new Date(item.date).getFullYear() === year)
+        );
+      });
+      setFilterdVisitorsData(data2);
+      return data2;
+    }
+  };
+
+  var filterDataFunction = (rating, year, month,searchvalue) => {
     if (rating === "All") {
       setFilterdVisitorsData(data);
       var data2 = data.filter((item) => {
@@ -130,6 +154,11 @@ export default function Home({ navigation }) {
     return (
       <View>
         <HeaderforComponents
+        searchInputVisible={searchInputVisible}
+        setSearchInputVisible={setSearchInputVisible}
+        searchvalue={searchvalue}
+        setSearchvalue={setSearchvalue}
+        
           item={[
             <HeaderFilterItem
               filterName={"Year"}
@@ -161,6 +190,7 @@ export default function Home({ navigation }) {
                 filterDataFunction(e, selectedYear, selectedMonth);
               }}
             />,
+            
           ]}
         />
 
@@ -227,14 +257,14 @@ export default function Home({ navigation }) {
       </View>
     );
   };
-
+console.log("render home")
   // ********************
   // ***********************Return Function************
   // *************************************
 
   return (
     <View style={[styles.safeAreaViewStyle]}>
-      <HeaderAndRbSHeet />
+      <HeaderAndRbSHeet/>
 
       <FlatList
         style={styles.scrollView}
@@ -278,3 +308,6 @@ const styles = StyleSheet.create({
     right: 20,
   },
 });
+
+
+export default React.memo(Home)
