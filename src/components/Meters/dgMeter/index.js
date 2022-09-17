@@ -39,6 +39,11 @@ const DGMeter = ({ navigation, route }) => {
   const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
   const [selectedDGMeter, setSelectedDGMeter] = useState("All");
   const [filteredData, setFilteredData] = useState(data);
+  const [searchInputVisible,setSearchInputVisible] = useState(false);
+  const [searchvalue, setSearchvalue] = useState("");
+
+
+
 
   const filterDataFunction = (dgNo, year, month) => {
     if (dgNo === "All") {
@@ -68,10 +73,35 @@ const DGMeter = ({ navigation, route }) => {
     filterDataFunction("All", selectedYear, selectedMonth);
   }, []);
 
+
+  const RenderItemIfSearchEnable=(item)=>{
+    
+    var concdata="";
+    for (const key in item) {
+      concdata=concdata+String(item[key]).toLowerCase()+" "
+    }
+   
+    if(concdata.includes(searchvalue.toLowerCase())){
+      return(
+        <DGMeterItem item={item} />
+      )
+    }
+    }
+
+
+
+    
+
+
+
   // *****************Header **********************
   const HeaderAndRbSHeet = () => {
     return (
       <HeaderforComponents
+      searchInputVisible={searchInputVisible}
+      setSearchInputVisible={setSearchInputVisible}
+      searchvalue={searchvalue}
+      setSearchvalue={setSearchvalue}
         item={[
           <HeaderFilterItem
             filterName={"Year"}
@@ -115,7 +145,7 @@ const DGMeter = ({ navigation, route }) => {
         data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
         renderItem={({ item }) =>
-          item.DG_No ? <DGMeterItem item={item} /> : <View></View>
+           !setSearchInputVisible   ? <DGMeterItem item={item} /> : RenderItemIfSearchEnable(item)
         }
       />
 

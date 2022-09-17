@@ -92,6 +92,7 @@ const [searchvalue, setSearchvalue] = useState("");
     return output;
   }
 
+
   // ****************Filter data function  for filtering data*********
 
   var filterDataFunction = (rating, year, month) => {
@@ -123,6 +124,7 @@ const [searchvalue, setSearchvalue] = useState("");
       setFilterdVisitorsData(data);
       var data2 = data.filter((item) => {
         return (
+
           (new Date(item.date).getMonth() === monthNames.indexOf(month)) &
           (new Date(item.date).getFullYear() === year)
         );
@@ -257,7 +259,23 @@ const [searchvalue, setSearchvalue] = useState("");
       </View>
     );
   };
-console.log("render home")
+  const RenderItemIfSearchEnable=(item)=>{
+    
+    var concdata="";
+    for (const key in item) {
+      concdata=concdata+String(item[key]).toLowerCase()+" "
+    }
+   
+    if(concdata.includes(searchvalue.toLowerCase())){
+      return(
+        <VisitorsItem
+        item={item}
+        selectedVisitorsItems={selectedVisitorsItems}
+        setSelectedVisitorsItems={setSelectedVisitorsItems}
+      />
+      )
+    }
+    }
   // ********************
   // ***********************Return Function************
   // *************************************
@@ -270,13 +288,15 @@ console.log("render home")
         style={styles.scrollView}
         data={filterdVisitorsData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => (
-          <VisitorsItem
+        renderItem={({ item }) =>!searchInputVisible?
+        <VisitorsItem
             item={item}
             selectedVisitorsItems={selectedVisitorsItems}
             setSelectedVisitorsItems={setSelectedVisitorsItems}
           />
-        )}
+          
+          :RenderItemIfSearchEnable(item)
+        }
       />
 
       <AntDesign

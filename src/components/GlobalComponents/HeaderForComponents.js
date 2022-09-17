@@ -9,6 +9,7 @@ import { setSelectedVisitorsItems,setVisitorsSearchValue } from "../../redux/act
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { render } from "react-dom";
 
 
 
@@ -18,15 +19,22 @@ import { useEffect } from "react";
 
 // ***************Main Function***************
  function HeaderforComponents(props) {
+  
 
   const navigation = useNavigation();
 const [searchvalue, setSearchvalue] = useState(props.searchvalue);
   // *************header item**************
 const [searchInputVisible, setSearchInputVisible] = useState(false);
+const refTextInput = useRef();
+
+useEffect(() => {
+  if(props.searchInputVisible){
+    refTextInput.current.focus()
+  }
+ }, []);
 
   
-  
-
+console.log(new Date())
 
 
 
@@ -96,7 +104,9 @@ const [searchInputVisible, setSearchInputVisible] = useState(false);
           
         }}
       >
-    <TextInput value={searchvalue} onChangeText={(e)=>setSearchvalue(e)} style={{color:"rgb(0, 172, 194)",paddingHorizontal:5,paddingVertical:3,borderColor:"rgb(0, 172, 194)",
+    <TextInput
+    
+     ref={refTextInput} value={searchvalue} onChangeText={(e)=>setSearchvalue(e)} style={{color:"rgb(0, 172, 194)",paddingHorizontal:5,paddingVertical:3,borderColor:"rgb(0, 172, 194)",
         borderWidth:0.3,
         borderRadius:3,minWidth:200}}/>
      

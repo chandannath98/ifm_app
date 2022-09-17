@@ -37,7 +37,8 @@ const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
 const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
 const [selectedLTMeter, setselectedLTMeter] = useState("All");
 const [filteredData, setFilteredData] = useState(data);
-
+const [searchInputVisible,setSearchInputVisible] = useState(false);
+  const [searchvalue, setSearchvalue] = useState("");
 
 
 
@@ -69,10 +70,33 @@ useEffect(() => {
   filterDataFunction("All", selectedYear, selectedMonth);
 }, []);
 
+
+
+const RenderItemIfSearchEnable=(item)=>{
+    
+  var concdata="";
+  for (const key in item) {
+    concdata=concdata+String(item[key]).toLowerCase()+" "
+  }
+ 
+  if(concdata.includes(searchvalue.toLowerCase())){
+    return(
+      <LTMeterItem item={item} />
+    )
+  }
+  }
+
+
+
+
 // *****************Header **********************
 const HeaderAndRbSHeet = () => {
   return (
     <HeaderforComponents
+    searchInputVisible={searchInputVisible}
+    setSearchInputVisible={setSearchInputVisible}
+    searchvalue={searchvalue}
+    setSearchvalue={setSearchvalue}
       item={[
         <HeaderFilterItem
           filterName={"Year"}
@@ -129,7 +153,7 @@ const HeaderAndRbSHeet = () => {
         style={styles.scrollView}
         data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => <LTMeterItem item={item} />}
+        renderItem={({ item }) =>!setSearchInputVisible   ? <LTMeterItem item={item} />: RenderItemIfSearchEnable(item)}
       />
     
 

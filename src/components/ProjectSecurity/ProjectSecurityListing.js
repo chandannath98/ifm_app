@@ -33,7 +33,8 @@ const ProjectSecurityListing = ({ navigation, route }) => {
   // **********All Data**********
   var data = projectSecurityData
 
-
+  const [searchInputVisible,setSearchInputVisible] = useState(false);
+  const [searchvalue, setSearchvalue] = useState("");
 
 // *************Today's Date*****************
   var dt = new Date();
@@ -194,7 +195,21 @@ var dayno=String(selectedDay).padStart(2,"0")
     }
   };
 
-
+  const RenderItemIfSearchEnable=(item)=>{
+    
+    var concdata="";
+    for (const key in item) {
+      concdata=concdata+String(item[key]).toLowerCase()+" "
+    }
+   
+    if(concdata.includes(searchvalue.toLowerCase())){
+      return(
+        <View>
+              <ProjectSecurityItems item={item} />
+            </View>
+      )
+    }
+    }
 
 
 const HeaderAndRbSheet=()=>{
@@ -205,18 +220,11 @@ return(
 
 
 
-
-
-
- 
-
-
-
-
-
-
-
       <HeaderforComponents
+      searchInputVisible={searchInputVisible}
+      setSearchInputVisible={setSearchInputVisible}
+      searchvalue={searchvalue}
+      setSearchvalue={setSearchvalue}
         item={[
           <HeaderFilterItem
             filterName={"Year"}
@@ -312,6 +320,8 @@ if date is not today then today button for set date to today*****
 )
 
 }
+
+
 
 
 
@@ -485,11 +495,12 @@ if date is not today then today button for set date to today*****
             paddingHorizontal: 6,
           }}
           // stickyHeaderIndices={[0,6,10]}
-          renderItem={({ item }) => (
+          renderItem={({ item }) => !searchInputVisible?
             <View>
               <ProjectSecurityItems item={item} />
-            </View>
-          )}
+            </View>:
+            RenderItemIfSearchEnable(item)
+          }
           onScrollBeginDrag={()=>setHideHeader(true)}
         />
       </View>

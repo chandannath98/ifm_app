@@ -37,6 +37,9 @@ const HTMeter = ({ navigation, route }) => {
   const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
   const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
   const [filteredData, setFilteredData] = useState(data);
+  const [searchInputVisible,setSearchInputVisible] = useState(false);
+  const [searchvalue, setSearchvalue] = useState("");
+
 
   const filterDataFunction = (year, month) => {
     var data2 = data.filter((item) => {
@@ -53,9 +56,29 @@ const HTMeter = ({ navigation, route }) => {
     filterDataFunction(selectedYear, selectedMonth);
   }, []);
 
+
+  const RenderItemIfSearchEnable=(item)=>{
+    
+    var concdata="";
+    for (const key in item) {
+      concdata=concdata+String(item[key]).toLowerCase()+" "
+    }
+   
+    if(concdata.includes(searchvalue.toLowerCase())){
+      return(
+        <HTMeterItem item={item} />
+      )
+    }
+    }
+
+
   const HeaderAndRbSHeet = () => {
     return (
       <HeaderforComponents
+      searchInputVisible={searchInputVisible}
+      setSearchInputVisible={setSearchInputVisible}
+      searchvalue={searchvalue}
+      setSearchvalue={setSearchvalue}
         item={[
           <HeaderFilterItem
             filterName={"Year"}
@@ -88,7 +111,7 @@ const HTMeter = ({ navigation, route }) => {
         style={styles.scrollView}
         data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => <HTMeterItem item={item} />}
+        renderItem={({ item }) =>!setSearchInputVisible   ?  <HTMeterItem item={item} /> : RenderItemIfSearchEnable(item)}
       />
 
       <TouchableOpacity

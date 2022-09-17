@@ -80,7 +80,7 @@ const BottemTabNav = () => {
         }}
       />
       <Tab.Screen
-        name={"Proect Security"}
+        name={"Project Security"}
         component={ProjectSecurityListing}
         options={{
           tabBarIcon: ({ focused, size }) => {
@@ -169,7 +169,7 @@ const BottemTabNav = () => {
       />
 
       <Tab.Screen
-        name={"Maaterial In/Out"}
+        name={"Material In/Out"}
         component={MaterialInOut}
         options={{
           headerShown: false,
