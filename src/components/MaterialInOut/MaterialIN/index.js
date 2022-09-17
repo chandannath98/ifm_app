@@ -36,6 +36,12 @@ var dt = new Date();
   const [selectedYear, setSelectedYear] = useState(dt.getFullYear());
   const [selectedMonth, setselectedMonth] = useState(monthNames[dt.getMonth()]);
   const [filteredData, setFilteredData] = useState(data);
+  const [searchInputVisible,setSearchInputVisible] = useState(false);
+  const [searchvalue, setSearchvalue] = useState("");
+
+
+
+
 
   const filterDataFunction = (year, month) => {
     var data2 = data.filter((item) => {
@@ -52,9 +58,37 @@ var dt = new Date();
     filterDataFunction(selectedYear, selectedMonth);
   }, []);
 
+
+
+
+
+  const RenderItemIfSearchEnable=(item)=>{
+    
+    var concdata="";
+    for (const key in item) {
+      concdata=concdata+String(item[key]).toLowerCase()+" "
+    }
+   
+    if(concdata.includes(searchvalue.toLowerCase())){
+      return(
+        <MaterialInItem item={item} />
+      )
+    }
+    }
+  
+
+
+
+
+
+
   const HeaderAndRbSHeet = () => {
     return (
       <HeaderforComponents
+      searchInputVisible={searchInputVisible}
+      setSearchInputVisible={setSearchInputVisible}
+      searchvalue={searchvalue}
+      setSearchvalue={setSearchvalue}
         item={[
           <HeaderFilterItem
             filterName={"Year"}
@@ -99,7 +133,7 @@ var dt = new Date();
         style={styles.scrollView}
         data={filteredData}
         contentContainerStyle={{ paddingBottom: 100, paddingTop: 10 }}
-        renderItem={({ item }) => <MaterialInItem item={item} />}
+        renderItem={({ item }) => !searchInputVisible?<MaterialInItem item={item} />:RenderItemIfSearchEnable(item)}
       />
     
 

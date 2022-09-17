@@ -134,18 +134,6 @@ const HeaderAndRbSHeet = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <SafeAreaView style={styles.container}>
       {hideHeader?<></>:<HeaderAndRbSHeet/>}
