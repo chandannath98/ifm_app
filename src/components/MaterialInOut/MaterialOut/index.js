@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Pressable, TouchableOpacity, TouchableHighlight,FlatList } from "react-native";
+import { StyleSheet, SafeAreaView, TouchableOpacity,FlatList } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
 
 import MaterialOutItem from "./MaterialOutItem";
-import { DGData } from "../../Meters/dgMeter/data";
 import { MOUTData } from "./MOUTData";
 import HeaderforComponents from "../../GlobalComponents/HeaderForComponents";
 import HeaderFilterItem from "../../GlobalComponents/HeaderFilterItem";
@@ -47,7 +46,7 @@ var dt = new Date();
 
   const filterDataFunction = (year, month) => {
     var data2 = data.filter((item) => {
-      console.log(item.out_date)  
+      
       return (
         (new Date(item.out_date).getMonth() === monthNames.indexOf(month)) &
         (new Date(item.out_date).getFullYear() === year)
@@ -82,7 +81,7 @@ var dt = new Date();
 
 
 
-
+// *******************Header Component********************
 
   const HeaderAndRbSHeet = () => {
     return (
@@ -123,7 +122,7 @@ var dt = new Date();
 
 
 
-
+// **********************Main Retrun Function start from here***************
 
 
 

@@ -12,6 +12,7 @@ import { Text } from "react-native";
 import { View } from "react-native";
 import ProjectSecurityListing from "../components/ProjectSecurity/ProjectSecurityListing";
 import { Platform } from "react-native";
+import DGMeterForm from "../components/Meters/dgMeter/DGMeterForm";
 
 // *********Main Function************
 
@@ -171,6 +172,60 @@ const BottemTabNav = () => {
       <Tab.Screen
         name={"Material In/Out"}
         component={MaterialInOut}
+        options={{
+          headerShown: false,
+
+          tabBarIcon: ({ focused, size }) => {
+            // const icon=focused?"bell":"home";
+            const color = focused ? "rgb(0, 172, 194)" : "grey";
+            return (
+              <MaterialCommunityIcons
+                name="boom-gate"
+                size={25}
+                color={color}
+              />
+            );
+          },
+
+          headerTintColor: "white",
+          headerStyle: {
+            // backgroundColor: "rgb(0, 172, 194)",
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+          },
+          headerTitle: (props) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <MaterialCommunityIcons
+                name="gate"
+                size={20}
+                color="rgb(0, 172, 194)"
+              />
+              <Text
+                style={{
+                  color: "rgb(0, 172, 194)",
+                  fontSize: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {" "}
+                Material In/Out
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={"dgform"}
+        component={DGMeterForm}
         options={{
           headerShown: false,
 

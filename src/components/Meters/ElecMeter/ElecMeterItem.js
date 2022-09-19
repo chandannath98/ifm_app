@@ -31,21 +31,6 @@ var elecricityNewReading=item.Mains_New_Reading
 var dgNewReading=item.Dg_New_Reading
 
 
-const TwoButtonAlert = () =>
-    Alert.alert(
-      "Error!",
-
-      "Consumed Units cant't be negetive, Please check!",
-      [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
-      ]
-    );
-
 
 
 

@@ -147,6 +147,7 @@ const HeaderFilterItem = (props) => {
           Platform.OS === "web"
             ? { paddingHorizontal: 15 }
             : { paddingHorizontal: 10 },
+            props.btnCustomStyle?props.btnCustomStyle: { paddingHorizontal: 10 }
         ]}
       >
         <Text style={{ fontSize: 17, color: "rgb(0, 172, 194)" }}>
